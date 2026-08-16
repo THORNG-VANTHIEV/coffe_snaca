@@ -1,0 +1,121 @@
+/**
+ * Raw palette + semantic design tokens.
+ *
+ * Dark is the default theme, so it lives on bare `:root` — a browser that
+ * never runs the theme script still lands on the intended look. Light is a
+ * deliberate opt-in via `[data-theme="light"]`, set by ThemeProvider and by
+ * the inline script in index.html that runs before first paint.
+ *
+ * The light values come straight from the specification (§31 Suggested Color
+ * Palette). The dark set is the same coffee family pushed into espresso tones
+ * (spec §4, "dark/coffee-inspired modern UI").
+ *
+ * Components never reference a raw hex — only the semantic tokens below —
+ * which is what makes switching themes a pure token swap.
+ */
+
+:root {
+  /* --- Brand palette (spec §31) --- */
+  --palette-espresso: #3b2416;
+  --palette-coffee: #6f4e37;
+  --palette-caramel: #c68b59;
+  --palette-cream: #faf7f2;
+  --palette-beige: #f2e9df;
+
+  /* --- Semantic tokens: dark (default) --- */
+  --bg: #1a110b;
+  --surface: #241811;
+  --surface-2: #302017;
+  --surface-3: #3b2a1e;
+  --border: #3e2c21;
+  --border-strong: #523b2b;
+  /*
+   * Boundaries that identify a control (outline buttons, the search field)
+   * rather than decorate a card — held at 3:1 against `surface`.
+   */
+  --border-interactive: #8a705c;
+
+  --text: #f6efe7;
+  --muted: #b49f8e;
+
+  --primary: #e4c7a5;
+  --on-primary: #241811;
+  --secondary: #c9a183;
+  --on-secondary: #241811;
+  --accent: #d9a472;
+  --on-accent: #241811;
+  /*
+   * `--accent` is the brand caramel and is only ever a fill or a decorative
+   * icon beside a label. Anything that has to be *read* — accent-coloured
+   * links, focus rings — uses this instead, which stays legible on a light
+   * background where the caramel drops to 2.9:1.
+   */
+  --accent-strong: #d9a472;
+
+  --success: #6bbf7c;
+  --success-soft: #1f3324;
+  --danger: #e0806f;
+  --danger-soft: #3a211c;
+
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-raised: 0 12px 36px rgba(0, 0, 0, 0.5);
+  --shadow-header: 0 1px 0 rgba(0, 0, 0, 0.35);
+
+  /* Hero / image overlays read differently per theme */
+  --overlay-from: rgba(12, 8, 5, 0.9);
+  --overlay-to: rgba(12, 8, 5, 0.3);
+
+  --skeleton: linear-gradient(
+    90deg,
+    var(--surface-2) 25%,
+    #3a2719 37%,
+    var(--surface-2) 63%
+  );
+
+  /* Browser chrome for form controls, scrollbars and the address bar */
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: var(--palette-cream);
+  --surface: #ffffff;
+  --surface-2: var(--palette-beige);
+  --surface-3: #eadfd2;
+  --border: #e7dbcd;
+  --border-strong: #d8c7b4;
+  --border-interactive: #9a8a76;
+
+  --text: #251a14;
+  --muted: #74675f;
+
+  --primary: var(--palette-espresso);
+  --on-primary: var(--palette-cream);
+  --secondary: var(--palette-coffee);
+  --on-secondary: var(--palette-cream);
+  --accent: var(--palette-caramel);
+  --on-accent: #2a1a0e;
+  /* A deepened caramel — the brand tone itself is only 2.9:1 on white. */
+  --accent-strong: #8c5a28;
+
+  --success: #387a45;
+  /* Soft badge grounds are lightened so the spec's green and red stay at 4.5:1 */
+  --success-soft: #eaf6ed;
+  --danger: #b34a3c;
+  --danger-soft: #fdefed;
+
+  --shadow-card: 0 8px 30px rgba(59, 36, 22, 0.06);
+  --shadow-raised: 0 12px 36px rgba(59, 36, 22, 0.1);
+  --shadow-header: 0 1px 0 rgba(59, 36, 22, 0.06);
+
+  --overlay-from: rgba(37, 26, 20, 0.86);
+  --overlay-to: rgba(37, 26, 20, 0.16);
+
+  --skeleton: linear-gradient(
+    90deg,
+    var(--surface-2) 25%,
+    #f8f2ea 37%,
+    var(--surface-2) 63%
+  );
+
+  color-scheme: light;
+}

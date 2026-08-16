@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="km">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Brown Bean Coffee | Digital Menu</title>
+    <meta
+      name="description"
+      content="Scan, browse and discover the Brown Bean Coffee menu — fresh coffee, tea, smoothies and Khmer food with prices in USD and KHR."
+    />
+    <meta name="author" content="Brown Bean Coffee" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Kept in step with the active theme by ThemeProvider and the script below -->
+    <meta name="theme-color" content="#1A110B" />
+
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="apple-touch-icon" href="%BASE_URL%images/logo/logo.png" />
+    <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
+
+    <!-- Open Graph / social preview. Update the absolute URLs if the site moves. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Brown Bean Coffee" />
+    <meta property="og:title" content="Brown Bean Coffee | Digital Menu" />
+    <meta
+      property="og:description"
+      content="Fresh coffee, better moments. Browse our full menu in Khmer and English."
+    />
+    <meta property="og:image" content="https://username.github.io/coffee-menu/images/banners/og-cover.webp" />
+    <meta property="og:url" content="https://username.github.io/coffee-menu/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap"
+    />
+
+    <!--
+      Applies the saved theme before the first paint. Without it a customer who
+      chose light would see a dark flash on every load, because dark is the
+      default. Deliberately inline and blocking — it must run before the body
+      is painted. The storage key matches STORAGE_KEYS.theme.
+    -->
+    <script>
+      ;(function () {
+        var theme = 'dark'
+        try {
+          if (localStorage.getItem('coffee-menu.theme') === 'light') theme = 'light'
+        } catch (e) {
+          /* private mode — fall back to the default */
+        }
+        document.documentElement.dataset.theme = theme
+        var meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#FAF7F2' : '#1A110B')
+      })()
+    </script>
+
+    <!-- Painted before the JS bundle parses so the boot is warm, never a white flash. -->
+    <style>
+      html {
+        background-color: #1a110b;
+      }
+      html[data-theme='light'] {
+        background-color: #faf7f2;
+      }
+      #app-boot {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #app-boot span {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 9999px;
+        border: 3px solid rgba(198, 139, 89, 0.25);
+        border-top-color: #c68b59;
+        animation: app-boot-spin 0.7s linear infinite;
+      }
+      @keyframes app-boot-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #app-boot span {
+          animation-duration: 2s;
+        }
+      }
+    </style>
+
+    <!--
+      Restores the real path after 404.html bounced a deep link back here — see
+      the github-pages-spa-fallback plugin in vite.config.ts. It runs before the
+      app so React Router only ever sees the corrected URL.
+    -->
+    <script>
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (part) {
+              return part.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div id="app-boot"><span></span></div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
