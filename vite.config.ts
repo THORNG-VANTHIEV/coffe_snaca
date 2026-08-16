@@ -9,8 +9,12 @@ import tailwindcss from '@tailwindcss/vite'
  * lives somewhere else, e.g. a custom domain:
  *
  *   VITE_BASE=/ npm run build
+ *
+ * The deploy workflow sets VITE_BASE from the repository name, so this default
+ * only shapes local `dev` and `preview` — keep it matching the repo so what
+ * you see locally is what ships.
  */
-const base = process.env.VITE_BASE ?? '/coffee-menu/'
+const base = process.env.VITE_BASE ?? '/coffe_snaca/'
 
 /**
  * GitHub Pages has no SPA rewrite, so refreshing `/coffee-menu/menu/latte`

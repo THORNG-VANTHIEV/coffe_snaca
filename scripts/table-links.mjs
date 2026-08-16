@@ -2,7 +2,7 @@
 /**
  * Prints the QR link for every table in db.json (spec §20).
  *
- *   npm run tables -- https://username.github.io/coffee-menu/
+ *   npm run tables -- https://thorng-vanthiev.github.io/coffe_snaca/
  *
  * Feed the list to any QR generator to print the table stickers. The URLs are
  * the only thing that has to be right — the app reads `?table=` from them.
@@ -15,8 +15,8 @@ import { fileURLToPath } from 'node:url'
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const args = process.argv.slice(2)
 const writeFile = args.includes('--write')
-const siteUrl = (args.find((arg) => !arg.startsWith('--')) ?? 'https://username.github.io/coffee-menu/')
-  .replace(/\/+$/, '')
+const DEFAULT_SITE_URL = 'https://thorng-vanthiev.github.io/coffe_snaca/'
+const siteUrl = (args.find((arg) => !arg.startsWith('--')) ?? DEFAULT_SITE_URL).replace(/\/+$/, '')
 
 const db = JSON.parse(readFileSync(join(root, 'public/data/db.json'), 'utf8'))
 const tables = db.tables.filter((table) => table.active !== false)

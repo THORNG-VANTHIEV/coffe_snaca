@@ -18,7 +18,7 @@ Customer phone → scan QR → GitHub Pages → React app → public/data/db.jso
 
 ```bash
 npm install
-npm run dev          # http://localhost:5173/coffee-menu/
+npm run dev          # http://localhost:5173/coffe_snaca/
 ```
 
 The dev server serves `public/data/db.json` directly, so there is nothing else
@@ -27,7 +27,7 @@ to run. Edit the file, save, and the browser reloads.
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Local dev server with hot reload |
-| `npm run build` | Validates the menu, type-checks, then builds to `dist/` |
+| `npm run build` | Validates menu + contrast, type-checks, then builds to `dist/` |
 | `npm run preview` | Serves `dist/` exactly as GitHub Pages will |
 | `npm run validate` | Checks `db.json` for the mistakes listed in spec §58 |
 | `npm run contrast` | Checks colour contrast in both themes |
@@ -104,14 +104,14 @@ Missing photos never break the page — the app falls back to
 Each table gets its own link:
 
 ```
-https://<username>.github.io/coffee-menu/?table=05
+https://thorng-vanthiev.github.io/coffe_snaca/?table=05
 ```
 
 Print the list, then paste the URLs into any QR generator:
 
 ```bash
-npm run tables -- https://<username>.github.io/coffee-menu/
-npm run tables -- https://<username>.github.io/coffee-menu/ --write   # writes table-links.md
+npm run tables -- https://thorng-vanthiev.github.io/coffe_snaca/
+npm run tables -- https://thorng-vanthiev.github.io/coffe_snaca/ --write   # writes table-links.md
 ```
 
 Add or remove tables in the `tables` array in `db.json`. A link pointing at a
@@ -122,12 +122,27 @@ never an error (spec §21).
 
 ## Deployment
 
+Live at **https://thorng-vanthiev.github.io/coffe_snaca/**
+(repository: `THORNG-VANTHIEV/coffe_snaca`).
+
 ### First time
 
-1. Create a GitHub repository named **`coffee-menu`**
-2. Push this project to its `main` branch
-3. In **Settings → Pages**, set **Source: GitHub Actions**
-4. Push once more; `.github/workflows/deploy.yml` builds and publishes
+1. Push this project to the repository's `main` branch
+2. In **Settings → Pages**, set **Source: GitHub Actions**
+3. Push again, or re-run the workflow
+
+**Step 2 is not optional.** Until Pages is switched on, the
+`actions/configure-pages` step fails with:
+
+```
+Error: Get Pages site failed. Please verify that the repository has Pages
+enabled and configured to build using GitHub Actions … Error: Not Found
+```
+
+That is the repository setting missing, not a problem with the build. The
+action's `enablement: true` input can create the Pages site instead, but it
+needs a Personal Access Token rather than the built-in `GITHUB_TOKEN`, so
+flipping the setting is the simpler route.
 
 The workflow derives the base path from the repository name, so renaming the
 repository does not break asset URLs. A `<user>.github.io` repository is
@@ -135,12 +150,13 @@ published at `/` automatically.
 
 ### The base path
 
-`vite.config.ts` defaults to `base: '/coffee-menu/'`, which must match the
-repository name (spec §52). Override it for any other host:
+`vite.config.ts` defaults to `base: '/coffe_snaca/'` to match the repository
+name (spec §52). This default only affects local `dev` and `preview` — CI sets
+`VITE_BASE` itself. Override it for any other host:
 
 ```bash
-VITE_BASE=/ npm run build          # custom domain or user site
-VITE_BASE=/my-menu/ npm run build  # repository named my-menu
+VITE_BASE=/ npm run build            # custom domain or user site
+VITE_BASE=/other-repo/ npm run build # a differently named repository
 ```
 
 Nothing in the source assumes the app runs at `/` — image paths from
@@ -149,7 +165,7 @@ Nothing in the source assumes the app runs at `/` — image paths from
 
 ### Deep links on GitHub Pages
 
-GitHub Pages has no SPA rewrite, so refreshing `/coffee-menu/menu/espresso`
+GitHub Pages has no SPA rewrite, so refreshing `/coffe_snaca/menu/espresso`
 would normally 404. A generated `404.html` bounces the request back into the
 app, and a snippet in `index.html` restores the address before React Router
 reads it. Both are produced automatically from `base` — see the

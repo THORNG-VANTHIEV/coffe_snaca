@@ -11,6 +11,9 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # Required by actions/deploy-pages v4 and later, which fetches the uploaded
+  # artifact through the Actions API.
+  actions: read
 
 # Never let two deploys race; queue instead, and let a newer push win.
 concurrency:
@@ -21,9 +24,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -42,15 +45,17 @@ jobs:
             echo "VITE_BASE=/$repo/" >> "$GITHUB_ENV"
           fi
 
-      - name: Check the menu data
-        run: npm run validate
+      - name: Check menu data, contrast, types and lint
+        run: npm run check
 
       - name: Build
         run: npm run build
 
-      - uses: actions/configure-pages@v5
+      # Fails with "Get Pages site failed … Not Found" until Pages is turned on
+      # for the repository: Settings → Pages → Source: GitHub Actions.
+      - uses: actions/configure-pages@v6
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -62,4 +67,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
