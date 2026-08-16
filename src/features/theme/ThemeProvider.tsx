@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { readStored, STORAGE_KEYS, writeStored } from '@/utils/storage'
 import { DEFAULT_THEME, isTheme, ThemeContext, type Theme } from './themeContext'
 
@@ -7,6 +7,10 @@ const CHROME_COLOR: Record<Theme, string> = {
   dark: '#1A110B',
   light: '#FAF7F2',
 }
+
+/** Matches the 260ms transition in globals.css, with a little slack. */
+const TRANSITION_CLASS = 'theme-transition'
+const TRANSITION_MS = 320
 
 /**
  * The stored choice, or the shop's default.
@@ -30,8 +34,20 @@ function readInitialTheme(): Theme {
  */
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(readInitialTheme)
+  const transitionTimer = useRef<number | undefined>(undefined)
 
   const setTheme = useCallback((next: Theme) => {
+    // Armed before the attribute flips, so the browser has the transition in
+    // place when the new palette lands. The class is added synchronously here
+    // and the swap happens in the effect below, a frame later.
+    const root = document.documentElement
+    root.classList.add(TRANSITION_CLASS)
+
+    window.clearTimeout(transitionTimer.current)
+    transitionTimer.current = window.setTimeout(() => {
+      root.classList.remove(TRANSITION_CLASS)
+    }, TRANSITION_MS)
+
     setThemeState(next)
     writeStored(STORAGE_KEYS.theme, next)
   }, [])
@@ -46,6 +62,15 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const meta = document.querySelector('meta[name="theme-color"]')
     if (meta) meta.setAttribute('content', CHROME_COLOR[theme])
   }, [theme])
+
+  // Never leave the global colour transition armed behind us.
+  useEffect(
+    () => () => {
+      window.clearTimeout(transitionTimer.current)
+      document.documentElement.classList.remove(TRANSITION_CLASS)
+    },
+    [],
+  )
 
   const value = useMemo(() => ({ theme, setTheme, toggleTheme }), [theme, setTheme, toggleTheme])
 

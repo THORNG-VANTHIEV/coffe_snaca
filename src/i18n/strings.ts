@@ -32,9 +32,8 @@ const en = {
   },
 
   theme: {
-    label: 'Appearance',
-    dark: 'Dark mode',
-    light: 'Light mode',
+    toDark: 'Switch to dark mode',
+    toLight: 'Switch to light mode',
   },
 
   hero: {
@@ -169,9 +168,8 @@ const km: Dictionary = {
   },
 
   theme: {
-    label: 'រូបរាង',
-    dark: 'រូបរាងងងឹត',
-    light: 'រូបរាងភ្លឺ',
+    toDark: 'ប្តូរទៅរូបរាងងងឹត',
+    toLight: 'ប្តូរទៅរូបរាងភ្លឺ',
   },
 
   hero: {

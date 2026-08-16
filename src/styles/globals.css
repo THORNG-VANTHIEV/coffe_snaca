@@ -126,6 +126,35 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  /**
+   * Colours cross-fade only while the theme is actually being switched.
+   * ThemeProvider adds this class for the length of the fade and takes it off
+   * again, because leaving a global colour transition on permanently would
+   * make every hover feel laggy and would override the transitions components
+   * declare for themselves.
+   *
+   * `!important` is needed to beat those per-component `transition-property`
+   * declarations for the duration — an element set to `transition-opacity`
+   * would otherwise snap its background. Scoping the whole rule to
+   * `no-preference` is what keeps it away from reduced-motion users, rather
+   * than trying to out-specify the block above.
+   */
+  @media (prefers-reduced-motion: no-preference) {
+    html.theme-transition,
+    html.theme-transition *,
+    html.theme-transition *::before,
+    html.theme-transition *::after {
+      transition:
+        background-color 260ms ease,
+        border-color 260ms ease,
+        color 260ms ease,
+        fill 260ms ease,
+        stroke 260ms ease,
+        box-shadow 260ms ease !important;
+      transition-delay: 0ms !important;
+    }
+  }
 }
 
 /* ------------------------------------------------------------------ */
