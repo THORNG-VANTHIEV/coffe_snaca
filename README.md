@@ -42,6 +42,20 @@ to run. Edit the file, save, and the browser reloads.
 Everything on the menu lives in one file: **`public/data/db.json`**.
 No React code needs to change for a normal menu update.
 
+### Rename the shop
+
+Change `shop_name_en` **and** `shop_name_km` in `settings`. Both matter — the
+menu opens in Khmer by default, so leaving the Khmer name behind means most
+customers still see the old one.
+
+Nothing else needs editing. The browser tab, the social preview card and the
+"Add to Home Screen" name are generated from these fields at build time by the
+`shop-identity` plugin, so they can never drift out of step with the menu.
+
+> **Edit `public/data/db.json`, never `dist/data/db.json`.** `dist/` is build
+> output: it is wiped on every build and excluded from git, so changes made
+> there are lost and never reach the published site.
+
 ### Change a price
 
 1. Open `public/data/db.json`
@@ -86,6 +100,26 @@ To hide sold-out items entirely instead, set
 
 Never reuse or renumber an existing `id` or `slug`; old QR links and
 bookmarks point at them.
+
+### The hero slideshow
+
+The banner cycles through `settings.hero_images` every 5 seconds with a
+cross-fade. Add or remove paths to change it — one entry makes it a static
+banner, and an empty list falls back to the shipped default.
+
+```json
+"hero_images": [
+  "/images/banners/hero-1.webp",
+  "/images/banners/hero-2.webp"
+]
+```
+
+Use wide images (**1600 × 900**). The headline sits over the left half, so
+keep the subject on the right where the overlay is lightest.
+
+Only the visible slide and the next one are loaded, so a four-slide hero still
+costs one image on first paint. It does not auto-advance for visitors who have
+asked their device for reduced motion.
 
 ### Photos
 
@@ -181,9 +215,10 @@ reads it. Both are produced automatically from `base` — see the
 
 | Field | Notes |
 | --- | --- |
-| `shop_name_en` / `shop_name_km` | Shown in the header, footer and page title |
+| `shop_name_en` / `shop_name_km` | Header, footer, browser tab, social card and PWA name |
 | `tagline_en` / `tagline_km` | Hero subtitle and footer line |
 | `logo` | Path under `public/`, e.g. `/images/logo/logo.png` |
+| `hero_images` | Banner slides, cross-faded every 5s. One entry = a static banner |
 | `phone`, `address_*`, `opening_hours_*` | Footer and About page |
 | `currency_usd`, `currency_khr` | Switch a currency off to hide it everywhere |
 | `default_language` | `"km"` or `"en"` — used until the customer chooses |
@@ -262,7 +297,7 @@ src/
     layout/             MainLayout — the loading / error / ready gate
   features/
     home/ menu/ product/ categories/ search/ about/ splash/
-    language/           LanguageProvider + the ខ្មែរ | EN toggle
+    language/           LanguageProvider + the ខ្មែរ / EN toggle
     table/              TableBadge
   hooks/                useMenu, useLanguage, useTable, useMediaQuery, useDocumentTitle
   i18n/strings.ts       UI labels only — menu content is bilingual in db.json
@@ -331,8 +366,9 @@ Other decisions worth knowing:
 ## Theme
 
 Two themes, **dark by default** — the coffee-house look the spec asks for
-(§4) — with a Moon/Sun switch in the header beside the language toggle. The
-choice is remembered in LocalStorage and survives a refresh or a re-scan.
+(§4) — with a Moon/Sun button in the header, shaped to match the language
+button beside it. The choice is remembered in LocalStorage and survives a
+refresh or a re-scan.
 
 Both palettes live in `src/styles/variables.css`:
 

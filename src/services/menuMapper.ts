@@ -176,6 +176,7 @@ function mapSettings(source: RawRecord): Settings {
     taglineEn: tagline.en,
     taglineKm: tagline.km,
     logo: resolveAssetUrl(readString(source, 'logo')),
+    heroImages: readStringArray(source, 'hero_images').map(resolveAssetUrl),
     phone: readString(source, 'phone'),
     addressEn: address.en,
     addressKm: address.km,

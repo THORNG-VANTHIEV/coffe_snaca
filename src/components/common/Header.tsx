@@ -1,6 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { useSettings } from '@/hooks/useMenu'
 import { useTable } from '@/hooks/useTable'
 import { LanguageToggle } from '@/features/language/LanguageToggle'
@@ -10,27 +9,21 @@ import { ShopLogo } from './ShopLogo'
 import { shopName } from '@/utils/translation'
 import { cn } from '@/utils/cn'
 
-/** Tailwind's `sm` — below it the header needs a second row. */
-const WIDE_HEADER = '(min-width: 640px)'
-
 /**
  * Sticky top header (spec §7.2, §37): who you are, which table you are at,
  * what language you read, and how the menu looks. Nothing else — a menu does
  * not need a navigation system.
  *
- * With three controls the row no longer fits beside the shop name on a 360px
- * phone, so the table drops to its own line there — the layout the spec draws
- * in §35. The badge is placed rather than duplicated behind `hidden`
- * utilities, so it appears once in the accessibility tree.
+ * All three controls fit one row again now that the language and theme
+ * switches are single buttons rather than segmented pairs, which keeps the
+ * sticky header short on the phone this is mostly read on.
  */
 export function Header() {
   const settings = useSettings()
   const { language, t } = useLanguage()
   const { table } = useTable()
-  const isWide = useMediaQuery(WIDE_HEADER)
 
   const name = shopName(settings, language)
-  const showTableRow = Boolean(table) && !isWide
 
   const links = [
     { to: '/', label: t.nav.home, end: true },
@@ -40,7 +33,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-bg/85 backdrop-blur-md">
-      <div className="container-page flex h-14 items-center gap-2 sm:h-16 sm:gap-4">
+      <div className="container-page flex h-16 items-center gap-2 sm:gap-4">
         <Link
           to="/"
           className="flex min-w-0 items-center gap-2.5 rounded-pill"
@@ -71,17 +64,11 @@ export function Header() {
         </nav>
 
         <div className="ms-auto flex shrink-0 items-center gap-2">
-          {table && isWide && <TableBadge table={table} />}
+          {table && <TableBadge table={table} />}
           <ThemeToggle />
           <LanguageToggle />
         </div>
       </div>
-
-      {showTableRow && table && (
-        <div className="container-page flex items-center pb-2">
-          <TableBadge table={table} />
-        </div>
-      )}
     </header>
   )
 }

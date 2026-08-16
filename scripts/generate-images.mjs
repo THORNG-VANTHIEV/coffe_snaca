@@ -173,13 +173,27 @@ function makeArtwork({ width, height, categorySlug, kind, seed }) {
   return canvas
 }
 
-/** Wide banner: a large cup off to one side, with steam. */
-function makeHero() {
-  const canvas = createCanvas(1600, 900)
-  const palette = PALETTES.coffee
-  const next = variations('hero-banner')
+/**
+ * Wide banner slides.
+ *
+ * The subject always sits on the right: the hero's headline occupies the left
+ * half under the dark end of the overlay gradient, so anything placed there
+ * would be hidden behind text.
+ */
+const HERO_SLIDES = [
+  { seed: 'hero-1', palette: 'coffee', dish: false, radius: 268, steam: true, dark: '#231409' },
+  { seed: 'hero-2', palette: 'tea', dish: false, radius: 244, steam: true, dark: '#1C2411' },
+  { seed: 'hero-3', palette: 'lunch', dish: true, radius: 288, steam: false, dark: '#2A1509' },
+  { seed: 'hero-4', palette: 'smoothies', dish: false, radius: 252, steam: false, dark: '#2B1608' },
+]
 
-  fillGradient(canvas, hex('#8A6141'), hex('#231409'), 0.9)
+function makeHero({ seed, palette: paletteKey, dish, radius, steam, dark }) {
+  const canvas = createCanvas(1600, 900)
+  const palette = paletteFor(paletteKey)
+  const next = variations(seed)
+
+  const ground = hex(dark)
+  fillGradient(canvas, hex(palette.from), ground, 0.9)
   radialGlow(canvas, 1180, 300, 900, hex(palette.accent), 0.45)
 
   const cx = 1150
@@ -187,20 +201,38 @@ function makeHero() {
   const vessel = hex(palette.vessel)
   const fill = hex(palette.fill)
 
-  disc(canvas, cx, cy, 330, mix(vessel, hex('#231409'), 0.6), 0.5)
-  disc(canvas, cx, cy, 268, vessel)
-  ring(canvas, cx, cy, 248, 10, mix(vessel, hex('#231409'), 0.3), 0.65)
-  disc(canvas, cx, cy, 222, fill)
-  disc(canvas, cx - 60, cy - 60, 110, mix(fill, vessel, 0.4), 0.5)
-  ring(canvas, cx, cy, 190, 12, [1, 1, 1], 0.1)
+  disc(canvas, cx, cy, radius * 1.23, mix(vessel, ground, 0.6), 0.5)
+  disc(canvas, cx, cy, radius, vessel)
+  ring(canvas, cx, cy, radius * 0.93, 10, mix(vessel, ground, 0.3), 0.65)
+  disc(canvas, cx, cy, radius * (dish ? 0.66 : 0.83), fill)
+  disc(canvas, cx - 60, cy - 60, radius * 0.41, mix(fill, vessel, 0.4), 0.5)
+  ring(canvas, cx, cy, radius * 0.71, 12, [1, 1, 1], 0.1)
 
-  for (let i = 0; i < 3; i++) {
-    const x = cx - 90 + i * 90
-    roundedRect(canvas, x, 90 + i * 26, 22, 150 - i * 22, 11, [1, 1, 1], 0.08 + next() * 0.04)
+  if (dish) {
+    const garnish = hex(palette.accent)
+    for (let i = 0; i < 6; i++) {
+      const angle = next() * Math.PI * 2
+      const distance = radius * (0.28 + next() * 0.22)
+      disc(
+        canvas,
+        cx + Math.cos(angle) * distance,
+        cy + Math.sin(angle) * distance,
+        radius * (0.035 + next() * 0.03),
+        garnish,
+        0.85,
+      )
+    }
+  }
+
+  if (steam) {
+    for (let i = 0; i < 3; i++) {
+      const x = cx - 90 + i * 90
+      roundedRect(canvas, x, 90 + i * 26, 22, 150 - i * 22, 11, [1, 1, 1], 0.08 + next() * 0.04)
+    }
   }
 
   vignette(canvas, 0.38)
-  grain(canvas, 0.016, hashString('hero-banner'))
+  grain(canvas, 0.016, hashString(seed))
   return canvas
 }
 
@@ -334,7 +366,10 @@ writeImage(
   }),
 )
 
-writeImage('/images/banners/hero.webp', makeHero(), 82)
+for (const [index, slide] of HERO_SLIDES.entries()) {
+  writeImage(`/images/banners/hero-${index + 1}.webp`, makeHero(slide), 82)
+}
+
 writeImage('/images/banners/og-cover.webp', makeSocialCover(), 82)
 writeImage('/images/logo/logo.png', makeLogo())
 

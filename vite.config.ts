@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { shopIdentity } from './vite/shop-identity.ts'
 
 /**
  * `base` must match the GitHub repository name so that GitHub Pages serves
@@ -63,7 +64,7 @@ function githubPagesSpaFallback(basePath: string): Plugin {
 
 export default defineConfig({
   base,
-  plugins: [react(), tailwindcss(), githubPagesSpaFallback(base)],
+  plugins: [react(), tailwindcss(), shopIdentity(), githubPagesSpaFallback(base)],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

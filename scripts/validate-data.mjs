@@ -100,6 +100,15 @@ if (!settings || typeof settings !== 'object') {
   if (settings.logo && !imageExists(settings.logo)) {
     warn('settings', `logo not found at public${settings.logo}`)
   }
+
+  const heroImages = Array.isArray(settings.hero_images) ? settings.hero_images : []
+  if (heroImages.length === 0) {
+    warn('settings', 'no hero_images — the hero falls back to the shipped default banner')
+  }
+  for (const image of heroImages) {
+    if (typeof image !== 'string' || !image) fail('settings', 'hero_images must be paths')
+    else if (!imageExists(image)) warn('settings', `hero image not found at public${image}`)
+  }
 }
 
 // ------------------------------------------------------------------ tables --

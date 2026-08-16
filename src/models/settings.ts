@@ -7,6 +7,11 @@ export interface Settings {
   taglineEn: string
   taglineKm: string
   logo: string
+  /**
+   * Hero banner slides, shown as a looping cross-fade. One entry is a static
+   * banner; an empty list falls back to the shipped default.
+   */
+  heroImages: string[]
   phone: string
   addressEn: string
   addressKm: string

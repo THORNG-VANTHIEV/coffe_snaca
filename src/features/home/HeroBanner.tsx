@@ -1,13 +1,14 @@
 import { ArrowRight } from 'lucide-react'
 import { ButtonLink } from '@/components/common/Button'
-import { ImageWithFallback } from '@/components/common/ImageWithFallback'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useSettings } from '@/hooks/useMenu'
 import { useTable } from '@/hooks/useTable'
+import { HeroSlideshow } from './HeroSlideshow'
 import { shopName, shopTagline } from '@/utils/translation'
 import { resolveAssetUrl } from '@/utils/url'
 
-const HERO_IMAGE = resolveAssetUrl('/images/banners/hero.webp')
+/** Used only when the shop has not listed any `hero_images` in db.json. */
+const FALLBACK_HERO = [resolveAssetUrl('/images/banners/hero-1.webp')]
 
 /**
  * Promotional banner (spec §7.2). Deliberately short on phones — the menu is
@@ -24,6 +25,7 @@ export function HeroBanner() {
 
   const name = shopName(settings, language)
   const tagline = shopTagline(settings, language)
+  const slides = settings.heroImages.length > 0 ? settings.heroImages : FALLBACK_HERO
 
   const welcome = table
     ? `${t.header.welcome} · ${t.header.table} ${table.number}`
@@ -31,20 +33,7 @@ export function HeroBanner() {
 
   return (
     <section className="relative isolate overflow-hidden rounded-card shadow-card">
-      {/*
-        The image sits in its own positioned wrapper: ImageWithFallback's own
-        wrapper is `relative`, and Tailwind emits `.relative` after
-        `.absolute`, so passing `absolute` in would silently lose.
-      */}
-      <div className="absolute inset-0">
-        <ImageWithFallback
-          src={HERO_IMAGE}
-          alt=""
-          priority
-          sizes="(min-width: 1280px) 1216px, 100vw"
-          className="size-full"
-        />
-      </div>
+      <HeroSlideshow images={slides} />
 
       <div
         className="absolute inset-0 bg-gradient-to-r from-[var(--overlay-from)] via-[var(--overlay-from)] to-[var(--overlay-to)]"
