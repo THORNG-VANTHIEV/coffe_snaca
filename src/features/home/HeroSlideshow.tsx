@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react'
 import { ImageWithFallback } from '@/components/common/ImageWithFallback'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { cn } from '@/utils/cn'
+import { REDUCED_MOTION_QUERY } from '@/utils/motion'
 
 /** How long each slide is held, and how long the cross-fade between them takes. */
 const SLIDE_MS = 5000
 const FADE_MS = 900
-
-const REDUCED_MOTION = '(prefers-reduced-motion: reduce)'
 
 /**
  * Looping cross-fade of hero banners (5s per slide).
@@ -25,7 +24,7 @@ const REDUCED_MOTION = '(prefers-reduced-motion: reduce)'
  * the next image is always already decoded before it fades in.
  */
 export function HeroSlideshow({ images }: { images: string[] }) {
-  const prefersReducedMotion = useMediaQuery(REDUCED_MOTION)
+  const prefersReducedMotion = useMediaQuery(REDUCED_MOTION_QUERY)
   const [active, setActive] = useState(0)
   const [mountedCount, setMountedCount] = useState(() => Math.min(2, images.length))
 

@@ -2012,10 +2012,17 @@ Examples:
 Animation duration:
 
 ```text
-150ms–300ms
+Fast feedback: 150ms
+Standard transitions: 220ms
+Gentle reveals: 320ms
 ```
 
 Avoid excessive motion.
+
+- Prefer opacity and transform so animations remain smooth on mobile devices
+- Never delay navigation, data loading, scrolling, or button interaction for decoration
+- Cap list staggering to the first visible items
+- Disable non-essential movement when `prefers-reduced-motion: reduce` is active
 
 ---
 

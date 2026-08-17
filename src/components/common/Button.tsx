@@ -31,7 +31,7 @@ const SIZES: Record<Size, string> = {
 function buttonStyles(variant: Variant = 'primary', size: Size = 'md'): string {
   return cn(
     'inline-flex items-center justify-center rounded-pill font-medium',
-    'transition duration-150 ease-out active:scale-[0.98]',
+    'transition duration-[var(--motion-fast)] ease-out active:scale-[0.98]',
     'disabled:pointer-events-none disabled:opacity-50',
     VARIANTS[variant],
     SIZES[size],

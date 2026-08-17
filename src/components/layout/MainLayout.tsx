@@ -1,4 +1,5 @@
-import { Outlet } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useMenuState } from '@/hooks/useMenu'
 import { ErrorState } from '@/components/common/ErrorState'
@@ -6,6 +7,7 @@ import { Footer } from '@/components/common/Footer'
 import { Header } from '@/components/common/Header'
 import { SplashScreen } from '@/features/splash/SplashScreen'
 import { useWelcomeGate } from '@/features/splash/useWelcomeGate'
+import { cn } from '@/utils/cn'
 
 /**
  * The single gate between "menu data exists" and "it does not".
@@ -16,7 +18,19 @@ import { useWelcomeGate } from '@/features/splash/useWelcomeGate'
 export function MainLayout() {
   const { status, data, reload } = useMenuState()
   const { t } = useLanguage()
-  const { showWelcome, dismissWelcome } = useWelcomeGate()
+  const { pathname } = useLocation()
+  const mainRef = useRef<HTMLElement>(null)
+  const { showWelcome, isLeaving, dismissWelcome, completeWelcome } = useWelcomeGate()
+  const welcomeWasVisible = useRef(showWelcome)
+
+  // Restore keyboard/screen-reader position only after React has removed
+  // `inert` from the menu underneath the departing welcome.
+  useEffect(() => {
+    if (welcomeWasVisible.current && !showWelcome) {
+      mainRef.current?.focus({ preventScroll: true })
+    }
+    welcomeWasVisible.current = showWelcome
+  }, [showWelcome])
 
   if (status === 'loading') return <SplashScreen />
 
@@ -28,26 +42,42 @@ export function MainLayout() {
     )
   }
 
-  if (showWelcome && data) {
-    return <SplashScreen settings={data.settings} onContinue={dismissWelcome} />
-  }
-
   return (
-    <div className="flex min-h-dvh flex-col bg-bg">
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-pill focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-on-primary"
+    <>
+      <div
+        className={cn(
+          'flex min-h-dvh flex-col bg-bg',
+          showWelcome && 'fixed inset-0 overflow-hidden',
+        )}
+        aria-hidden={showWelcome || undefined}
+        inert={showWelcome || undefined}
       >
-        {t.common.skipToContent}
-      </a>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-pill focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-on-primary"
+        >
+          {t.common.skipToContent}
+        </a>
 
-      <Header />
+        <Header />
 
-      <main id="main" className="flex-1">
-        <Outlet />
-      </main>
+        <main ref={mainRef} id="main" tabIndex={-1} className="flex-1 focus:outline-none">
+          <div key={pathname} className="animate-page-enter">
+            <Outlet />
+          </div>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+
+      {showWelcome && data ? (
+        <SplashScreen
+          settings={data.settings}
+          onContinue={dismissWelcome}
+          exiting={isLeaving}
+          onExitComplete={completeWelcome}
+        />
+      ) : null}
+    </>
   )
 }

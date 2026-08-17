@@ -1,10 +1,13 @@
+import { useEffect } from 'react'
 import { ArrowRight } from 'lucide-react'
 import type { Settings } from '@/models'
 import { Button } from '@/components/common/Button'
 import { ShopLogo } from '@/components/common/ShopLogo'
 import { useLanguage } from '@/hooks/useLanguage'
 import { shopName, shopTagline } from '@/utils/translation'
+import { MOTION_DURATION_MS, prefersReducedMotion } from '@/utils/motion'
 import { resolveAssetUrl } from '@/utils/url'
+import { cn } from '@/utils/cn'
 
 /**
  * The short, branded moment between scanning the QR code and viewing the menu
@@ -17,9 +20,13 @@ import { resolveAssetUrl } from '@/utils/url'
 export function SplashScreen({
   settings,
   onContinue,
+  exiting = false,
+  onExitComplete,
 }: {
   settings?: Settings
   onContinue?: () => void
+  exiting?: boolean
+  onExitComplete?: () => void
 }) {
   const { language, t } = useLanguage()
   const ready = settings !== undefined && onContinue !== undefined
@@ -29,10 +36,33 @@ export function SplashScreen({
   // loading fallback still needs resolving here.
   const logo = settings?.logo || resolveAssetUrl('/images/logo/logo.png')
 
+  // Animation events are the normal completion path. The timer is a safety
+  // net for browsers or user styles that suppress them entirely.
+  useEffect(() => {
+    if (!exiting || !onExitComplete) return
+
+    const delay = prefersReducedMotion() ? 0 : MOTION_DURATION_MS.standard + 80
+    const timeout = window.setTimeout(onExitComplete, delay)
+    return () => window.clearTimeout(timeout)
+  }, [exiting, onExitComplete])
+
   return (
     <section
       aria-labelledby={ready ? 'welcome-title' : undefined}
-      className="relative isolate grid min-h-dvh place-items-center overflow-hidden bg-bg px-5 py-10"
+      onAnimationEnd={(event) => {
+        if (
+          exiting &&
+          event.target === event.currentTarget &&
+          event.animationName === 'welcome-exit'
+        ) {
+          onExitComplete?.()
+        }
+      }}
+      className={cn(
+        'relative isolate grid min-h-dvh place-items-center overflow-hidden bg-bg px-5 py-10',
+        ready && 'fixed inset-0 z-50',
+        exiting && 'pointer-events-none animate-welcome-exit',
+      )}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <span className="absolute -top-36 left-1/2 size-96 -translate-x-1/2 rounded-pill bg-accent/[0.12] blur-3xl" />
@@ -63,7 +93,7 @@ export function SplashScreen({
 
             {tagline ? <p className="mt-3 max-w-xs text-sm text-muted sm:text-base">{tagline}</p> : null}
 
-            <Button onClick={onContinue} className="mt-8 w-full">
+            <Button onClick={onContinue} disabled={exiting} className="mt-8 w-full">
               {t.welcome.cta}
               <ArrowRight className="size-4" aria-hidden="true" />
             </Button>

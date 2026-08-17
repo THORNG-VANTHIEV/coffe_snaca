@@ -420,6 +420,22 @@ Two tokens exist specifically because one value cannot serve both jobs:
 any pair drops below its WCAG target in either theme. It runs as part of
 `npm run build`, so a palette tweak cannot quietly break legibility.
 
+## Motion
+
+The interface uses a restrained three-speed motion rhythm: **150ms** for
+control feedback, **220ms** for route and welcome transitions, and **320ms**
+for image/card reveals. Routes fade and rise slightly, search results
+cross-fade without shifting, and only the first eight cards in a grid or rail
+are staggered. The menu is already mounted behind the welcome, so pressing
+**View menu** reveals it smoothly instead of showing a blank frame.
+
+Motion never delays data loading, navigation, scrolling, or control input.
+Effects use compositor-friendly opacity and transform properties, and the
+global `prefers-reduced-motion` rule removes animation duration and stagger
+delay for customers who request less movement. Timing tokens live in
+`src/styles/variables.css`; shared keyframes and utilities live in
+`src/styles/globals.css`.
+
 ## Accessibility and performance
 
 - Every image has alt text and a fallback chain; no broken-image icons
@@ -430,7 +446,7 @@ any pair drops below its WCAG target in either theme. It runs as part of
   layout while data arrives
 - Motion is disabled for `prefers-reduced-motion`
 
-Production build: ~93 KB gzipped JS, ~8 KB gzipped CSS, plus images.
+Production build: ~95 KB gzipped JS, ~9 KB gzipped CSS, plus images.
 
 ---
 

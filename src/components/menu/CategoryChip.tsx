@@ -20,7 +20,7 @@ export function CategoryChip({ to, label, icon: Icon, active = false }: Category
       aria-current={active ? 'page' : undefined}
       className={cn(
         'inline-flex min-h-11 items-center gap-2 rounded-pill border px-4 text-sm font-medium whitespace-nowrap',
-        'transition duration-150 ease-out',
+        'transition duration-[var(--motion-fast)] ease-out',
         active
           ? 'border-primary bg-primary text-on-primary shadow-card'
           : 'border-border bg-surface text-muted hover:border-border-strong hover:text-text',

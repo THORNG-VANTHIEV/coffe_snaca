@@ -25,11 +25,17 @@ describe('useWelcomeGate', () => {
     expect(window.sessionStorage.getItem(STORAGE_KEYS.welcomeSeen)).toBeNull()
   })
 
-  it('dismisses immediately and skips the welcome for the rest of the session', () => {
+  it('runs the exit phase and skips the welcome for the rest of the session', () => {
     const firstVisit = renderHook(() => useWelcomeGate())
 
     act(() => firstVisit.result.current.dismissWelcome())
+    expect(firstVisit.result.current.showWelcome).toBe(true)
+    expect(firstVisit.result.current.isLeaving).toBe(true)
+    expect(window.sessionStorage.getItem(STORAGE_KEYS.welcomeSeen)).toBe('1')
+
+    act(() => firstVisit.result.current.completeWelcome())
     expect(firstVisit.result.current.showWelcome).toBe(false)
+    expect(firstVisit.result.current.isLeaving).toBe(false)
     firstVisit.unmount()
 
     const repeatVisit = renderHook(() => useWelcomeGate())

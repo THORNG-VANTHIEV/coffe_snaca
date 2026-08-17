@@ -47,6 +47,7 @@ export function SearchBar({ value, onChange, className }: SearchBarProps) {
         className={cn(
           'h-12 w-full rounded-pill border border-border-interactive bg-surface ps-11 pe-11 text-[15px] text-text shadow-card',
           'placeholder:text-muted focus:border-accent-strong focus:outline-none',
+          'transition-[border-color,background-color,box-shadow] duration-[var(--motion-fast)] ease-out',
           '[&::-webkit-search-cancel-button]:appearance-none',
         )}
       />
@@ -56,7 +57,7 @@ export function SearchBar({ value, onChange, className }: SearchBarProps) {
           type="button"
           onClick={() => onChange('')}
           aria-label={t.search.clear}
-          className="absolute top-1/2 end-2 grid size-9 -translate-y-1/2 place-items-center rounded-pill text-muted transition duration-150 hover:bg-surface-2 hover:text-text"
+          className="absolute top-1/2 end-2 grid size-9 -translate-y-1/2 place-items-center rounded-pill text-muted transition duration-[var(--motion-fast)] hover:bg-surface-2 hover:text-text"
         >
           <X className="size-4" aria-hidden="true" />
         </button>

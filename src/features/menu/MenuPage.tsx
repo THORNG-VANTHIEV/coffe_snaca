@@ -56,7 +56,11 @@ export function MenuPage() {
           <SectionHeading id="menu-heading" icon={UtensilsCrossed} title={heading} />
 
           {visible.length > 0 ? (
-            <ProductGrid products={visible} priorityCount={4} />
+            <ProductGrid
+              key={activeCategory?.id ?? 'all'}
+              products={visible}
+              priorityCount={4}
+            />
           ) : (
             <EmptyState
               icon={UtensilsCrossed}

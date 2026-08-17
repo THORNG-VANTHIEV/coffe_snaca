@@ -17,7 +17,7 @@ export function ProductGrid({ products, priorityCount = 0, className }: ProductG
   return (
     <div
       className={cn(
-        'grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4',
+        'motion-stagger grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4',
         className,
       )}
     >

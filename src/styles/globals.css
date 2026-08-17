@@ -122,8 +122,10 @@
     *::before,
     *::after {
       animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
     }
   }
 
@@ -242,7 +244,7 @@
 }
 
 @utility animate-fade-rise {
-  animation: fade-rise 0.3s var(--ease-out-soft) both;
+  animation: fade-rise var(--motion-slow) var(--ease-out-soft) both;
 }
 
 @keyframes fade-in {
@@ -255,5 +257,103 @@
 }
 
 @utility animate-fade-in {
-  animation: fade-in 0.25s ease-out both;
+  animation: fade-in var(--motion-standard) ease-out both;
+}
+
+/** The whole route moves as one quiet layer; controls stay interactive. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility animate-page-enter {
+  animation: page-enter var(--motion-standard) var(--ease-out-soft) both;
+}
+
+/** Search/filter changes use opacity only, so typing never makes content jump. */
+@keyframes results-enter {
+  from {
+    opacity: 0.68;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility animate-results-enter {
+  animation: results-enter var(--motion-fast) ease-out both;
+}
+
+/** The welcome leaves over the already-mounted menu instead of a blank page. */
+@keyframes welcome-exit {
+  to {
+    opacity: 0;
+    transform: scale(0.992);
+  }
+}
+
+@utility animate-welcome-exit {
+  animation: welcome-exit var(--motion-standard) ease-in both;
+}
+
+/** Image load opacity and card hover zoom share one compositor transition. */
+@utility image-reveal {
+  transition-property: opacity, transform, scale;
+  transition-duration: var(--motion-slow);
+  transition-timing-function: var(--ease-out-soft);
+}
+
+/**
+ * A capped stagger for grids and rails. Only the first two screenfuls are
+ * delayed; below-the-fold items appear immediately and never hold up scroll.
+ */
+@keyframes list-item-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer utilities {
+  .motion-stagger > * {
+    animation: list-item-enter var(--motion-slow) var(--ease-out-soft) both;
+  }
+
+  .motion-stagger > :nth-child(2) {
+    animation-delay: 35ms;
+  }
+
+  .motion-stagger > :nth-child(3) {
+    animation-delay: 70ms;
+  }
+
+  .motion-stagger > :nth-child(4) {
+    animation-delay: 105ms;
+  }
+
+  .motion-stagger > :nth-child(5) {
+    animation-delay: 140ms;
+  }
+
+  .motion-stagger > :nth-child(6) {
+    animation-delay: 175ms;
+  }
+
+  .motion-stagger > :nth-child(7) {
+    animation-delay: 210ms;
+  }
+
+  .motion-stagger > :nth-child(8) {
+    animation-delay: 245ms;
+  }
 }

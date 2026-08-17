@@ -90,7 +90,7 @@ export function ImageWithFallback({
           // being emitted later in the stylesheet.
           style={{ opacity: loaded ? 1 : 0 }}
           className={cn(
-            'size-full object-cover transition duration-300 ease-out',
+            'image-reveal size-full object-cover',
             imageClassName,
           )}
         />

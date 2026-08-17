@@ -19,7 +19,7 @@ export function CategoryGrid({
   const { language, t } = useLanguage()
 
   return (
-    <ul className="grid grid-cols-3 gap-4 lg:grid-cols-4 xl:grid-cols-6">
+    <ul className="motion-stagger grid grid-cols-3 gap-4 lg:grid-cols-4 xl:grid-cols-6">
       {categories.map((category) => {
         const Icon = resolveCategoryIcon(category.icon)
         const name = categoryName(category, language)
@@ -29,7 +29,7 @@ export function CategoryGrid({
           <li key={category.id}>
             <Link
               to={`/category/${category.slug}`}
-              className="group block overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-200 ease-out hover:-translate-y-1 hover:shadow-raised"
+              className="group block overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-[var(--motion-standard)] ease-out hover:-translate-y-1 hover:shadow-raised"
             >
               <div className="relative">
                 <ImageWithFallback

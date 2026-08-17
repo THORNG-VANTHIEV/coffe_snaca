@@ -12,11 +12,17 @@ function shouldShowWelcome(): boolean {
 /** Keeps the one-per-session welcome open until the customer chooses to enter. */
 export function useWelcomeGate() {
   const [showWelcome, setShowWelcome] = useState(shouldShowWelcome)
+  const [isLeaving, setIsLeaving] = useState(false)
 
   const dismissWelcome = useCallback(() => {
     writeSessionStored(STORAGE_KEYS.welcomeSeen, '1')
-    setShowWelcome(false)
+    setIsLeaving(true)
   }, [])
 
-  return { showWelcome, dismissWelcome }
+  const completeWelcome = useCallback(() => {
+    setShowWelcome(false)
+    setIsLeaving(false)
+  }, [])
+
+  return { showWelcome, isLeaving, dismissWelcome, completeWelcome }
 }

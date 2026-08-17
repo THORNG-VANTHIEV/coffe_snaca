@@ -15,6 +15,11 @@
  */
 
 :root {
+  /* --- Motion rhythm: quick feedback, calm transitions, gentle reveals --- */
+  --motion-fast: 150ms;
+  --motion-standard: 220ms;
+  --motion-slow: 320ms;
+
   /* --- Brand palette (spec §31) --- */
   --palette-espresso: #3b2416;
   --palette-coffee: #6f4e37;
