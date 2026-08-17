@@ -17,6 +17,8 @@ export const STORAGE_KEYS = {
   theme: `${PREFIX}theme`,
   lastCategory: `${PREFIX}last_selected_category`,
   tableNumber: `${PREFIX}table_number`,
+  // Session-only: a new browser session may show the branded welcome again.
+  welcomeSeen: `${PREFIX}welcome_seen`,
 } as const
 
 export function readStored(key: string): string | null {
@@ -40,5 +42,22 @@ export function removeStored(key: string): void {
     window.localStorage.removeItem(key)
   } catch {
     /* ignore */
+  }
+}
+
+/** SessionStorage variants for UI that should reset with the browser session. */
+export function readSessionStored(key: string): string | null {
+  try {
+    return window.sessionStorage.getItem(key)
+  } catch {
+    return null
+  }
+}
+
+export function writeSessionStored(key: string, value: string): void {
+  try {
+    window.sessionStorage.setItem(key, value)
+  } catch {
+    /* The welcome may appear again next time; the menu still works. */
   }
 }

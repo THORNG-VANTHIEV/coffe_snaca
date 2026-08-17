@@ -29,6 +29,7 @@ to run. Edit the file, save, and the browser reloads.
 | `npm run dev` | Local dev server with hot reload |
 | `npm run build` | Validates menu + contrast, type-checks, then builds to `dist/` |
 | `npm run preview` | Serves `dist/` exactly as GitHub Pages will |
+| `npm test` | Runs the focused component and welcome-flow tests once |
 | `npm run validate` | Checks `db.json` for the mistakes listed in spec §58 |
 | `npm run contrast` | Checks colour contrast in both themes |
 | `npm run check` | validate + contrast + typecheck + lint |
@@ -350,8 +351,11 @@ document. The plain dev server needs none of this.)
 
 Other decisions worth knowing:
 
-- **Loading state lives in one place.** `MainLayout` shows the splash, the
-  error panel, or the pages. Pages therefore never handle a null menu.
+- **Loading and welcome state live in one place.** `MainLayout` shows the
+  loading splash, the error panel, the short branded welcome, or the pages.
+  The customer enters with the visible **View menu** button, and that choice
+  is remembered in SessionStorage so repeat views in the same browser session
+  go straight to the menu. Pages therefore never handle a null menu.
 - **Filters live in the URL.** `?category=`, `?q=` and `?table=` mean any view
   of the menu can be shared, bookmarked and undone with the back button.
 - **The data is read defensively.** A typo in `db.json` falls back to a safe

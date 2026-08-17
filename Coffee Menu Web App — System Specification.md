@@ -282,9 +282,17 @@ Display:
 
 - Coffee shop logo
 - Coffee shop name
+- Coffee shop tagline
 - Small loading animation
+- Visible “View Menu” button as soon as the menu data is ready
 
 Keep loading screen short.
+
+Behavior:
+
+- Open the menu only after the customer presses “View Menu”
+- Show the branded welcome only once per browser session
+- On repeat views in the same session, show only real loading time and then open the menu
 
 ---
 

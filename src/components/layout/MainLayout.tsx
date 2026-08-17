@@ -5,6 +5,7 @@ import { ErrorState } from '@/components/common/ErrorState'
 import { Footer } from '@/components/common/Footer'
 import { Header } from '@/components/common/Header'
 import { SplashScreen } from '@/features/splash/SplashScreen'
+import { useWelcomeGate } from '@/features/splash/useWelcomeGate'
 
 /**
  * The single gate between "menu data exists" and "it does not".
@@ -13,8 +14,9 @@ import { SplashScreen } from '@/features/splash/SplashScreen'
  * check or a loading branch of its own.
  */
 export function MainLayout() {
-  const { status, reload } = useMenuState()
+  const { status, data, reload } = useMenuState()
   const { t } = useLanguage()
+  const { showWelcome, dismissWelcome } = useWelcomeGate()
 
   if (status === 'loading') return <SplashScreen />
 
@@ -24,6 +26,10 @@ export function MainLayout() {
         <ErrorState onRetry={reload} />
       </div>
     )
+  }
+
+  if (showWelcome && data) {
+    return <SplashScreen settings={data.settings} onContinue={dismissWelcome} />
   }
 
   return (

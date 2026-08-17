@@ -30,6 +30,12 @@ const en = {
     welcome: 'Welcome',
   },
 
+  welcome: {
+    eyebrow: 'Welcome to',
+    cta: 'View menu',
+    continueHint: 'Continue when you’re ready.',
+  },
+
   theme: {
     toDark: 'Switch to dark mode',
     toLight: 'Switch to light mode',
@@ -163,6 +169,12 @@ const km: Dictionary = {
   header: {
     table: 'តុលេខ',
     welcome: 'សូមស្វាគមន៍',
+  },
+
+  welcome: {
+    eyebrow: 'សូមស្វាគមន៍មកកាន់',
+    cta: 'មើលម៉ឺនុយ',
+    continueHint: 'ចុចមើលម៉ឺនុយនៅពេលអ្នករួចរាល់។',
   },
 
   theme: {
