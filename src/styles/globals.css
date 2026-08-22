@@ -41,8 +41,8 @@
   --radius-pill: 999px;
 
   --font-sans:
-    'Inter', 'Noto Sans Khmer', ui-sans-serif, system-ui, -apple-system,
-    'Segoe UI', sans-serif;
+    'Kantumruy Pro', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    sans-serif;
 
   --container-page: 1280px;
 
@@ -75,8 +75,8 @@
 
   /*
    * Khmer glyphs stack diacritics above and below the baseline, so they need
-   * noticeably more leading than Latin text at the same size. Browsers pick
-   * Noto Sans Khmer per-glyph from the stack; this only fixes the metrics.
+   * noticeably more leading than Latin text at the same size, regardless of
+   * which font renders them — this only fixes the metrics.
    */
   :lang(km) {
     line-height: 1.75;
