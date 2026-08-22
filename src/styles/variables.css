@@ -26,23 +26,23 @@
 
   /* --- Semantic tokens: dark (default) --- */
   --bg: var(--palette-navy);
-  --surface: #0f354b;
-  --surface-2: #1c4054;
-  --surface-3: #294a5e;
-  --border: #335365;
-  --border-strong: #476475;
+  --surface: #153e56;
+  --surface-2: #214b65;
+  --surface-3: #2d5874;
+  --border: #3b637d;
+  --border-strong: #517a94;
   /*
    * Boundaries that identify a control (outline buttons, the search field)
    * rather than decorate a card — held at 3:1 against `surface`.
    */
-  --border-interactive: #6b8290;
+  --border-interactive: #779db5;
 
   --text: #ffffff;
-  --muted: #9eadb6;
+  --muted: #a6bac7;
 
   --primary: #ffffff;
   --on-primary: var(--palette-navy);
-  --secondary: #a6b4bc;
+  --secondary: #b0c2cc;
   --on-secondary: var(--palette-navy);
   --accent: #ffffff;
   --on-accent: var(--palette-navy);
@@ -58,8 +58,8 @@
   --danger: #e0806f;
   --danger-soft: #3a211c;
 
-  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
-  --shadow-raised: 0 12px 36px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --shadow-raised: 0 14px 38px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   --shadow-header: 0 1px 0 rgba(0, 0, 0, 0.35);
 
   /* Hero / image overlays read differently per theme */

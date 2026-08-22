@@ -38,29 +38,29 @@ export function AboutPage() {
     // Narrows the column by overriding the container's own custom property.
     // Stacking `max-w-3xl` on top of `container-page` would instead depend on
     // which of the two Tailwind happens to emit last.
-    <div className="container-page [--container-page:48rem] py-8">
-      <header className="flex flex-col items-center gap-4 text-center">
+    <div className="container-page [--container-page:64rem] py-8 md:py-12">
+      <header className="flex flex-col items-center text-center rounded-card border border-border/70 bg-surface/50 p-8 shadow-card backdrop-blur-sm sm:p-12">
         <ShopLogo src={settings.logo} name={name} className="h-16 shadow-card sm:h-20" />
-        {/* The logo already spells out the shop name, so the page heading
-            stays for its accessible name without repeating it on screen. */}
         <h1 className="sr-only">{name}</h1>
-        {tagline && <p className="text-sm text-muted">{tagline}</p>}
-        <p className="max-w-xl text-[15px] leading-relaxed text-muted">{t.about.intro}</p>
+        {tagline && (
+          <p className="mt-4 text-base font-medium text-text sm:text-lg">{tagline}</p>
+        )}
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">{t.about.intro}</p>
       </header>
 
-      <dl className="mt-10 grid gap-4 sm:grid-cols-3">
+      <dl className="mt-8 grid gap-4 sm:grid-cols-3 sm:gap-6">
         {details.map(({ icon: Icon, label, value, href }) => (
           <div
             key={label}
-            className="flex flex-col gap-2 rounded-card border border-border bg-surface p-5 shadow-card"
+            className="flex flex-col gap-2.5 rounded-card border border-border/70 bg-surface p-6 shadow-card transition duration-200 hover:-translate-y-1 hover:border-border-strong hover:shadow-raised"
           >
-            <dt className="flex items-center gap-2 text-xs font-semibold tracking-wide text-muted uppercase">
+            <dt className="flex items-center gap-2 text-xs font-semibold tracking-wider text-muted uppercase">
               <Icon className="size-4 text-accent" aria-hidden="true" />
               {label}
             </dt>
-            <dd className="text-sm text-text">
+            <dd className="text-sm font-medium text-text">
               {href ? (
-                <a href={href} className="underline-offset-4 hover:underline">
+                <a href={href} className="transition duration-150 hover:text-accent-strong hover:underline">
                   {value}
                 </a>
               ) : (
@@ -72,9 +72,9 @@ export function AboutPage() {
       </dl>
 
       {socials.length > 0 && (
-        <section className="mt-8 text-center">
-          <h2 className="text-sm font-semibold text-text">{t.about.follow}</h2>
-          <ul className="mt-3 flex justify-center gap-3">
+        <section className="mt-10 rounded-card border border-border/70 bg-surface/50 p-6 text-center shadow-card backdrop-blur-sm">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-text/90">{t.about.follow}</h2>
+          <ul className="mt-4 flex flex-wrap justify-center gap-3">
             {socials.map(({ href, label, Icon }) => (
               <li key={label}>
                 <a
@@ -82,9 +82,10 @@ export function AboutPage() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={label}
-                  className="grid size-11 place-items-center rounded-pill border border-border bg-surface text-muted transition duration-150 hover:text-accent-strong"
+                  className="flex items-center gap-2.5 rounded-pill border border-border bg-surface px-4 py-2.5 text-xs font-medium text-muted shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface-2 hover:text-text hover:shadow-raised"
                 >
-                  <Icon className="size-5" />
+                  <Icon className="size-4 text-accent" />
+                  <span>{label}</span>
                 </a>
               </li>
             ))}
@@ -92,7 +93,7 @@ export function AboutPage() {
         </section>
       )}
 
-      <p className="mt-10 flex items-start justify-center gap-2 rounded-card bg-surface-2/70 p-4 text-center text-sm text-muted">
+      <p className="mt-8 flex items-start justify-center gap-2.5 rounded-card border border-border/60 bg-surface-2/60 p-4 text-center text-sm text-muted">
         <Info className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
         {t.about.menuNote}
       </p>

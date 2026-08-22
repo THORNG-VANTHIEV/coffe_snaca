@@ -10,7 +10,7 @@
     <meta name="robots" content="index, follow" />
 
     <!-- Kept in step with the active theme by ThemeProvider and the script below -->
-    <meta name="theme-color" content="#1A110B" />
+    <meta name="theme-color" content="#FAF7F2" />
 
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <link rel="apple-touch-icon" href="%BASE_URL%images/logo/logo.png" />
@@ -37,31 +37,32 @@
 
     <!--
       Applies the saved theme before the first paint. Without it a customer who
-      chose light would see a dark flash on every load, because dark is the
+      chose dark would see a light flash on every load, because light is the
       default. Deliberately inline and blocking — it must run before the body
       is painted. The storage key matches STORAGE_KEYS.theme.
     -->
     <script>
       ;(function () {
-        var theme = 'dark'
+        var theme = 'light'
         try {
-          if (localStorage.getItem('coffee-menu.theme') === 'light') theme = 'light'
+          var stored = localStorage.getItem('coffee-menu.theme')
+          if (stored === 'dark' || stored === 'light') theme = stored
         } catch (e) {
           /* private mode — fall back to the default */
         }
         document.documentElement.dataset.theme = theme
         var meta = document.querySelector('meta[name="theme-color"]')
-        if (meta) meta.setAttribute('content', theme === 'light' ? '#FAF7F2' : '#1A110B')
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#FAF7F2' : '#00283f')
       })()
     </script>
 
     <!-- Painted before the JS bundle parses so the boot is warm, never a white flash. -->
     <style>
       html {
-        background-color: #1a110b;
-      }
-      html[data-theme='light'] {
         background-color: #faf7f2;
+      }
+      html[data-theme='dark'] {
+        background-color: #00283f;
       }
       #app-boot {
         position: fixed;

@@ -29,7 +29,7 @@ export function CategoryGrid({
           <li key={category.id}>
             <Link
               to={`/category/${category.slug}`}
-              className="group block overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-[var(--motion-standard)] ease-out hover:-translate-y-1 hover:shadow-raised"
+              className="group block overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-[var(--motion-standard)] ease-out hover:-translate-y-1 hover:border-border-strong hover:shadow-raised"
             >
               <div className="relative">
                 <ImageWithFallback

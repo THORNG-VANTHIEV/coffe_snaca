@@ -1,11 +1,12 @@
-import { Clock, MapPin, Phone } from 'lucide-react'
+import { ChevronRight, Clock, MapPin, Phone } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useSettings } from '@/hooks/useMenu'
 import { FacebookIcon, TelegramIcon } from './BrandIcons'
 import { ShopLogo } from './ShopLogo'
 import { shopAddress, shopName, shopOpeningHours, shopTagline } from '@/utils/translation'
 
-/** Shop details and social links (spec §62). */
+/** Shop details, quick links, and social connections (spec §62). */
 export function Footer() {
   const settings = useSettings()
   const { language, t } = useLanguage()
@@ -15,88 +16,148 @@ export function Footer() {
   const hours = shopOpeningHours(settings, language)
   const tagline = shopTagline(settings, language)
 
+  const navLinks = [
+    { to: '/', label: t.nav.home },
+    { to: '/menu', label: t.nav.menu },
+    { to: '/about', label: t.nav.about },
+  ]
+
   const socials = [
     { href: settings.facebook, label: 'Facebook', Icon: FacebookIcon },
     { href: settings.telegram, label: 'Telegram', Icon: TelegramIcon },
   ].filter((social) => social.href !== '')
 
   return (
-    <footer className="mt-16 border-t border-border bg-surface-2/70">
-      <div className="container-page grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="flex flex-col gap-3">
-          <ShopLogo src={settings.logo} name={name} className="h-9" />
-          {tagline && <p className="text-sm text-muted">{tagline}</p>}
-        </div>
+    <footer className="relative mt-20 border-t border-border/80 bg-surface-2/80 backdrop-blur-sm">
+      {/* Top accent line */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
-        <dl className="flex flex-col gap-3 text-sm">
-          {address && (
-            <div className="flex gap-2.5">
-              <dt className="pt-0.5">
-                <MapPin className="size-4 text-accent" aria-hidden="true" />
-                <span className="sr-only">{t.footer.address}</span>
-              </dt>
-              <dd className="text-muted">{address}</dd>
-            </div>
-          )}
+      <div className="container-page py-12 lg:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4 lg:gap-12">
+          {/* Col 1: Brand & Tagline */}
+          <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1">
+            <ShopLogo src={settings.logo} name={name} className="h-10" />
+            {tagline && (
+              <p className="text-sm font-medium text-text/90 leading-relaxed mt-1">
+                {tagline}
+              </p>
+            )}
+            <p className="text-xs text-muted leading-relaxed">
+              {language === 'km'
+                ? 'ហាងកាហ្វេក្នុងស្រុក ដែលផ្តល់ជូនកាហ្វេលីងថ្មីៗ ភេសជ្ជៈឈ្ងុយឆ្ងាញ់ និងបរិយាកាសស្ងប់ស្ងាត់។'
+                : 'A local coffee shop offering fresh roasts, delicious drinks, and a cozy atmosphere.'}
+            </p>
+          </div>
 
-          {settings.phone && (
-            <div className="flex gap-2.5">
-              <dt className="pt-0.5">
-                <Phone className="size-4 text-accent" aria-hidden="true" />
-                <span className="sr-only">{t.footer.phone}</span>
-              </dt>
-              <dd>
-                <a
-                  href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-                  className="text-muted underline-offset-4 hover:text-text hover:underline"
-                >
-                  {settings.phone}
-                </a>
-              </dd>
-            </div>
-          )}
-
-          {hours && (
-            <div className="flex gap-2.5">
-              <dt className="pt-0.5">
-                <Clock className="size-4 text-accent" aria-hidden="true" />
-                <span className="sr-only">{t.footer.hours}</span>
-              </dt>
-              <dd className="text-muted">
-                <span className="block">{t.footer.hours}</span>
-                <span className="block tabular-nums">{hours}</span>
-              </dd>
-            </div>
-          )}
-        </dl>
-
-        {socials.length > 0 && (
+          {/* Col 2: Quick Links */}
           <div className="flex flex-col gap-3">
-            <p className="text-sm font-semibold text-text">{t.footer.follow}</p>
-            <ul className="flex gap-2.5">
-              {socials.map(({ href, label, Icon }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label={label}
-                    className="grid size-11 place-items-center rounded-pill border border-border bg-surface text-muted transition duration-150 hover:text-accent-strong"
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-text/90">
+              {t.footer.quickLinks}
+            </h3>
+            <ul className="flex flex-col gap-2.5 text-sm">
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="inline-flex items-center gap-1.5 text-muted transition duration-150 hover:translate-x-1 hover:text-accent-strong"
                   >
-                    <Icon className="size-4.5" />
-                  </a>
+                    <ChevronRight className="size-3.5 text-accent/70" />
+                    <span>{link.label}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
-        )}
+
+          {/* Col 3: Contact & Hours */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-text/90">
+              {t.about.contact}
+            </h3>
+            <dl className="flex flex-col gap-3 text-sm">
+              {address && (
+                <div className="flex items-start gap-2.5">
+                  <dt className="pt-0.5 shrink-0">
+                    <MapPin className="size-4 text-accent" aria-hidden="true" />
+                    <span className="sr-only">{t.footer.address}</span>
+                  </dt>
+                  <dd className="text-muted leading-snug">{address}</dd>
+                </div>
+              )}
+
+              {settings.phone && (
+                <div className="flex items-center gap-2.5">
+                  <dt className="shrink-0">
+                    <Phone className="size-4 text-accent" aria-hidden="true" />
+                    <span className="sr-only">{t.footer.phone}</span>
+                  </dt>
+                  <dd>
+                    <a
+                      href={`tel:${settings.phone.replace(/\s+/g, '')}`}
+                      className="text-muted font-medium tabular-nums transition duration-150 hover:text-accent-strong"
+                    >
+                      {settings.phone}
+                    </a>
+                  </dd>
+                </div>
+              )}
+
+              {hours && (
+                <div className="flex items-start gap-2.5">
+                  <dt className="pt-0.5 shrink-0">
+                    <Clock className="size-4 text-accent" aria-hidden="true" />
+                    <span className="sr-only">{t.footer.hours}</span>
+                  </dt>
+                  <dd className="text-muted">
+                    <span className="block text-xs text-muted/80">{t.footer.hours}</span>
+                    <span className="block font-medium tabular-nums text-text/90">{hours}</span>
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </div>
+
+          {/* Col 4: Social Connections */}
+          {socials.length > 0 && (
+            <div className="flex flex-col gap-3">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-text/90">
+                {t.footer.follow}
+              </h3>
+              <p className="text-xs text-muted">
+                {language === 'km' ? 'តាមដានពួកយើងនៅលើបណ្តាញសង្គម' : 'Stay connected with us'}
+              </p>
+              <div className="flex flex-wrap gap-2.5 mt-1">
+                {socials.map(({ href, label, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={label}
+                    className="flex items-center gap-2 rounded-pill border border-border bg-surface px-3.5 py-2 text-xs font-medium text-muted shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface-2 hover:text-text hover:shadow-raised"
+                  >
+                    <Icon className="size-4 text-accent" />
+                    <span>{label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="border-t border-border/70">
-        <p className="container-page py-5 text-center text-xs text-muted">
-          © {new Date().getFullYear()} {name}. {t.footer.rights}
-        </p>
+      {/* Copyright Bottom Bar */}
+      <div className="border-t border-border/60 bg-surface-3/30">
+        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-xs text-muted sm:flex-row">
+          <p className="text-center sm:text-start">
+            © {new Date().getFullYear()} <span className="font-medium text-text">{name}</span>. {t.footer.rights}
+          </p>
+          <div className="flex items-center gap-4 text-xs text-muted/70">
+            <span>{t.common.appName}</span>
+          </div>
+        </div>
       </div>
     </footer>
   )
 }
+

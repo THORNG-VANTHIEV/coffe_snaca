@@ -136,6 +136,7 @@ const en = {
   },
 
   footer: {
+    quickLinks: 'Quick Links',
     hours: 'Open daily',
     address: 'Address',
     phone: 'Phone',
@@ -277,6 +278,7 @@ const km: Dictionary = {
   },
 
   footer: {
+    quickLinks: 'ព័ត៌មាន',
     hours: 'បើកជារៀងរាល់ថ្ងៃ',
     address: 'អាសយដ្ឋាន',
     phone: 'ទូរស័ព្ទ',

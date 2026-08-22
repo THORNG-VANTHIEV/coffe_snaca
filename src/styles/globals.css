@@ -357,3 +357,9 @@
     animation-delay: 245ms;
   }
 }
+
+/* Light theme filter to ensure white text logo renders in exact brand navy (#00283f) on light backgrounds */
+:root[data-theme='light'] .shop-logo-img {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(100%) saturate(950%) hue-rotate(174deg) brightness(55%);
+}
+

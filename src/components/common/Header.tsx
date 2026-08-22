@@ -42,7 +42,7 @@ export function Header() {
           <ShopLogo src={settings.logo} name={name} className="h-9" />
         </Link>
 
-        <nav aria-label={t.nav.menu} className="ms-4 hidden items-center gap-1 md:flex">
+        <nav aria-label={t.nav.menu} className="ms-6 hidden items-center gap-1.5 md:flex">
           {links.map((link) => (
             <NavLink
               key={link.to}
@@ -50,8 +50,10 @@ export function Header() {
               end={link.end}
               className={({ isActive }) =>
                 cn(
-                  'rounded-pill px-3 py-2 text-sm font-medium transition duration-150',
-                  isActive ? 'bg-surface-2 text-text' : 'text-muted hover:text-text',
+                  'rounded-pill px-3.5 py-1.5 text-sm font-medium transition duration-150',
+                  isActive
+                    ? 'bg-surface-2 text-text font-semibold shadow-xs border border-border/60'
+                    : 'text-muted hover:bg-surface/60 hover:text-text',
                 )
               }
             >

@@ -4,7 +4,7 @@ import { DEFAULT_THEME, isTheme, ThemeContext, type Theme } from './themeContext
 
 /** Address-bar / browser-chrome colour, kept in step with the page. */
 const CHROME_COLOR: Record<Theme, string> = {
-  dark: '#1A110B',
+  dark: '#00283f',
   light: '#FAF7F2',
 }
 

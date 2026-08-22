@@ -49,7 +49,7 @@ export function ShopLogo({
       width={238}
       height={80}
       onError={() => setFailed(true)}
-      className={cn('w-auto shrink-0 rounded-md object-contain', className)}
+      className={cn('w-auto shrink-0 rounded-md object-contain shop-logo-img', className)}
     />
   )
 }

@@ -10,7 +10,7 @@ import { MOTION_DURATION_MS } from '@/utils/motion'
 import { SplashScreen } from './SplashScreen'
 
 const settings: Settings = {
-  shopNameEn: 'SNACA COFE',
+  shopNameEn: 'SNACA CAFE',
   shopNameKm: 'ស្នាក់ការ កាហ្វេ',
   taglineEn: 'Fresh coffee, better moments.',
   taglineKm: 'កាហ្វេស្រស់ សម្រាប់ពេលវេលាដ៏ល្អរបស់អ្នក',
@@ -61,7 +61,7 @@ describe('SplashScreen', () => {
     const onContinue = vi.fn()
     const view = renderSplash(<SplashScreen settings={settings} onContinue={onContinue} />)
 
-    expect(screen.getByRole('heading', { name: 'SNACA COFE' })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: 'SNACA CAFE' })).toBeTruthy()
     expect(screen.getByText('Fresh coffee, better moments.')).toBeTruthy()
     expect(view.container.querySelector('img')?.getAttribute('src')).toBe(settings.logo)
 
