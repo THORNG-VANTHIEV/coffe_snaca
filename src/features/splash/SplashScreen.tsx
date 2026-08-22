@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Sparkles } from 'lucide-react'
 import type { Settings } from '@/models'
 import { Button } from '@/components/common/Button'
 import { ShopLogo } from '@/components/common/ShopLogo'
@@ -59,27 +59,34 @@ export function SplashScreen({
         }
       }}
       className={cn(
-        'relative isolate grid min-h-dvh place-items-center overflow-hidden bg-bg px-5 py-10',
+        'relative isolate grid min-h-dvh place-items-center overflow-hidden bg-bg/65 backdrop-blur-md px-5 py-10 transition-colors duration-300',
         ready && 'fixed inset-0 z-50',
         exiting && 'pointer-events-none animate-welcome-exit',
       )}
     >
+      {/* Dynamic ambient background glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <span className="absolute -top-36 left-1/2 size-96 -translate-x-1/2 rounded-pill bg-accent/[0.12] blur-3xl" />
-        <span className="absolute -right-28 -bottom-36 size-80 rounded-pill bg-primary/[0.08] blur-3xl" />
+        <span className="absolute -top-40 left-1/2 size-[28rem] -translate-x-1/2 rounded-full bg-primary/10 blur-[100px] transition-all duration-700" />
+        <span className="absolute -bottom-40 -left-20 size-80 rounded-full bg-accent/15 blur-[90px]" />
+        <span className="absolute -top-20 -right-20 size-80 rounded-full bg-surface-3/20 blur-[80px]" />
       </div>
 
-      <div className="animate-fade-rise relative flex w-[calc(100vw-2.5rem)] min-w-0 max-w-sm flex-col items-center rounded-[2rem] border border-border bg-surface/90 px-6 py-9 text-center shadow-raised backdrop-blur-md sm:px-9 sm:py-11">
+      {/* Glassmorphic Card Container */}
+      <div className="animate-fade-rise relative flex w-[calc(100vw-2.5rem)] min-w-0 max-w-sm flex-col items-center rounded-[2.25rem] border border-border/80 bg-surface/85 px-7 py-9 text-center shadow-raised backdrop-blur-xl sm:px-10 sm:py-11">
+        {/* Top accent gradient line */}
         <span
-          className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent"
+          className="absolute inset-x-10 top-0 h-0.5 bg-gradient-to-r from-transparent via-primary/60 to-transparent"
           aria-hidden="true"
         />
 
-        <ShopLogo
-          src={logo}
-          name=""
-          className="h-16 border-4 border-surface shadow-raised ring-1 ring-border-strong sm:h-20"
-        />
+        {/* Clean, un-bordered logo display */}
+        <div className="flex items-center justify-center py-2 transition-transform duration-300 hover:scale-105">
+          <ShopLogo
+            src={logo}
+            name=""
+            className="h-14 sm:h-18 object-contain drop-shadow-sm"
+          />
+        </div>
 
         {ready ? (
           <>
@@ -90,28 +97,37 @@ export function SplashScreen({
               {name || t.common.appName}
             </h1>
 
-            <p className="mt-6 text-xs font-semibold tracking-[0.18em] text-accent-strong uppercase">
-              {t.welcome.eyebrow}
-            </p>
+            {/* Welcome Eyebrow Badge */}
+            <div className="mt-5 inline-flex items-center gap-1.5 rounded-pill border border-border/60 bg-surface-2/60 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted shadow-xs">
+              <Sparkles className="size-3 text-accent" aria-hidden="true" />
+              <span>{t.welcome.eyebrow}</span>
+            </div>
 
-            {tagline ? <p className="mt-3 max-w-xs text-sm text-muted sm:text-base">{tagline}</p> : null}
+            {tagline ? (
+              <p className="mt-3.5 max-w-xs text-sm font-medium leading-relaxed text-text/90 sm:text-base">
+                {tagline}
+              </p>
+            ) : null}
 
-            <Button onClick={onContinue} disabled={exiting} className="mt-8 w-full">
-              {t.welcome.cta}
-              <ArrowRight className="size-4" aria-hidden="true" />
+            <Button
+              onClick={onContinue}
+              disabled={exiting}
+              className="group mt-8 w-full shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              <span>{t.welcome.cta}</span>
+              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
             </Button>
 
-            <p className="mt-3 text-xs text-muted">
+            <p className="mt-3 text-xs text-muted/80 font-normal">
               {t.welcome.continueHint}
             </p>
           </>
         ) : (
-          <div className="mt-7" role="status" aria-live="polite">
+          <div className="mt-8 flex flex-col items-center gap-3 py-4" role="status" aria-live="polite">
             <span
-              className="mx-auto block size-8 animate-spin rounded-pill border-[3px] border-accent/25 border-t-accent"
+              className="block size-9 animate-spin rounded-pill border-[3px] border-primary/20 border-t-primary"
               aria-hidden="true"
             />
-
             <span className="sr-only">{t.states.loading}</span>
           </div>
         )}
