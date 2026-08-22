@@ -40,11 +40,11 @@ export function AboutPage() {
     // which of the two Tailwind happens to emit last.
     <div className="container-page [--container-page:48rem] py-8">
       <header className="flex flex-col items-center gap-4 text-center">
-        <ShopLogo src={settings.logo} name={name} className="size-20 shadow-card" />
-        <div>
-          <h1 className="text-2xl font-semibold text-text sm:text-3xl">{name}</h1>
-          {tagline && <p className="mt-1 text-sm text-muted">{tagline}</p>}
-        </div>
+        <ShopLogo src={settings.logo} name={name} className="h-16 shadow-card sm:h-20" />
+        {/* The logo already spells out the shop name, so the page heading
+            stays for its accessible name without repeating it on screen. */}
+        <h1 className="sr-only">{name}</h1>
+        {tagline && <p className="text-sm text-muted">{tagline}</p>}
         <p className="max-w-xl text-[15px] leading-relaxed text-muted">{t.about.intro}</p>
       </header>
 

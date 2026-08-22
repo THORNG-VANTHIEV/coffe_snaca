@@ -24,13 +24,8 @@ export function Footer() {
     <footer className="mt-16 border-t border-border bg-surface-2/70">
       <div className="container-page grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-3">
-            <ShopLogo src={settings.logo} name={name} className="size-11" />
-            <div className="min-w-0">
-              <p className="font-semibold text-text">{name}</p>
-              {tagline && <p className="text-sm text-muted">{tagline}</p>}
-            </div>
-          </div>
+          <ShopLogo src={settings.logo} name={name} className="h-9" />
+          {tagline && <p className="text-sm text-muted">{tagline}</p>}
         </div>
 
         <dl className="flex flex-col gap-3 text-sm">

@@ -45,7 +45,7 @@ export function HeroBanner() {
 
         <h1 className="max-w-lg text-2xl leading-tight font-semibold text-white sm:text-4xl lg:text-[2.75rem]">
           {t.hero.titleLine1}
-          <span className="block text-accent">{t.hero.titleLine2}</span>
+          <span className="block text-white">{t.hero.titleLine2}</span>
         </h1>
 
         <p className="max-w-md text-sm text-white/85 sm:text-base">

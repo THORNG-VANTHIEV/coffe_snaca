@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 error.png
+
+/snaca-two-tone-preview.html
+data/

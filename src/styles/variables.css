@@ -6,9 +6,10 @@
  * deliberate opt-in via `[data-theme="light"]`, set by ThemeProvider and by
  * the inline script in index.html that runs before first paint.
  *
- * The light values come straight from the specification (§31 Suggested Color
- * Palette). The dark set is the same coffee family pushed into espresso tones
- * (spec §4, "dark/coffee-inspired modern UI").
+ * Two-tone brand palette supplied by the shop owner: navy and white only,
+ * no accent hue. Navy and white trade places between themes — navy is the
+ * light theme's ink and the dark theme's background, white is the reverse —
+ * which is what keeps the flip feeling intentional rather than arbitrary.
  *
  * Components never reference a raw hex — only the semantic tokens below —
  * which is what makes switching themes a pure token swap.
@@ -20,42 +21,37 @@
   --motion-standard: 220ms;
   --motion-slow: 320ms;
 
-  /* --- Brand palette (spec §31) --- */
-  --palette-espresso: #3b2416;
-  --palette-coffee: #6f4e37;
-  --palette-caramel: #c68b59;
-  --palette-cream: #faf7f2;
-  --palette-beige: #f2e9df;
+  /* --- Brand palette --- */
+  --palette-navy: #00283f;
 
   /* --- Semantic tokens: dark (default) --- */
-  --bg: #1a110b;
-  --surface: #241811;
-  --surface-2: #302017;
-  --surface-3: #3b2a1e;
-  --border: #3e2c21;
-  --border-strong: #523b2b;
+  --bg: var(--palette-navy);
+  --surface: #0f354b;
+  --surface-2: #1c4054;
+  --surface-3: #294a5e;
+  --border: #335365;
+  --border-strong: #476475;
   /*
    * Boundaries that identify a control (outline buttons, the search field)
    * rather than decorate a card — held at 3:1 against `surface`.
    */
-  --border-interactive: #8a705c;
+  --border-interactive: #6b8290;
 
-  --text: #f6efe7;
-  --muted: #b49f8e;
+  --text: #ffffff;
+  --muted: #9eadb6;
 
-  --primary: #e4c7a5;
-  --on-primary: #241811;
-  --secondary: #c9a183;
-  --on-secondary: #241811;
-  --accent: #d9a472;
-  --on-accent: #241811;
+  --primary: #ffffff;
+  --on-primary: var(--palette-navy);
+  --secondary: #a6b4bc;
+  --on-secondary: var(--palette-navy);
+  --accent: #ffffff;
+  --on-accent: var(--palette-navy);
   /*
-   * `--accent` is the brand caramel and is only ever a fill or a decorative
-   * icon beside a label. Anything that has to be *read* — accent-coloured
-   * links, focus rings — uses this instead, which stays legible on a light
-   * background where the caramel drops to 2.9:1.
+   * No separate accent hue in this palette — `--accent` is white, the same
+   * as `--primary`, so it already reads at full contrast. `--accent-strong`
+   * exists only so components that reach for it don't need a special case.
    */
-  --accent-strong: #d9a472;
+  --accent-strong: #ffffff;
 
   --success: #6bbf7c;
   --success-soft: #1f3324;
@@ -67,13 +63,13 @@
   --shadow-header: 0 1px 0 rgba(0, 0, 0, 0.35);
 
   /* Hero / image overlays read differently per theme */
-  --overlay-from: rgba(12, 8, 5, 0.9);
-  --overlay-to: rgba(12, 8, 5, 0.3);
+  --overlay-from: rgba(0, 12, 19, 0.9);
+  --overlay-to: rgba(0, 12, 19, 0.3);
 
   --skeleton: linear-gradient(
     90deg,
     var(--surface-2) 25%,
-    #3a2719 37%,
+    #24445c 37%,
     var(--surface-2) 63%
   );
 
@@ -82,25 +78,25 @@
 }
 
 :root[data-theme='light'] {
-  --bg: var(--palette-cream);
+  --bg: #fafbfb;
   --surface: #ffffff;
-  --surface-2: var(--palette-beige);
-  --surface-3: #eadfd2;
-  --border: #e7dbcd;
-  --border-strong: #d8c7b4;
-  --border-interactive: #9a8a76;
+  --surface-2: #f4f5f6;
+  --surface-3: #e8ecee;
+  --border: #e0e5e8;
+  --border-strong: #ccd4d9;
+  --border-interactive: #738995;
 
-  --text: #251a14;
-  --muted: #74675f;
+  --text: var(--palette-navy);
+  --muted: #597382;
 
-  --primary: var(--palette-espresso);
-  --on-primary: var(--palette-cream);
-  --secondary: var(--palette-coffee);
-  --on-secondary: var(--palette-cream);
-  --accent: var(--palette-caramel);
-  --on-accent: #2a1a0e;
-  /* A deepened caramel — the brand tone itself is only 2.9:1 on white. */
-  --accent-strong: #8c5a28;
+  --primary: var(--palette-navy);
+  --on-primary: #ffffff;
+  --secondary: #476475;
+  --on-secondary: #ffffff;
+  --accent: var(--palette-navy);
+  --on-accent: #ffffff;
+  /* No separate accent hue — `--accent-strong` just matches `--accent`. */
+  --accent-strong: var(--palette-navy);
 
   --success: #387a45;
   /* Soft badge grounds are lightened so the spec's green and red stay at 4.5:1 */
@@ -108,17 +104,17 @@
   --danger: #b34a3c;
   --danger-soft: #fdefed;
 
-  --shadow-card: 0 8px 30px rgba(59, 36, 22, 0.06);
-  --shadow-raised: 0 12px 36px rgba(59, 36, 22, 0.1);
-  --shadow-header: 0 1px 0 rgba(59, 36, 22, 0.06);
+  --shadow-card: 0 8px 30px rgba(0, 40, 63, 0.06);
+  --shadow-raised: 0 12px 36px rgba(0, 40, 63, 0.1);
+  --shadow-header: 0 1px 0 rgba(0, 40, 63, 0.06);
 
-  --overlay-from: rgba(37, 26, 20, 0.86);
-  --overlay-to: rgba(37, 26, 20, 0.16);
+  --overlay-from: rgba(0, 40, 63, 0.86);
+  --overlay-to: rgba(0, 40, 63, 0.16);
 
   --skeleton: linear-gradient(
     90deg,
     var(--surface-2) 25%,
-    #f8f2ea 37%,
+    #eef2f4 37%,
     var(--surface-2) 63%
   );
 

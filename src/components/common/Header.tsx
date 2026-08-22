@@ -39,10 +39,7 @@ export function Header() {
           className="flex min-w-0 items-center gap-2.5 rounded-pill"
           aria-label={name}
         >
-          <ShopLogo src={settings.logo} name={name} className="size-9" />
-          <span className="truncate text-[15px] font-semibold text-text sm:text-base">
-            {name}
-          </span>
+          <ShopLogo src={settings.logo} name={name} className="h-9" />
         </Link>
 
         <nav aria-label={t.nav.menu} className="ms-4 hidden items-center gap-1 md:flex">

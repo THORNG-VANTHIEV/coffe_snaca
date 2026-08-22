@@ -27,7 +27,7 @@ export function ShopLogo({
     return (
       <span
         className={cn(
-          'grid shrink-0 place-items-center rounded-pill bg-primary text-on-primary',
+          'grid aspect-square shrink-0 place-items-center rounded-pill bg-primary text-on-primary',
           className,
         )}
         role={decorative ? undefined : 'img'}
@@ -39,14 +39,17 @@ export function ShopLogo({
     )
   }
 
+  // The logo is a wordmark (it already spells out the shop name), not an
+  // icon — `w-auto` + `object-contain` show it at its own aspect ratio
+  // instead of cropping it into a square.
   return (
     <img
       src={src}
       alt={name}
-      width={80}
+      width={238}
       height={80}
       onError={() => setFailed(true)}
-      className={cn('shrink-0 rounded-pill object-cover', className)}
+      className={cn('w-auto shrink-0 rounded-md object-contain', className)}
     />
   )
 }

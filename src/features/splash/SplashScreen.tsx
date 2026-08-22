@@ -78,18 +78,21 @@ export function SplashScreen({
         <ShopLogo
           src={logo}
           name=""
-          className="size-24 border-4 border-surface shadow-raised ring-1 ring-border-strong sm:size-28"
+          className="h-16 border-4 border-surface shadow-raised ring-1 ring-border-strong sm:h-20"
         />
 
         {ready ? (
           <>
+            {/* The logo above already spells out the shop name, so the
+                heading stays for its accessible name without repeating it
+                on screen. */}
+            <h1 id="welcome-title" className="sr-only">
+              {name || t.common.appName}
+            </h1>
+
             <p className="mt-6 text-xs font-semibold tracking-[0.18em] text-accent-strong uppercase">
               {t.welcome.eyebrow}
             </p>
-
-            <h1 id="welcome-title" className="mt-2 text-3xl leading-tight text-text sm:text-4xl">
-              {name || t.common.appName}
-            </h1>
 
             {tagline ? <p className="mt-3 max-w-xs text-sm text-muted sm:text-base">{tagline}</p> : null}
 
