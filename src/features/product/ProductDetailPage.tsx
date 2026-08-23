@@ -155,14 +155,15 @@ export function ProductDetailPage() {
 
       <article className="mt-3 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
         <div className="lg:sticky lg:top-24 lg:self-start">
-          <div className="relative">
+          <div className="relative overflow-hidden rounded-card border border-border/70 bg-white p-4 shadow-card dark:bg-surface-2/70 sm:p-6">
             <ImageWithFallback
               src={product.image}
               alt={name}
               priority
+              fit="contain"
               sizes="(min-width: 1024px) 600px, 100vw"
               className={cn(
-                'aspect-[4/3] w-full rounded-card shadow-card',
+                'aspect-[4/3] w-full bg-transparent',
                 !product.available && 'opacity-55 grayscale-[35%]',
               )}
             />

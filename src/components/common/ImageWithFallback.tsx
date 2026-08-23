@@ -21,6 +21,8 @@ interface ImageWithFallbackProps {
   /** Hero and above-the-fold art loads eagerly; everything else lazily (spec §48). */
   priority?: boolean
   sizes?: string
+  /** Controls image scaling: 'cover' (default) fills bounds, 'contain' shows the entire image. */
+  fit?: 'cover' | 'contain'
 }
 
 /**
@@ -35,6 +37,7 @@ export function ImageWithFallback({
   imageClassName,
   priority = false,
   sizes,
+  fit = 'cover',
 }: ImageWithFallbackProps) {
   const imageRef = useRef<HTMLImageElement>(null)
   const [source, setSource] = useState(src || FALLBACK_SRC)
@@ -90,7 +93,8 @@ export function ImageWithFallback({
           // being emitted later in the stylesheet.
           style={{ opacity: loaded ? 1 : 0 }}
           className={cn(
-            'image-reveal size-full object-cover',
+            'image-reveal size-full',
+            fit === 'contain' ? 'object-contain' : 'object-cover',
             imageClassName,
           )}
         />

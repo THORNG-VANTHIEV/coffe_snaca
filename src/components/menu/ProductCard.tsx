@@ -36,14 +36,15 @@ export function ProductCard({ product, priority, className }: ProductCardProps) 
         className,
       )}
     >
-      <div className="relative">
+      <div className="relative overflow-hidden bg-surface-2/40">
         <ImageWithFallback
           src={product.image}
           alt={name}
           priority={priority}
+          fit="contain"
           sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 80vw"
           className={cn(
-            'aspect-[4/3] w-full',
+            'aspect-square w-full p-2.5 bg-white dark:bg-surface-2/70',
             !product.available && 'opacity-55 grayscale-[35%]',
           )}
           imageClassName="group-hover:scale-[1.04]"
