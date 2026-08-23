@@ -23,9 +23,10 @@ export function Footer() {
   ]
 
   const socials = [
-    { href: settings.facebook, label: 'Facebook', Icon: FacebookIcon },
-    { href: settings.telegram, label: 'Telegram', Icon: TelegramIcon },
-  ].filter((social) => social.href !== '')
+    settings.facebook ? { href: settings.facebook, label: 'Facebook', Icon: FacebookIcon, external: true } : null,
+    settings.telegram ? { href: settings.telegram, label: 'Telegram', Icon: TelegramIcon, external: true } : null,
+    settings.phone ? { href: `tel:${settings.phone.replace(/\s+/g, '')}`, label: settings.phone, Icon: Phone, external: false } : null,
+  ].filter((item): item is NonNullable<typeof item> => item !== null)
 
   return (
     <footer className="relative mt-20 border-t border-border/80 bg-surface-2/80 backdrop-blur-sm">
@@ -127,12 +128,11 @@ export function Footer() {
                 {language === 'km' ? 'តាមដានពួកយើងនៅលើបណ្តាញសង្គម' : 'Stay connected with us'}
               </p>
               <div className="flex flex-wrap gap-2.5 mt-1">
-                {socials.map(({ href, label, Icon }) => (
+                {socials.map(({ href, label, Icon, external }) => (
                   <a
                     key={label}
                     href={href}
-                    target="_blank"
-                    rel="noreferrer noopener"
+                    {...(external ? { target: '_blank', rel: 'noreferrer noopener' } : {})}
                     aria-label={label}
                     className="flex items-center gap-2 rounded-pill border border-border bg-surface px-3.5 py-2 text-xs font-medium text-muted shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface-2 hover:text-text hover:shadow-raised"
                   >

@@ -30,9 +30,10 @@ export function AboutPage() {
   ].filter((detail) => detail.value !== '')
 
   const socials = [
-    { href: settings.facebook, label: 'Facebook', Icon: FacebookIcon },
-    { href: settings.telegram, label: 'Telegram', Icon: TelegramIcon },
-  ].filter((social) => social.href !== '')
+    settings.facebook ? { href: settings.facebook, label: 'Facebook', Icon: FacebookIcon, external: true } : null,
+    settings.telegram ? { href: settings.telegram, label: 'Telegram', Icon: TelegramIcon, external: true } : null,
+    settings.phone ? { href: `tel:${settings.phone.replace(/\s+/g, '')}`, label: settings.phone, Icon: Phone, external: false } : null,
+  ].filter((item): item is NonNullable<typeof item> => item !== null)
 
   return (
     // Narrows the column by overriding the container's own custom property.
@@ -75,12 +76,11 @@ export function AboutPage() {
         <section className="mt-10 rounded-card border border-border/70 bg-surface/50 p-6 text-center shadow-card backdrop-blur-sm">
           <h2 className="text-xs font-semibold uppercase tracking-wider text-text/90">{t.about.follow}</h2>
           <ul className="mt-4 flex flex-wrap justify-center gap-3">
-            {socials.map(({ href, label, Icon }) => (
+            {socials.map(({ href, label, Icon, external }) => (
               <li key={label}>
                 <a
                   href={href}
-                  target="_blank"
-                  rel="noreferrer noopener"
+                  {...(external ? { target: '_blank', rel: 'noreferrer noopener' } : {})}
                   aria-label={label}
                   className="flex items-center gap-2.5 rounded-pill border border-border bg-surface px-4 py-2.5 text-xs font-medium text-muted shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface-2 hover:text-text hover:shadow-raised"
                 >
