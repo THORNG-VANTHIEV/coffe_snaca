@@ -182,10 +182,18 @@
   display: flex;
   gap: 0.875rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline: 1rem;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+}
+
+/**
+ * Snapping is opt-in. The category chips deliberately skip it: they are centred
+ * programmatically as the active section changes, and mandatory snapping drags
+ * that scroll straight back to an item's leading edge.
+ */
+@utility scroll-row-snap {
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
 }
 
 @utility scroll-item {

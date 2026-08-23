@@ -17,7 +17,7 @@ export function ProductRail({
   priority?: boolean
 }) {
   return (
-    <ul className="motion-stagger scroll-row scrollbar-none -mx-4 px-4 pb-2 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-4 lg:overflow-visible lg:px-0">
+    <ul className="motion-stagger scroll-row scroll-row-snap scrollbar-none -mx-4 px-4 pb-2 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-4 lg:overflow-visible lg:px-0">
       {products.map((product, index) => (
         <li key={product.id} className="scroll-item w-[236px] lg:w-auto">
           <ProductCard

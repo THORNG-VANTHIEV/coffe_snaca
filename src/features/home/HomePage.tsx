@@ -78,7 +78,9 @@ export function HomePage() {
               <CategoryList
                 categories={categories}
                 showAll={false}
-                hrefFor={(slug) => (slug ? `/category/${slug}` : '/menu')}
+                hrefFor={(slug) =>
+                  slug ? `/menu?category=${slug}#category-${slug}` : '/menu'
+                }
               />
             )}
           </section>
