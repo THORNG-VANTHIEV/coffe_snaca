@@ -197,6 +197,8 @@ const HERO_SLIDES = [
   { seed: 'hero-2', palette: 'tea', dish: false, radius: 244, steam: true, dark: '#1C2411' },
   { seed: 'hero-3', palette: 'lunch', dish: true, radius: 288, steam: false, dark: '#2A1509' },
   { seed: 'hero-4', palette: 'smoothies', dish: false, radius: 252, steam: false, dark: '#2B1608' },
+  { seed: 'hero-5', palette: 'edition', dish: false, radius: 260, steam: false, dark: '#00283f' },
+  { seed: 'hero-6', palette: 'matcha-serie', dish: false, radius: 270, steam: false, dark: '#1a3320' },
 ]
 
 function makeHero({ seed, palette: paletteKey, dish, radius, steam, dark }) {
