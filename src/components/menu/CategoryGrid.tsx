@@ -31,13 +31,13 @@ export function CategoryGrid({
               to={`/category/${category.slug}`}
               className="group block overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-[var(--motion-standard)] ease-out hover:-translate-y-1 hover:border-border-strong hover:shadow-raised"
             >
-              <div className="relative overflow-hidden bg-surface-2/40">
+              <div className="relative overflow-hidden">
                 <ImageWithFallback
                   src={category.image}
                   alt=""
-                  fit="contain"
+                  fit="cover"
                   sizes="220px"
-                  className="aspect-square w-full bg-white p-2.5 dark:bg-surface-2/70"
+                  className="aspect-[4/3] w-full"
                   imageClassName="group-hover:scale-[1.05]"
                 />
                 <span className="absolute top-2.5 left-2.5 grid size-8 place-items-center rounded-pill bg-surface/90 text-accent shadow-sm backdrop-blur-sm">
