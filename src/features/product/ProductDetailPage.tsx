@@ -163,8 +163,8 @@ export function ProductDetailPage() {
               fit="cover"
               sizes="(min-width: 1024px) 600px, 100vw"
               className={cn(
-                'aspect-[4/3] w-full',
-                !product.available && 'opacity-55 grayscale-[35%]',
+                'aspect-4/3 w-full',
+                !product.available && 'opacity-55 grayscale-35',
               )}
             />
 

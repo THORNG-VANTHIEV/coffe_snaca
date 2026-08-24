@@ -31,7 +31,7 @@ export function ProductCard({ product, priority, className }: ProductCardProps) 
       to={`/menu/${product.slug}`}
       className={cn(
         'group flex flex-col overflow-hidden rounded-card bg-surface shadow-card',
-        'border border-border/70 transition duration-[var(--motion-standard)] ease-out',
+        'border border-border/70 transition duration-var(--motion-standard) ease-out',
         'hover:-translate-y-1 hover:border-border-strong hover:shadow-raised focus-visible:-translate-y-1',
         className,
       )}
@@ -44,8 +44,8 @@ export function ProductCard({ product, priority, className }: ProductCardProps) 
           fit="cover"
           sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 80vw"
           className={cn(
-            'aspect-[4/3] w-full',
-            !product.available && 'opacity-55 grayscale-[35%]',
+            'aspect-4/3 w-full',
+            !product.available && 'opacity-55 grayscale-35',
           )}
           imageClassName="group-hover:scale-[1.04]"
         />

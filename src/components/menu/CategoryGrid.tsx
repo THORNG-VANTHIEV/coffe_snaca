@@ -29,7 +29,7 @@ export function CategoryGrid({
           <li key={category.id}>
             <Link
               to={`/menu?category=${category.slug}#category-${category.slug}`}
-              className="group block overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-[var(--motion-standard)] ease-out hover:-translate-y-1 hover:border-border-strong hover:shadow-raised"
+              className="group block overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-var(--motion-standard) ease-out hover:-translate-y-1 hover:border-border-strong hover:shadow-raised"
             >
               <div className="relative overflow-hidden">
                 <ImageWithFallback
@@ -37,7 +37,7 @@ export function CategoryGrid({
                   alt=""
                   fit="cover"
                   sizes="220px"
-                  className="aspect-[4/3] w-full"
+                  className="aspect-4/3 w-full"
                   imageClassName="group-hover:scale-[1.05]"
                 />
                 <span className="absolute top-2.5 left-2.5 grid size-8 place-items-center rounded-pill bg-surface/90 text-accent shadow-sm backdrop-blur-sm">
