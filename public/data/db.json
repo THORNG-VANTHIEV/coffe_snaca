@@ -111,7 +111,7 @@
       "icon": "leaf",
       "kind": "drink",
       "active": true,
-      "sort_order": 1
+      "sort_order": 2
     },
     {
       "id": 2,
@@ -124,7 +124,7 @@
       "icon": "coffee",
       "kind": "drink",
       "active": true,
-      "sort_order": 2
+      "sort_order": 1
     },
     {
       "id": 3,
