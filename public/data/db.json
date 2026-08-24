@@ -383,7 +383,7 @@
     {
       "id": 103,
       "slug": "hot-green-tea",
-      "category_id": 1,
+      "category_id": 4,
       "name_en": "Hot Green Tea",
       "name_km": "តែបៃតង ក្តៅ",
       "description_en": "Traditional fragrant hot green tea.",
@@ -415,7 +415,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 3
+      "sort_order": 4
     },
     {
       "id": 104,
@@ -463,7 +463,7 @@
       "id": 105,
       "slug": "cafe-snaca",
       "category_id": 2,
-      "name_en": "Cafe Snaca",
+      "name_en": "Snaca Edition",
       "name_km": "កាហ្វេ ស្នាក់ការ",
       "description_en": "Our signature rich house blend iced coffee recipe.",
       "description_km": "រូបមន្តកាហ្វេពិសេសប្រចាំហាងស្នាក់ការ ឈ្ងុយប្លែក និងដិតជាប់ចិត្ត។",
