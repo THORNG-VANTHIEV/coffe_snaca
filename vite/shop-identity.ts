@@ -103,15 +103,17 @@ function buildManifest(identity: ShopIdentity, themeColor: string): string {
       lang: 'km',
       icons: [
         {
-          src: 'images/logo/logo.png',
+          src: 'favicon.png',
           sizes: '512x512',
           type: 'image/png',
           purpose: 'any',
         },
+        // Same wordmark, pulled inside the safe zone: a maskable icon is
+        // cropped to whatever shape the launcher wants.
         {
-          src: 'favicon.svg',
-          sizes: 'any',
-          type: 'image/svg+xml',
+          src: 'icon-maskable.png',
+          sizes: '512x512',
+          type: 'image/png',
           purpose: 'maskable',
         },
       ],

@@ -12,8 +12,18 @@
     <!-- Kept in step with the active theme by ThemeProvider and the script below -->
     <meta name="theme-color" content="#FAF7F2" />
 
-    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
-    <link rel="apple-touch-icon" href="%BASE_URL%images/logo/logo.png" />
+    <!--
+      The SNACA wordmark on its own navy, so the tab reads the same in either
+      OS theme. Root-absolute, not %BASE_URL%: these files exist in public/, so
+      Vite resolves them and prefixes the base itself — writing %BASE_URL% too
+      doubles it to /coffe_snaca/coffe_snaca/ in dev and the icon 404s.
+      The manifest is the opposite case. It is generated at bundle time by the
+      shop-identity plugin, so there is no file for Vite to resolve and no base
+      is added — it has to carry %BASE_URL% of its own.
+    -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
 
     <!-- Open Graph / social preview. Update the absolute URLs if the site moves. -->
