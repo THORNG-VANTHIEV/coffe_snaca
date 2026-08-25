@@ -248,9 +248,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.25,
           "price_khr": 9200
+        },
+        {
+          "name": "L",
+          "price_usd": 2.7,
+          "price_khr": 11100
         }
       ],
       "temperature": [
@@ -280,8 +285,8 @@
       ],
       "options": [],
       "available": true,
-      "best_seller": false,
-      "recommended": true,
+      "best_seller": true,
+      "recommended": false,
       "featured": true,
       "sort_order": 1
     },
@@ -298,9 +303,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 1.83,
           "price_khr": 7500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.2,
+          "price_khr": 9000
         }
       ],
       "temperature": [
@@ -347,9 +357,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.45,
+          "price_khr": 10000
         }
       ],
       "temperature": [
@@ -396,9 +411,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.8,
+          "price_khr": 11500
         }
       ],
       "temperature": [
@@ -438,9 +458,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.44,
           "price_khr": 10000
+        },
+        {
+          "name": "L",
+          "price_usd": 2.7,
+          "price_khr": 11100
         }
       ],
       "temperature": [
@@ -480,9 +505,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 1.5,
           "price_khr": 6200
+        },
+        {
+          "name": "L",
+          "price_usd": 2.2,
+          "price_khr": 9000
         }
       ],
       "temperature": [
@@ -517,9 +547,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.68,
+          "price_khr": 11000
         }
       ],
       "temperature": [
@@ -554,9 +589,9 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
-          "price_usd": 1.88,
-          "price_khr": 7700
+          "name": "R",
+          "price_usd": 2.5,
+          "price_khr": 10300
         }
       ],
       "temperature": [
@@ -586,8 +621,8 @@
       ],
       "options": [],
       "available": true,
-      "best_seller": false,
-      "recommended": true,
+      "best_seller": true,
+      "recommended": false,
       "featured": true,
       "sort_order": 1
     },
@@ -604,9 +639,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.32,
+          "price_khr": 9500
         }
       ],
       "temperature": [
@@ -641,9 +681,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.32,
+          "price_khr": 9500
         }
       ],
       "temperature": [
@@ -683,9 +728,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.32,
+          "price_khr": 9500
         }
       ],
       "temperature": [
@@ -720,9 +770,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.32,
+          "price_khr": 9500
         }
       ],
       "temperature": [
@@ -765,9 +820,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.32,
+          "price_khr": 9500
         }
       ],
       "temperature": [
@@ -789,8 +849,8 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": false,
-      "recommended": true,
+      "best_seller": true,
+      "recommended": false,
       "featured": false,
       "sort_order": 3
     },
@@ -807,9 +867,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.32,
+          "price_khr": 9500
         }
       ],
       "temperature": [
@@ -849,9 +914,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.07,
           "price_khr": 8500
+        },
+        {
+          "name": "L",
+          "price_usd": 2.32,
+          "price_khr": 9500
         }
       ],
       "temperature": [
@@ -891,9 +961,9 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
-          "price_usd": 2.07,
-          "price_khr": 8500
+          "name": "R",
+          "price_usd": 2.0,
+          "price_khr": 8200
         }
       ],
       "temperature": [
@@ -933,9 +1003,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
-          "price_usd": 2.8,
-          "price_khr": 11500
+          "name": "R",
+          "price_usd": 2.56,
+          "price_khr": 10500
+        },
+        {
+          "name": "L",
+          "price_usd": 3.05,
+          "price_khr": 12500
         }
       ],
       "temperature": [
@@ -972,7 +1047,7 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.56,
           "price_khr": 10500
         }
@@ -1009,9 +1084,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.56,
           "price_khr": 10500
+        },
+        {
+          "name": "L",
+          "price_usd": 3.05,
+          "price_khr": 12500
         }
       ],
       "temperature": [
@@ -1055,9 +1135,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.56,
           "price_khr": 10500
+        },
+        {
+          "name": "L",
+          "price_usd": 3.05,
+          "price_khr": 12500
         }
       ],
       "temperature": [
@@ -1092,9 +1177,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
+          "name": "R",
           "price_usd": 2.56,
           "price_khr": 10500
+        },
+        {
+          "name": "L",
+          "price_usd": 3.05,
+          "price_khr": 12500
         }
       ],
       "temperature": [
@@ -1129,9 +1219,14 @@
       "ingredients_km": [],
       "sizes": [
         {
-          "name": "Regular",
-          "price_usd": 2,
-          "price_khr": 8200
+          "name": "R",
+          "price_usd": 2.56,
+          "price_khr": 10500
+        },
+        {
+          "name": "L",
+          "price_usd": 3.05,
+          "price_khr": 12500
         }
       ],
       "temperature": [
@@ -1210,8 +1305,8 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
-      "recommended": false,
+      "best_seller": false,
+      "recommended": true,
       "featured": true,
       "sort_order": 2
     },
@@ -1396,8 +1491,8 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
-      "recommended": false,
+      "best_seller": false,
+      "recommended": true,
       "featured": false,
       "sort_order": 8
     },
@@ -1675,8 +1770,8 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
-      "recommended": false,
+      "best_seller": false,
+      "recommended": true,
       "featured": false,
       "sort_order": 3
     },
@@ -1706,8 +1801,8 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
-      "recommended": false,
+      "best_seller": false,
+      "recommended": true,
       "featured": true,
       "sort_order": 4
     },
@@ -1830,8 +1925,8 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
-      "recommended": false,
+      "best_seller": false,
+      "recommended": true,
       "featured": false,
       "sort_order": 8
     },

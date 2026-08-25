@@ -33,6 +33,7 @@ const ICE_LEVELS: readonly IceLevel[] = ['none', 'less', 'normal', 'extra']
 
 /** Long-form labels for the conventional size codes. */
 const SIZE_LABELS: Record<string, { en: string; km: string }> = {
+  R: { en: 'Regular', km: 'ធម្មតា' },
   S: { en: 'Small', km: 'តូច' },
   M: { en: 'Medium', km: 'មធ្យម' },
   L: { en: 'Large', km: 'ធំ' },
