@@ -49,6 +49,7 @@ const PALETTES = {
   'hot-coffee': { from: '#7A5638', to: '#31200F', vessel: '#F2E7D8', fill: '#4A2C16', accent: '#C68B59' },
   'tea-soda': { from: '#7E8A5C', to: '#333A20', vessel: '#F3EEE0', fill: '#B4BE7C', accent: '#CBD79A' },
   'blended-drinks': { from: '#CF9A57', to: '#6B3F1C', vessel: '#F8F0E3', fill: '#EFAD52', accent: '#FFD08A' },
+  'noodle-soup': { from: '#BE8F5C', to: '#543619', vessel: '#F6EDDD', fill: '#E6BE85', accent: '#FAD9A6' },
   breakfast: { from: '#C79355', to: '#5D3A19', vessel: '#F7EEDE', fill: '#EFC178', accent: '#FFDCA1' },
   lunch: { from: '#AE6A42', to: '#4D2A16', vessel: '#F5EADB', fill: '#D2854A', accent: '#F0AC6C' },
   others: { from: '#8A7A68', to: '#3D352B', vessel: '#F5F1EB', fill: '#B8A896', accent: '#D6C8B8' },

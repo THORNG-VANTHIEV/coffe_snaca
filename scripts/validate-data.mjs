@@ -20,6 +20,9 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const publicDir = join(root, 'public')
 const dbPath = join(publicDir, 'data/db.json')
 
+/** The shop's fixed exchange rate. Prices in riel are derived from USD. */
+const KHR_PER_USD = 4100
+
 const errors = []
 const warnings = []
 
@@ -79,6 +82,15 @@ function checkPrice(where, record) {
   }
   if (typeof usd === 'number' && typeof khr === 'number' && usd > 0 && khr === 0) {
     warn(where, 'has a USD price but no KHR price')
+  }
+
+  // The shop converts at a fixed 4,100៛ per dollar and always rounds UP to the
+  // next 100៛ note, so the two currencies can never drift apart by hand.
+  if (typeof usd === 'number' && typeof khr === 'number' && usd > 0) {
+    const expected = Math.ceil((usd * KHR_PER_USD) / 100) * 100
+    if (khr !== expected) {
+      fail(where, `price_khr should be ${expected} (${usd} x ${KHR_PER_USD}, rounded up to 100៛) — got ${khr}`)
+    }
   }
 }
 
