@@ -240,7 +240,7 @@
       "image": "/images/menu-items/fried-mixed-lemongrass-beef-plate-1.webp",
       "icon": "wheat",
       "kind": "food",
-      "active": true,
+      "active": false,
       "sort_order": 11
     }
   ],
@@ -1034,7 +1034,7 @@
       ],
       "options": [],
       "available": true,
-      "best_seller": true,
+      "best_seller": false,
       "recommended": false,
       "featured": true,
       "sort_order": 1
@@ -1174,6 +1174,9 @@
       "id": 183,
       "slug": "matcha-latte",
       "category_id": 4,
+      "also_in_categories": [
+        1
+      ],
       "name_en": "Matcha Latte",
       "name_km": "Matcha Latte",
       "description_en": "Premium Japanese matcha with fresh milk over ice.",
@@ -1207,7 +1210,7 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": false,
+      "best_seller": true,
       "recommended": false,
       "featured": false,
       "sort_order": 5
@@ -1784,43 +1787,6 @@
       "sort_order": 1
     },
     {
-      "id": 119,
-      "slug": "coffee-frappe",
-      "category_id": 6,
-      "name_en": "Coffee Frappe",
-      "name_km": "កាហ្វេ ក្រឡុក",
-      "description_en": "Ice-blended espresso and milk topped with whipped cream.",
-      "description_km": "កាហ្វេ Espresso កិនជាមួយទឹកកក និងទឹកដោះគោស្រស់។",
-      "image": "/images/menu-items/coffee-frappe.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "R",
-          "price_usd": 2.56,
-          "price_khr": 10500
-        }
-      ],
-      "temperature": [
-        "iced"
-      ],
-      "sugar_levels": [
-        0,
-        25,
-        50,
-        75,
-        100
-      ],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 2
-    },
-    {
       "id": 102,
       "slug": "green-tea-frappe",
       "category_id": 6,
@@ -1869,7 +1835,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 3
+      "sort_order": 2
     },
     {
       "id": 120,
@@ -1911,7 +1877,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 4
+      "sort_order": 3
     },
     {
       "id": 121,
@@ -1953,7 +1919,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 5
+      "sort_order": 4
     },
     {
       "id": 122,
@@ -1995,7 +1961,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 6
+      "sort_order": 5
     },
     {
       "id": 190,
@@ -2042,7 +2008,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 7
+      "sort_order": 6
     },
     {
       "id": 191,
@@ -2089,7 +2055,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 8
+      "sort_order": 7
     },
     {
       "id": 192,
@@ -2136,7 +2102,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 9
+      "sort_order": 8
     },
     {
       "id": 193,
@@ -2183,7 +2149,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 10
+      "sort_order": 9
     },
     {
       "id": 132,
@@ -2279,223 +2245,6 @@
       "sort_order": 3
     },
     {
-      "id": 135,
-      "slug": "fries-fish-trey-kantho",
-      "category_id": 7,
-      "name_en": "Fries Fish Trey Kantho with Rice",
-      "name_km": "បាយសត្រី កន្ធរចៀន",
-      "description_en": "Fresh local Kantho fish fried to golden perfection with steamed rice.",
-      "description_km": "បាយសក្តៅៗ ញ៉ាំជាមួយត្រីកន្ធរចៀនស្រួយ។",
-      "image": "/images/menu-items/fries-fish-trey-kantho-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 4
-    },
-    {
-      "id": 129,
-      "slug": "chicken-porridge-thigh",
-      "category_id": 7,
-      "name_en": "Chicken Porridge (Thigh)",
-      "name_km": "បបរមាន់ស្រែ (ភ្លៅ)",
-      "description_en": "Traditional free-range chicken congee served with a tender whole chicken thigh.",
-      "description_km": "បបរអង្កររម្ងាស់ជាមួយភ្លៅមាន់ស្រែ ខ្ញី ស្លឹកខ្ទឹម និងខ្ទឹមបំពង។",
-      "image": "/images/menu-items/chicken-porridge-thigh-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": true,
-      "sort_order": 9
-    },
-    {
-      "id": 130,
-      "slug": "chicken-porridge-wing",
-      "category_id": 7,
-      "name_en": "Chicken Porridge (Wing)",
-      "name_km": "បបរមាន់ស្រែ (ស្លាប)",
-      "description_en": "Savory hot rice congee served with free-range chicken wings.",
-      "description_km": "បបរមាន់ស្រែជាមួយស្លាបមាន់ ខ្ញី និងខ្ទឹមបំពងឈ្ងុយឆ្ងាញ់។",
-      "image": "/images/menu-items/chicken-porridge-wing-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 10
-    },
-    {
-      "id": 131,
-      "slug": "shredded-chicken-porridge",
-      "category_id": 7,
-      "name_en": "Shredded Chicken Porridge",
-      "name_km": "បបរមាន់ស្រែ (សរសៃ)",
-      "description_en": "Silky rice porridge cooked with tender shredded chicken meat and herbs.",
-      "description_km": "បបរមាន់សរសៃទន់ស្រួលញ៉ាំ ជាមួយខ្ញី និងម្រេច។",
-      "image": "/images/menu-items/shredded-chicken-porridge-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 11
-    },
-    {
-      "id": 136,
-      "slug": "classic-american-breakfast",
-      "category_id": 7,
-      "name_en": "Classic American Breakfast Set",
-      "name_km": "ឈុតអាហារពេលព្រឹកអាមេរិកាំង",
-      "description_en": "Two eggs, bacon, grilled sausages, beans, and toasted bread.",
-      "description_km": "ឈុតពេញលេញមានស៊ុតចៀន ប៊ីខន សាច់ក្រកអាំង និងនំបុ័ងអាំង។",
-      "image": "/images/products/american-breakfast/classic-american-breakfast.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 4.5,
-          "price_khr": 18500
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": true,
-      "sort_order": 12
-    },
-    {
-      "id": 137,
-      "slug": "bacon-scrambled-eggs",
-      "category_id": 7,
-      "name_en": "Bacon & Scrambled Eggs with Toast",
-      "name_km": "ស៊ុតកូរ ប៊ីខន និងនំបុ័ងអាំង",
-      "description_en": "Creamy scrambled eggs with crispy bacon and buttered toast.",
-      "description_km": "ស៊ុតកូរទន់ល្មើយ ញ៉ាំជាមួយប៊ីខនស្រួយ និងនំបុ័ងប័រ។",
-      "image": "/images/products/american-breakfast/classic-american-breakfast.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 3.75,
-          "price_khr": 15400
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 13
-    },
-    {
-      "id": 138,
-      "slug": "sausage-sunny-eggs",
-      "category_id": 7,
-      "name_en": "Sausage & Sunny Side Up Eggs",
-      "name_km": "សាច់ក្រក និងស៊ុតចៀន",
-      "description_en": "Grilled pork breakfast sausages with two sunny side up eggs.",
-      "description_km": "សាច់ក្រកអាំងឈ្ងុយឆ្ងាញ់ ស៊ុតចៀន ២គ្រាប់ និងនំបុ័ង។",
-      "image": "/images/products/american-breakfast/classic-american-breakfast.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 3.5,
-          "price_khr": 14400
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 14
-    },
-    {
       "id": 194,
       "slug": "trey-kaher-with-rice",
       "category_id": 7,
@@ -2524,7 +2273,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 15
+      "sort_order": 4
     },
     {
       "id": 195,
@@ -2555,7 +2304,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 16
+      "sort_order": 5
     },
     {
       "id": 196,
@@ -2586,7 +2335,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 17
+      "sort_order": 6
     },
     {
       "id": 197,
@@ -2617,7 +2366,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 18
+      "sort_order": 7
     },
     {
       "id": 198,
@@ -2648,7 +2397,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 19
+      "sort_order": 8
     },
     {
       "id": 199,
@@ -2679,7 +2428,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 20
+      "sort_order": 9
     },
     {
       "id": 200,
@@ -2710,7 +2459,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 21
+      "sort_order": 10
     },
     {
       "id": 201,
@@ -2741,7 +2490,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 22
+      "sort_order": 11
     },
     {
       "id": 202,
@@ -2772,7 +2521,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 23
+      "sort_order": 12
     },
     {
       "id": 124,
@@ -3023,37 +2772,6 @@
       "sort_order": 8
     },
     {
-      "id": 126,
-      "slug": "steam-chicken-with-rice",
-      "category_id": 8,
-      "name_en": "Steam Chicken With Rice",
-      "name_km": "បាយមាន់ស្ងោរ",
-      "description_en": "Tender poached chicken served over fragrant chicken broth rice with ginger dip.",
-      "description_km": "សាច់មាន់ស្ងោរផុយ ញ៉ាំជាមួយបាយដាំទឹកស៊ុបមាន់ និងទឹកជ្រលក់ខ្ញី។",
-      "image": "/images/menu-items/steam-chicken-with-rice-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": true,
-      "sort_order": 1
-    },
-    {
       "id": 127,
       "slug": "fried-chicken-thigh-with-rice",
       "category_id": 8,
@@ -3082,7 +2800,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 2
+      "sort_order": 1
     },
     {
       "id": 128,
@@ -3113,7 +2831,7 @@
       "best_seller": false,
       "recommended": true,
       "featured": false,
-      "sort_order": 3
+      "sort_order": 2
     },
     {
       "id": 139,
@@ -3144,7 +2862,7 @@
       "best_seller": false,
       "recommended": true,
       "featured": true,
-      "sort_order": 4
+      "sort_order": 3
     },
     {
       "id": 140,
@@ -3175,7 +2893,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 5
+      "sort_order": 4
     },
     {
       "id": 141,
@@ -3206,38 +2924,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 6
-    },
-    {
-      "id": 142,
-      "slug": "holy-basil-fries-rice-with-beef",
-      "category_id": 8,
-      "name_en": "Holy Basil Fries Rice with Beef",
-      "name_km": "បាយឆាសាច់គោ ម្រះព្រៅ",
-      "description_en": "Stir-fried beef and fragrant holy basil over steamed rice.",
-      "description_km": "បាយឆាសាច់គោជាមួយស្លឹកម្រះព្រៅឈ្ងុយហឹរតិចៗ។",
-      "image": "/images/menu-items/holy-basil-fries-rice-with-beef-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 7
+      "sort_order": 5
     },
     {
       "id": 143,
@@ -3268,7 +2955,7 @@
       "best_seller": false,
       "recommended": true,
       "featured": false,
-      "sort_order": 8
+      "sort_order": 6
     },
     {
       "id": 144,
@@ -3299,69 +2986,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 9
-    },
-    {
-      "id": 145,
-      "slug": "fried-mixed-lemongrass-beef-with-rice",
-      "category_id": 8,
-      "name_en": "Fried Lemongrass Beef with Rice",
-      "name_km": "បាយ ឆាគ្រឿងសាច់គោ",
-      "description_en": "Khmer lemongrass paste stir-fried with beef served with rice.",
-      "description_km": "បាយឆាគ្រឿងសាច់គោបែបខ្មែរ ឈ្ងុយស្លឹកក្រូចសើច និងគល់ស្លឹកគ្រៃ។",
-      "image": "/images/menu-items/fried-mixed-lemongrass-beef-with-rice-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 10
-    },
-    {
-      "id": 146,
-      "slug": "fried-mixed-lemongrass-chicken-with-rice",
-      "category_id": 8,
-      "name_en": "Fried Lemongrass Chicken with Rice",
-      "name_km": "បាយ ឆាគ្រឿងសាច់មាន់",
-      "description_en": "Chicken stir-fried in aromatic lemongrass kroeung with rice.",
-      "description_km": "បាយឆាគ្រឿងសាច់មាន់ ឈ្ងុយគ្រឿងបុកបែបប្រពៃណី។",
-      "image": "/images/menu-items/fried-mixed-lemongrass-chicken-with-rice-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 11
+      "sort_order": 7
     },
     {
       "id": 147,
@@ -3392,38 +3017,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 12
-    },
-    {
-      "id": 148,
-      "slug": "pork-partlow-soup",
-      "category_id": 8,
-      "name_en": "Pork Partlow Soup Bowl",
-      "name_km": "សម្លរផាក់ឡូវ",
-      "description_en": "Braised five-spice pork offal soup bowl.",
-      "description_km": "សម្លផាក់ឡូវគ្រឿងក្នុងជ្រូកផុយ ទឹកស៊ុបដិតឈ្ងុយ។",
-      "image": "/images/menu-items/pork-partlow-soup-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 13
+      "sort_order": 8
     },
     {
       "id": 149,
@@ -3454,38 +3048,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 14
-    },
-    {
-      "id": 150,
-      "slug": "somlor-korko",
-      "category_id": 8,
-      "name_en": "Somlor Korko",
-      "name_km": "សម្លរគោរកោ",
-      "description_en": "Iconic Khmer vegetable and meat stew with roasted ground rice.",
-      "description_km": "សម្លកកូរខ្មែរចម្រុះបន្លែ និងសាច់ ជាមួយអង្ករលីងឈ្ងុយ។",
-      "image": "/images/menu-items/somlor-korko-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 15
+      "sort_order": 9
     },
     {
       "id": 151,
@@ -3516,69 +3079,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 16
-    },
-    {
-      "id": 152,
-      "slug": "mjoyoun-trey-por",
-      "category_id": 8,
-      "name_en": "Mjoyoun Trey Por",
-      "name_km": "សម្លរម្ជូរយួន ត្រីពោរ",
-      "description_en": "Sweet and sour fish soup with pineapple, tomatoes and herbs.",
-      "description_km": "សម្លម្ជូរយួនត្រីពោរ ម្នាស់ និងប៉េងប៉ោះ។",
-      "image": "/images/menu-items/mjoyoun-trey-por-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 17
-    },
-    {
-      "id": 153,
-      "slug": "seaweed-soup-with-minced-pork",
-      "category_id": 8,
-      "name_en": "Seaweed Soup with Minced Pork",
-      "name_km": "សម្លរ សារ៉ាយសមុទ្រ សាច់ជ្រូក",
-      "description_en": "Healthy seaweed and minced pork clear soup.",
-      "description_km": "សម្លសារ៉ាយសមុទ្រសាច់ជ្រូកចិញ្ច្រាំ ងាយស្រួលញ៉ាំ និងមានជីវជាតិ។",
-      "image": "/images/menu-items/seaweed-soup-with-minced-pork-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 18
+      "sort_order": 10
     },
     {
       "id": 154,
@@ -3609,7 +3110,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 19
+      "sort_order": 11
     },
     {
       "id": 155,
@@ -3640,69 +3141,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 20
-    },
-    {
-      "id": 156,
-      "slug": "pickled-mustard-green-soup-with-pork",
-      "category_id": 8,
-      "name_en": "Pickled Mustard Green Soup with Pork",
-      "name_km": "សម្លស្ពៃជ្រក់ សាច់ជ្រូក",
-      "description_en": "Savory sour pickled mustard green soup cooked with tender pork ribs.",
-      "description_km": "សម្លស្ពៃជ្រក់សាច់ជ្រូក ទឹកស៊ុបជូរស្រាលឆ្ងាញ់។",
-      "image": "/images/menu-items/pickled-mustard-green-soup-with-pork-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 21
-    },
-    {
-      "id": 157,
-      "slug": "spaghetti-carbonara",
-      "category_id": 8,
-      "name_en": "Spaghetti Carbonara",
-      "name_km": "ស្ប៉ាហ្គេតទី កាបូណារ៉ា",
-      "description_en": "Creamy Italian pasta tossed with crispy bacon, parmesan and black pepper.",
-      "description_km": "មីស្ប៉ាហ្គេតទីទឹកដោះគោឈីសខាប់ ជាមួយប៊ីខនស្រួយ។",
-      "image": "/images/menu-items/spaghetti-carbonara-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 3.54,
-          "price_khr": 14600
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 22
+      "sort_order": 12
     },
     {
       "id": 208,
@@ -3733,7 +3172,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 23
+      "sort_order": 13
     },
     {
       "id": 209,
@@ -3764,7 +3203,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 24
+      "sort_order": 14
     },
     {
       "id": 210,
@@ -3795,7 +3234,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 25
+      "sort_order": 15
     },
     {
       "id": 211,
@@ -3826,7 +3265,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 26
+      "sort_order": 16
     },
     {
       "id": 212,
@@ -3857,7 +3296,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 27
+      "sort_order": 17
     },
     {
       "id": 213,
@@ -3888,7 +3327,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 28
+      "sort_order": 18
     },
     {
       "id": 214,
@@ -3919,7 +3358,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 29
+      "sort_order": 19
     },
     {
       "id": 215,
@@ -3950,7 +3389,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 30
+      "sort_order": 20
     },
     {
       "id": 216,
@@ -3981,7 +3420,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 31
+      "sort_order": 21
     },
     {
       "id": 158,
@@ -4015,68 +3454,6 @@
       "sort_order": 1
     },
     {
-      "id": 159,
-      "slug": "fried-chicken-wings-platter",
-      "category_id": 9,
-      "name_en": "Fried Chicken Wings Snack Platter",
-      "name_km": "ស្លាបមាន់ចៀន",
-      "description_en": "Crispy seasoned chicken wings snack portion.",
-      "description_km": "ស្លាបមាន់ចៀនស្រួយ សម្រាប់ញ៉ាំលេងជុំគ្នា។",
-      "image": "/images/menu-items/fried-chicken-wings-platter-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 2
-    },
-    {
-      "id": 160,
-      "slug": "fried-chicken-wings-with-pickled-radish",
-      "category_id": 9,
-      "name_en": "Fried Chicken Wings with Pickled Radish",
-      "name_km": "ស្លាបមាន់ចៀន ជ្រក់",
-      "description_en": "Crispy fried chicken wings served with house-made pickled radish.",
-      "description_km": "ស្លាបមាន់ចៀនស្រួយ ញ៉ាំជាមួយជ្រក់ឆ្ងាញ់កាត់ទ្រលាន់។",
-      "image": "/images/menu-items/fried-chicken-wings-with-pickled-radish-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 3
-    },
-    {
       "id": 217,
       "slug": "pancake",
       "category_id": 9,
@@ -4105,348 +3482,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 4
-    },
-    {
-      "id": 161,
-      "slug": "fried-mixed-lemongrass-chicken-plate",
-      "category_id": 10,
-      "name_en": "Fried Mixed Lemongrass Chicken Plate",
-      "name_km": "ឆាគ្រឿង សាច់មាន់",
-      "description_en": "A la carte plate of lemongrass stir-fried chicken.",
-      "description_km": "ឆាគ្រឿងសាច់មាន់មួយចានដាច់ដោយឡែក។",
-      "image": "/images/menu-items/fried-mixed-lemongrass-chicken-plate-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 1
-    },
-    {
-      "id": 162,
-      "slug": "fried-ginger-pork-plate",
-      "category_id": 10,
-      "name_en": "Fried Ginger Pork Plate",
-      "name_km": "ឆាខ្ញី សាច់ជ្រូក",
-      "description_en": "A la carte plate of ginger stir-fried pork.",
-      "description_km": "ឆាខ្ញីសាច់ជ្រូកមួយចានដាច់ដោយឡែក។",
-      "image": "/images/menu-items/fried-ginger-pork-plate-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
       "sort_order": 2
-    },
-    {
-      "id": 163,
-      "slug": "fried-mixed-lemongrass-beef-plate",
-      "category_id": 10,
-      "name_en": "Fried Mixed Lemongrass Beef Plate",
-      "name_km": "ឆាគ្រឿង សាច់គោ",
-      "description_en": "A la carte plate of lemongrass stir-fried beef.",
-      "description_km": "ឆាគ្រឿងសាច់គោមួយចានដាច់ដោយឡែក។",
-      "image": "/images/menu-items/fried-mixed-lemongrass-beef-plate-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 3
-    },
-    {
-      "id": 164,
-      "slug": "fried-cauliflower-pork-plate",
-      "category_id": 10,
-      "name_en": "Fried Cauliflower Pork Plate",
-      "name_km": "ឆាផ្កាខាត់ណា សាច់ជ្រូក",
-      "description_en": "A la carte plate of stir-fried cauliflower and pork.",
-      "description_km": "ឆាផ្កាខាត់ណាសាច់ជ្រូកមួយចានដាច់ដោយឡែក។",
-      "image": "/images/menu-items/fried-cauliflower-pork-plate-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 4
-    },
-    {
-      "id": 165,
-      "slug": "pork-partlow-plate",
-      "category_id": 10,
-      "name_en": "Pork Partlow Plate",
-      "name_km": "ផាក់ឡូវ",
-      "description_en": "A la carte plate of braised five-spice pork offal.",
-      "description_km": "ផាក់ឡូវគ្រឿងក្នុងជ្រូកមួយចានដាច់ដោយឡែក។",
-      "image": "/images/menu-items/pork-partlow-plate-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 5
-    },
-    {
-      "id": 166,
-      "slug": "minced-pork-holy-basil-plate",
-      "category_id": 10,
-      "name_en": "Minced Pork Holy Basil Plate",
-      "name_km": "ឆាម្រះព្រៅ សាច់ជ្រូកចិញ្ច្រាំ",
-      "description_en": "A la carte plate of spicy holy basil minced pork.",
-      "description_km": "ឆាម្រះព្រៅសាច់ជ្រូកចិញ្ច្រាំមួយចានដាច់ដោយឡែក។",
-      "image": "/images/menu-items/minced-pork-holy-basil-plate-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 6
-    },
-    {
-      "id": 167,
-      "slug": "somlor-korko-ingredients-set",
-      "category_id": 10,
-      "name_en": "Somlor Korko Ingredients Set",
-      "name_km": "ឈុតគ្រឿងផ្សំ សម្លរគោរកោ",
-      "description_en": "Fresh ingredient cooking set for traditional Somlor Korko soup.",
-      "description_km": "ឈុតបន្លែ និងគ្រឿងផ្សំស្រស់សម្រាប់ចម្អិនសម្លកកូរ។",
-      "image": "/images/menu-items/somlor-korko-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 7
-    },
-    {
-      "id": 168,
-      "slug": "mjoyoun-trey-por-ingredients-set",
-      "category_id": 10,
-      "name_en": "Mjoyoun Trey Por Ingredients Set",
-      "name_km": "ឈុតគ្រឿងផ្សំ សម្លរម្ជូរយួន ត្រីពោរ",
-      "description_en": "Fresh ingredient cooking set for Mjoyoun Trey Por sour soup.",
-      "description_km": "ឈុតគ្រឿងផ្សំស្រស់សម្រាប់ចម្អិនសម្លម្ជូរយួនត្រីពោរ។",
-      "image": "/images/menu-items/mjoyoun-trey-por-ingredients-set-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 8
-    },
-    {
-      "id": 169,
-      "slug": "mjokreng-sachkor-ingredients-set",
-      "category_id": 10,
-      "name_en": "Mjokreng Sachkor Ingredients Set",
-      "name_km": "ឈុតគ្រឿងផ្សំ ម្ជូរគ្រឿង សាច់គោ",
-      "description_en": "Fresh ingredient cooking set for beef lemongrass sour soup.",
-      "description_km": "ឈុតគ្រឿងផ្សំស្រស់សម្រាប់ចម្អិនសម្លម្ជូរគ្រឿងសាច់គោ។",
-      "image": "/images/menu-items/mjokreng-sachkor-ingredients-set-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 9
-    },
-    {
-      "id": 170,
-      "slug": "steamed-rice",
-      "category_id": 10,
-      "name_en": "Steamed Jasmine Rice",
-      "name_km": "បាយស",
-      "description_en": "Extra bowl of fragrant steamed Cambodian jasmine rice.",
-      "description_km": "បាយសផ្ការំដួលក្តៅៗមួយចានបន្ថែម។",
-      "image": "/images/products/extra-choice/steamed-rice.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 0.5,
-          "price_khr": 2100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 10
-    },
-    {
-      "id": 171,
-      "slug": "fried-egg",
-      "category_id": 10,
-      "name_en": "Fried Egg (Sunny Side Up)",
-      "name_km": "ពងទាចៀន",
-      "description_en": "Crispy edged sunny side up fried duck egg.",
-      "description_km": "ពងទាចៀនគែមស្រួយៗ ផ្នែកកណ្តាលទន់ឆ្ងាញ់។",
-      "image": "/images/products/extra-choice/fried-egg.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 0.5,
-          "price_khr": 2100
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 11
     }
   ]
 }
