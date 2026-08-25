@@ -16,11 +16,12 @@ export function getActiveCategories(menu: MenuData): Category[] {
  * off take their products with them, and sold-out items are dropped entirely
  * when the shop prefers to hide them (spec §16, §23).
  *
- * Ordering is category first, then price from dearest to cheapest inside each
- * one — so the full menu reads as coffee, then tea, then food, and every
- * category opens on its most expensive item and tails off to its cheapest.
- * `sort_order` is demoted to a tiebreaker between equally priced items, which
- * still lets the owner decide which of two $2.50 lattes leads.
+ * Ordering is category first. Inside a category the shop's own picks lead —
+ * see `promotionRank` — so the drink the shop wants to sell opens the section
+ * even when a pricier item would otherwise outrank it. Everything after that
+ * runs from dearest to cheapest, so a category tails off to its cheapest item.
+ * `sort_order` is a tiebreaker between equally priced items, which still lets
+ * the owner decide which of two $2.50 lattes leads.
  * Sold-out items sink to the bottom of their own category rather than the
  * bottom of the menu.
  */
@@ -36,10 +37,26 @@ export function getVisibleProducts(menu: MenuData): Product[] {
         (categoryOrder.get(a.categoryId) ?? 0) - (categoryOrder.get(b.categoryId) ?? 0)
       if (categoryDelta !== 0) return categoryDelta
       if (a.available !== b.available) return a.available ? -1 : 1
+      // Sits below availability: a sold-out house pick must not open a section.
+      const rankDelta = promotionRank(a) - promotionRank(b)
+      if (rankDelta !== 0) return rankDelta
       const priceDelta = startingPriceUsd(b) - startingPriceUsd(a)
       if (priceDelta !== 0) return priceDelta
       return a.sortOrder - b.sortOrder || a.id - b.id
     })
+}
+
+/**
+ * How far up its own category a product is pushed. The three badges the shop
+ * can put on an item double as the running order: a best seller opens the
+ * section, then a recommendation, then a merely featured item, and everything
+ * else falls back to price. An item wearing several badges takes its best one.
+ */
+function promotionRank(product: Product): number {
+  if (product.bestSeller) return 0
+  if (product.recommended) return 1
+  if (product.featured) return 2
+  return 3
 }
 
 /**
