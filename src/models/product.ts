@@ -38,7 +38,17 @@ export interface ProductOptionGroup {
 export interface Product {
   id: number
   slug: string
+  /** Where the product lives: its one real category (spec §16). */
   categoryId: number
+  /**
+   * Showcase categories the product *also* appears in, on top of its own.
+   *
+   * A category like Signature Drinks is a window onto the menu rather than a
+   * shelf of its own: Snaca Edition is an iced coffee first and is listed
+   * under Iced Coffee, and being a house signature puts it in front of the
+   * customer a second time instead of moving it.
+   */
+  alsoInCategoryIds: number[]
 
   nameEn: string
   nameKm: string

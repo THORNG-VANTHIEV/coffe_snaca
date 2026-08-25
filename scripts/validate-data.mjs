@@ -197,6 +197,29 @@ for (const product of products) {
     warn(where, 'belongs to an inactive category and will be hidden')
   }
 
+  // Showcase categories (Signature Drinks) borrow products that already live
+  // somewhere else, so the item appears twice on the menu on purpose.
+  const alsoIn = product.also_in_categories
+  if (alsoIn !== undefined) {
+    if (!Array.isArray(alsoIn)) {
+      fail(where, 'also_in_categories must be an array of category ids')
+    } else {
+      const seen = new Set()
+      for (const id of alsoIn) {
+        if (!categoryIds.has(id)) {
+          fail(where, `also_in_categories references category ${id}, which does not exist`)
+        } else if (id === product.category_id) {
+          fail(where, `also_in_categories repeats the product's own category ${id}`)
+        } else if (seen.has(id)) {
+          fail(where, `also_in_categories lists category ${id} twice`)
+        } else if (!activeCategoryIds.has(id)) {
+          warn(where, `also_in_categories references inactive category ${id}`)
+        }
+        seen.add(id)
+      }
+    }
+  }
+
   checkBilingual(where, product, 'name')
   checkBilingual(where, product, 'description', { required: false })
 

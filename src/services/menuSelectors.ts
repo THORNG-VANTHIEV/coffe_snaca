@@ -53,8 +53,31 @@ function startingPriceUsd(product: Product): number {
   return getStartingSize(product)?.price.usd ?? Number.NEGATIVE_INFINITY
 }
 
+/**
+ * Everything filed under a category, including the products a showcase
+ * category borrows from elsewhere on the menu (see `alsoInCategoryIds`). A
+ * borrowed product keeps its own category too, so it is rendered in both
+ * sections — that duplication is the point of a showcase.
+ */
 export function getProductsByCategory(products: Product[], categoryId: number): Product[] {
-  return products.filter((product) => product.categoryId === categoryId)
+  return products.filter((product) => isInCategory(product, categoryId))
+}
+
+export function isInCategory(product: Product, categoryId: number): boolean {
+  return (
+    product.categoryId === categoryId || product.alsoInCategoryIds.includes(categoryId)
+  )
+}
+
+/** How many products each category shows — showcase borrowings included. */
+export function countProductsByCategory(products: Product[]): Map<number, number> {
+  const counts = new Map<number, number>()
+  for (const product of products) {
+    for (const id of [product.categoryId, ...product.alsoInCategoryIds]) {
+      counts.set(id, (counts.get(id) ?? 0) + 1)
+    }
+  }
+  return counts
 }
 
 export function getBestSellers(products: Product[]): Product[] {

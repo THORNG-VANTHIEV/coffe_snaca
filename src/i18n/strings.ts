@@ -12,7 +12,7 @@
 const en = {
   common: {
     appName: 'Digital Menu',
-    all: 'All',
+    all: 'All Series',
     back: 'Back',
     close: 'Close',
     items: 'items',

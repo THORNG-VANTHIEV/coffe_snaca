@@ -105,6 +105,7 @@ function mapProduct(source: RawRecord): Product {
     id: readNumber(source, 'id'),
     slug: readString(source, 'slug'),
     categoryId: readNumber(source, 'category_id'),
+    alsoInCategoryIds: readNumberArray(source, 'also_in_categories'),
 
     nameEn: name.en,
     nameKm: name.km,

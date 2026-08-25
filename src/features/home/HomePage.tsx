@@ -14,7 +14,11 @@ import { useLanguage } from '@/hooks/useLanguage'
 import { useCategories, useProducts, useSettings } from '@/hooks/useMenu'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 import { DESKTOP_QUERY, useMediaQuery } from '@/hooks/useMediaQuery'
-import { getBestSellers, getRecommended } from '@/services/menuSelectors'
+import {
+  countProductsByCategory,
+  getBestSellers,
+  getRecommended,
+} from '@/services/menuSelectors'
 import { shopName } from '@/utils/translation'
 
 const RAIL_LIMIT = 8
@@ -45,13 +49,7 @@ export function HomePage() {
   )
   const preview = useMemo(() => products.slice(0, PREVIEW_LIMIT), [products])
 
-  const countByCategory = useMemo(() => {
-    const counts = new Map<number, number>()
-    for (const product of products) {
-      counts.set(product.categoryId, (counts.get(product.categoryId) ?? 0) + 1)
-    }
-    return counts
-  }, [products])
+  const countByCategory = useMemo(() => countProductsByCategory(products), [products])
 
   return (
     <div className="container-page flex flex-col gap-9 py-5 sm:gap-12 sm:py-7">

@@ -102,22 +102,9 @@
   "categories": [
     {
       "id": 1,
-      "slug": "matcha-serie",
-      "name_en": "Matcha Serie",
-      "name_km": "Matcha Serie",
-      "description_en": "Premium Japanese green tea series",
-      "description_km": "ភេសជ្ជៈម៉ាត់ឆាជប៉ុនពិសេស",
-      "image": "/images/menu-items/matcha-snaca-latte.webp",
-      "icon": "leaf",
-      "kind": "drink",
-      "active": true,
-      "sort_order": 2
-    },
-    {
-      "id": 2,
-      "slug": "edition",
-      "name_en": "Edition",
-      "name_km": "តួឯក",
+      "slug": "signature-drinks",
+      "name_en": "Signature Drinks",
+      "name_km": "ភេសជ្ជៈប្រចាំហាង",
       "description_en": "Signature house special drinks",
       "description_km": "ភេសជ្ជៈពិសេសប្រចាំហាង",
       "image": "/images/menu-items/cafe-snaca.webp",
@@ -127,27 +114,40 @@
       "sort_order": 1
     },
     {
-      "id": 3,
-      "slug": "cold-drinks",
-      "name_en": "Cold Drink",
-      "name_km": "ភេសជ្ជៈត្រជាក់",
-      "description_en": "Refreshing iced coffees and cold drinks",
-      "description_km": "ភេសជ្ជៈទឹកកកត្រជាក់ស្រស់ស្រាយ",
+      "id": 2,
+      "slug": "iced-coffee",
+      "name_en": "Iced Coffee",
+      "name_km": "កាហ្វេត្រជាក់",
+      "description_en": "Refreshing iced coffee over crystal ice",
+      "description_km": "កាហ្វេត្រជាក់ស្រស់ស្រាយ",
       "image": "/images/menu-items/ice-latte.webp",
       "icon": "glass-water",
+      "kind": "drink",
+      "active": true,
+      "sort_order": 2
+    },
+    {
+      "id": 3,
+      "slug": "hot-coffee",
+      "name_en": "Hot Coffee",
+      "name_km": "កាហ្វេក្ដៅ",
+      "description_en": "Fresh hot brewed coffee, rich and aromatic",
+      "description_km": "កាហ្វេក្ដៅៗឈ្ងុយឆ្ងាញ់ ក្រអូបខ្លាំង",
+      "image": "/images/menu-items/hot-cappuccino.webp",
+      "icon": "coffee",
       "kind": "drink",
       "active": true,
       "sort_order": 3
     },
     {
       "id": 4,
-      "slug": "hot-drinks",
-      "name_en": "Hot Drink",
-      "name_km": "ភេសជ្ជៈក្តៅ",
-      "description_en": "Fresh hot brewed coffee and warm tea",
-      "description_km": "ភេសជ្ជៈក្តៅៗឈ្ងុយឆ្ងាញ់",
-      "image": "/images/menu-items/hot-cappuccino.webp",
-      "icon": "coffee",
+      "slug": "matcha-series",
+      "name_en": "Matcha Series",
+      "name_km": "Matcha Series",
+      "description_en": "Premium Japanese green tea series",
+      "description_km": "ភេសជ្ជៈម៉ាត់ឆាជប៉ុនពិសេស",
+      "image": "/images/menu-items/matcha-snaca-latte.webp",
+      "icon": "leaf",
       "kind": "drink",
       "active": true,
       "sort_order": 4
@@ -156,7 +156,7 @@
       "id": 5,
       "slug": "tea-soda",
       "name_en": "Tea & Soda",
-      "name_km": "តែ និងសូដា",
+      "name_km": "តែ & សូដា",
       "description_en": "Flavored teas, iced tea and sparkling sodas",
       "description_km": "តែផ្លែឈើ តែក្រហម និងសូដា",
       "image": "/images/menu-items/passion-soda.webp",
@@ -167,8 +167,8 @@
     },
     {
       "id": 6,
-      "slug": "frappe-smoothie",
-      "name_en": "Frappe & Smoothie",
+      "slug": "blended-drinks",
+      "name_en": "Blended Drinks / Frappes",
       "name_km": "ភេសជ្ជៈក្រឡុក",
       "description_en": "Ice-blended smoothies and frappes",
       "description_km": "ភេសជ្ជៈកិន និងទឹកក្រឡុកផ្លែឈើស្រស់",
@@ -180,86 +180,34 @@
     },
     {
       "id": 7,
-      "slug": "noodle-soup",
-      "name_en": "Noodle Soup",
-      "name_km": "គុយទាវ",
-      "description_en": "Hot savory Cambodian noodle soups",
-      "description_km": "គុយទាវទឹកស៊ុបឈ្ងុយឆ្ងាញ់",
-      "image": "/images/products/noodle-soup/beef-noodle-soup.webp",
-      "icon": "soup",
+      "slug": "breakfast",
+      "name_en": "Breakfast",
+      "name_km": "អាហារពេលព្រឹក",
+      "description_en": "Morning dishes, noodle soups and chicken porridge",
+      "description_km": "អាហារពេលព្រឹក គុយទាវ និងបបរមាន់",
+      "image": "/images/menu-items/bay-phat-love-1.webp",
+      "icon": "egg-fried",
       "kind": "food",
       "active": true,
       "sort_order": 7
     },
     {
       "id": 8,
-      "slug": "chicken-rice",
-      "name_en": "Chicken Rice",
-      "name_km": "បាយមាន់",
-      "description_en": "Steamed and roasted crispy chicken rice",
-      "description_km": "បាយមាន់ស្រែ និងមាន់អាំងឈ្ងុយឆ្ងាញ់",
-      "image": "/images/menu-items/steam-chicken-with-rice-1.webp",
-      "icon": "wheat",
-      "kind": "food",
-      "active": true,
-      "sort_order": 8
-    },
-    {
-      "id": 9,
-      "slug": "chicken-porridge",
-      "name_en": "Chicken Porridge",
-      "name_km": "បបរមាន់ស្រែ",
-      "description_en": "Comforting traditional local chicken congee",
-      "description_km": "បបរមាន់ស្រែបែបប្រពៃណី",
-      "image": "/images/menu-items/chicken-porridge-thigh-1.webp",
-      "icon": "soup",
-      "kind": "food",
-      "active": true,
-      "sort_order": 9
-    },
-    {
-      "id": 10,
-      "slug": "breakfast",
-      "name_en": "Breakfast",
-      "name_km": "អាហារពេលព្រឹក",
-      "description_en": "Morning dishes, grilled pork and fried fish",
-      "description_km": "អាហារពេលព្រឹកស្រស់ៗរាល់ព្រឹក",
-      "image": "/images/menu-items/bay-phat-love-1.webp",
-      "icon": "egg-fried",
-      "kind": "food",
-      "active": true,
-      "sort_order": 10
-    },
-    {
-      "id": 11,
-      "slug": "american-breakfast",
-      "name_en": "American Breakfast",
-      "name_km": "អាហារពេលព្រឹកអាមេរីក",
-      "description_en": "Western breakfast with bacon, eggs and toast",
-      "description_km": "ឈុតអាហារពេលព្រឹកបែបអាមេរិកាំង",
-      "image": "/images/products/american-breakfast/classic-american-breakfast.webp",
-      "icon": "egg-fried",
-      "kind": "food",
-      "active": true,
-      "sort_order": 11
-    },
-    {
-      "id": 12,
       "slug": "lunch",
       "name_en": "Lunch",
-      "name_km": "អាហារថ្ងៃត្រង់",
+      "name_km": "អាហារពេលថ្ងៃត្រង់",
       "description_en": "Khmer home cooking and hearty lunchtime plates",
       "description_km": "ម្ហូបខ្មែរ និងអាហារថ្ងៃត្រង់ឆ្ងាញ់ៗ",
       "image": "/images/menu-items/beef-lok-lak-1.webp",
       "icon": "utensils",
       "kind": "food",
       "active": true,
-      "sort_order": 12
+      "sort_order": 8
     },
     {
-      "id": 13,
-      "slug": "snack",
-      "name_en": "Snack",
+      "id": 9,
+      "slug": "snacks",
+      "name_en": "Snacks",
       "name_km": "អាហារសម្រន់",
       "description_en": "Crispy finger foods and wings to share",
       "description_km": "អាហារសម្រន់ញ៉ាំលេង និងចែករំលែក",
@@ -267,202 +215,30 @@
       "icon": "cookie",
       "kind": "food",
       "active": true,
-      "sort_order": 13
+      "sort_order": 9
     },
     {
-      "id": 14,
-      "slug": "extra-choice",
-      "name_en": "Extra Choice",
-      "name_km": "ជម្រើសបន្ថែម",
-      "description_en": "A la carte plates, sets and sides",
+      "id": 10,
+      "slug": "others",
+      "name_en": "Others",
+      "name_km": "ផ្សេងៗ",
+      "description_en": "A la carte plates, ingredient sets and sides",
       "description_km": "ម្ហូបចាន ឈុតគ្រឿងផ្សំ និងថែមផ្សេងៗ",
       "image": "/images/menu-items/fried-mixed-lemongrass-beef-plate-1.webp",
-      "icon": "utensils",
+      "icon": "wheat",
       "kind": "food",
       "active": true,
-      "sort_order": 14
+      "sort_order": 10
     }
   ],
   "products": [
     {
-      "id": 101,
-      "slug": "matcha-snaca-latte",
-      "category_id": 1,
-      "name_en": "Matcha Snaca Latte",
-      "name_km": "Matcha Snaca Latte",
-      "description_en": "Premium Japanese matcha whisked with rich fresh milk.",
-      "description_km": "ម៉ាឆាជប៉ុនពិសេសក្រឡុកជាមួយទឹកដោះគោស្រស់ឈ្ងុយឆ្ងាញ់។",
-      "image": "/images/menu-items/matcha-snaca-latte.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 1.88,
-          "price_khr": 7700
-        }
-      ],
-      "temperature": [
-        "hot",
-        "iced"
-      ],
-      "sugar_levels": [
-        0,
-        25,
-        50,
-        75,
-        100
-      ],
-      "ice_levels": [
-        "none",
-        "less",
-        "normal",
-        "extra"
-      ],
-      "extras": [
-        {
-          "name_en": "Extra Matcha",
-          "name_km": "ថែមម៉ាឆា",
-          "price_usd": 0.5,
-          "price_khr": 2000
-        }
-      ],
-      "options": [],
-      "available": true,
-      "best_seller": true,
-      "recommended": true,
-      "featured": true,
-      "sort_order": 1
-    },
-    {
-      "id": 102,
-      "slug": "green-tea-frappe",
-      "category_id": 1,
-      "name_en": "Green Tea Frappe",
-      "name_km": "តែបៃតង ក្រឡុក",
-      "description_en": "Ice-blended sweet and creamy matcha green tea.",
-      "description_km": "តែបៃតងកិនជាមួយទឹកកក និងទឹកដោះគោស្រស់។",
-      "image": "/images/menu-items/green-tea-frappe.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.56,
-          "price_khr": 10500
-        }
-      ],
-      "temperature": [
-        "iced"
-      ],
-      "sugar_levels": [
-        0,
-        25,
-        50,
-        75,
-        100
-      ],
-      "ice_levels": [
-        "normal"
-      ],
-      "extras": [
-        {
-          "name_en": "Whipped Cream",
-          "name_km": "ក្រែមវីប",
-          "price_usd": 0.5,
-          "price_khr": 2000
-        }
-      ],
-      "options": [],
-      "available": true,
-      "best_seller": true,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 2
-    },
-    {
-      "id": 103,
-      "slug": "hot-green-tea",
-      "category_id": 4,
-      "name_en": "Hot Green Tea",
-      "name_km": "តែបៃតង ក្តៅ",
-      "description_en": "Traditional fragrant hot green tea.",
-      "description_km": "តែបៃតងក្តៅៗឈ្ងុយឆ្ងាញ់ និងមានផាសុកភាព។",
-      "image": "/images/menu-items/hot-green-tea.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.07,
-          "price_khr": 8500
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [
-        0,
-        25,
-        50,
-        75,
-        100
-      ],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 4
-    },
-    {
-      "id": 104,
-      "slug": "ice-green-tea",
-      "category_id": 1,
-      "name_en": "Ice Green Tea",
-      "name_km": "តែបៃតង ទឹកកក",
-      "description_en": "Chilled refreshing green tea with ice.",
-      "description_km": "តែបៃតងទឹកកកត្រជាក់ស្រស់ស្រាយ។",
-      "image": "/images/menu-items/ice-green-tea.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.07,
-          "price_khr": 8500
-        }
-      ],
-      "temperature": [
-        "iced"
-      ],
-      "sugar_levels": [
-        0,
-        25,
-        50,
-        75,
-        100
-      ],
-      "ice_levels": [
-        "none",
-        "less",
-        "normal",
-        "extra"
-      ],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 4
-    },
-    {
       "id": 105,
       "slug": "cafe-snaca",
       "category_id": 2,
+      "also_in_categories": [
+        1
+      ],
       "name_en": "Snaca Edition",
       "name_km": "កាហ្វេ ស្នាក់ការ",
       "description_en": "Our signature rich house blend iced coffee recipe.",
@@ -473,8 +249,8 @@
       "sizes": [
         {
           "name": "Regular",
-          "price_usd": 2.07,
-          "price_khr": 8500
+          "price_usd": 2.25,
+          "price_khr": 9200
         }
       ],
       "temperature": [
@@ -504,54 +280,15 @@
       ],
       "options": [],
       "available": true,
-      "best_seller": true,
+      "best_seller": false,
       "recommended": true,
       "featured": true,
       "sort_order": 1
     },
     {
-      "id": 106,
-      "slug": "snaca-frappe",
-      "category_id": 2,
-      "name_en": "Snaca Frappe",
-      "name_km": "ស្នាក់ការ ក្រឡុក",
-      "description_en": "Signature blended special frappe with velvety texture.",
-      "description_km": "ភេសជ្ជៈកិនរូបមន្តពិសេសស្នាក់ការ រសជាតិទន់ក្រអូបឈ្ងុយឆ្ងាញ់។",
-      "image": "/images/menu-items/snaca-frappe.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.8,
-          "price_khr": 11500
-        }
-      ],
-      "temperature": [
-        "iced"
-      ],
-      "sugar_levels": [
-        0,
-        25,
-        50,
-        75,
-        100
-      ],
-      "ice_levels": [
-        "normal"
-      ],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": true,
-      "recommended": true,
-      "featured": true,
-      "sort_order": 2
-    },
-    {
       "id": 107,
       "slug": "ice-americano",
-      "category_id": 3,
+      "category_id": 2,
       "name_en": "Ice Americano",
       "name_km": "កាហ្វេខ្មៅ ទឹកកក",
       "description_en": "Bold espresso shot served with cold filtered water and ice.",
@@ -562,8 +299,8 @@
       "sizes": [
         {
           "name": "Regular",
-          "price_usd": 1.71,
-          "price_khr": 7000
+          "price_usd": 1.83,
+          "price_khr": 7500
         }
       ],
       "temperature": [
@@ -595,12 +332,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 1
+      "sort_order": 2
     },
     {
       "id": 108,
       "slug": "ice-latte",
-      "category_id": 3,
+      "category_id": 2,
       "name_en": "Ice Latte",
       "name_km": "ឡាតេ ទឹកកក",
       "description_en": "Espresso mixed with fresh milk and served over ice.",
@@ -642,14 +379,14 @@
       "options": [],
       "available": true,
       "best_seller": false,
-      "recommended": true,
+      "recommended": false,
       "featured": false,
-      "sort_order": 2
+      "sort_order": 3
     },
     {
       "id": 109,
       "slug": "ice-cappuccino",
-      "category_id": 3,
+      "category_id": 2,
       "name_en": "Ice Cappuccino",
       "name_km": "កាពូជីណូ ទឹកកក",
       "description_en": "Espresso, cold milk and fluffy milk foam on top.",
@@ -686,12 +423,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 3
+      "sort_order": 4
     },
     {
       "id": 110,
       "slug": "ice-chocolate",
-      "category_id": 3,
+      "category_id": 2,
       "name_en": "Ice Chocolate",
       "name_km": "សូកូឡា ទឹកកក",
       "description_en": "Rich premium dark chocolate blended with cold milk and ice.",
@@ -728,12 +465,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 4
+      "sort_order": 5
     },
     {
       "id": 111,
       "slug": "hot-americano",
-      "category_id": 4,
+      "category_id": 3,
       "name_en": "Hot Americano",
       "name_km": "កាហ្វេខ្មៅ ក្តៅ",
       "description_en": "Freshly brewed hot espresso topped with hot water.",
@@ -770,7 +507,7 @@
     {
       "id": 112,
       "slug": "hot-cappuccino",
-      "category_id": 4,
+      "category_id": 3,
       "name_en": "Hot Cappuccino",
       "name_km": "កាពូជីណូ ក្តៅ",
       "description_en": "Hot espresso layered with steamed milk and thick foam.",
@@ -805,9 +542,138 @@
       "sort_order": 2
     },
     {
+      "id": 101,
+      "slug": "matcha-snaca-latte",
+      "category_id": 4,
+      "name_en": "Matcha Snaca Latte",
+      "name_km": "Matcha Snaca Latte",
+      "description_en": "Premium Japanese matcha whisked with rich fresh milk.",
+      "description_km": "ម៉ាឆាជប៉ុនពិសេសក្រឡុកជាមួយទឹកដោះគោស្រស់ឈ្ងុយឆ្ងាញ់។",
+      "image": "/images/menu-items/matcha-snaca-latte.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 1.88,
+          "price_khr": 7700
+        }
+      ],
+      "temperature": [
+        "hot",
+        "iced"
+      ],
+      "sugar_levels": [
+        0,
+        25,
+        50,
+        75,
+        100
+      ],
+      "ice_levels": [
+        "none",
+        "less",
+        "normal",
+        "extra"
+      ],
+      "extras": [
+        {
+          "name_en": "Extra Matcha",
+          "name_km": "ថែមម៉ាឆា",
+          "price_usd": 0.5,
+          "price_khr": 2000
+        }
+      ],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": true,
+      "featured": true,
+      "sort_order": 1
+    },
+    {
+      "id": 103,
+      "slug": "hot-green-tea",
+      "category_id": 4,
+      "name_en": "Hot Green Tea",
+      "name_km": "តែបៃតង ក្តៅ",
+      "description_en": "Traditional fragrant hot green tea.",
+      "description_km": "តែបៃតងក្តៅៗឈ្ងុយឆ្ងាញ់ និងមានផាសុកភាព។",
+      "image": "/images/menu-items/hot-green-tea.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.07,
+          "price_khr": 8500
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [
+        0,
+        25,
+        50,
+        75,
+        100
+      ],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 2
+    },
+    {
+      "id": 104,
+      "slug": "ice-green-tea",
+      "category_id": 4,
+      "name_en": "Ice Green Tea",
+      "name_km": "តែបៃតង ទឹកកក",
+      "description_en": "Chilled refreshing green tea with ice.",
+      "description_km": "តែបៃតងទឹកកកត្រជាក់ស្រស់ស្រាយ។",
+      "image": "/images/menu-items/ice-green-tea.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.07,
+          "price_khr": 8500
+        }
+      ],
+      "temperature": [
+        "iced"
+      ],
+      "sugar_levels": [
+        0,
+        25,
+        50,
+        75,
+        100
+      ],
+      "ice_levels": [
+        "none",
+        "less",
+        "normal",
+        "extra"
+      ],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 3
+    },
+    {
       "id": 113,
       "slug": "hot-red-tea",
-      "category_id": 4,
+      "category_id": 5,
       "name_en": "Hot Red Tea",
       "name_km": "តែក្រហម ក្តៅ",
       "description_en": "Aromatic traditional hot brewed red tea.",
@@ -839,7 +705,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 3
+      "sort_order": 1
     },
     {
       "id": 114,
@@ -881,12 +747,15 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 1
+      "sort_order": 2
     },
     {
       "id": 115,
       "slug": "passion-soda",
       "category_id": 5,
+      "also_in_categories": [
+        1
+      ],
       "name_en": "Passion Soda",
       "name_km": "ផាសិន សូដា",
       "description_en": "Sparkling soda infused with sweet tangy passion fruit.",
@@ -920,10 +789,10 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
-      "recommended": false,
+      "best_seller": false,
+      "recommended": true,
       "featured": false,
-      "sort_order": 2
+      "sort_order": 3
     },
     {
       "id": 116,
@@ -965,7 +834,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 3
+      "sort_order": 4
     },
     {
       "id": 117,
@@ -1007,7 +876,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 4
+      "sort_order": 5
     },
     {
       "id": 118,
@@ -1049,7 +918,46 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 5
+      "sort_order": 6
+    },
+    {
+      "id": 106,
+      "slug": "snaca-frappe",
+      "category_id": 6,
+      "name_en": "Snaca Frappe",
+      "name_km": "ស្នាក់ការ ក្រឡុក",
+      "description_en": "Signature blended special frappe with velvety texture.",
+      "description_km": "ភេសជ្ជៈកិនរូបមន្តពិសេសស្នាក់ការ រសជាតិទន់ក្រអូបឈ្ងុយឆ្ងាញ់។",
+      "image": "/images/menu-items/snaca-frappe.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.8,
+          "price_khr": 11500
+        }
+      ],
+      "temperature": [
+        "iced"
+      ],
+      "sugar_levels": [
+        0,
+        25,
+        50,
+        75,
+        100
+      ],
+      "ice_levels": [
+        "normal"
+      ],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": true,
+      "sort_order": 1
     },
     {
       "id": 119,
@@ -1086,7 +994,53 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 1
+      "sort_order": 2
+    },
+    {
+      "id": 102,
+      "slug": "green-tea-frappe",
+      "category_id": 6,
+      "name_en": "Green Tea Frappe",
+      "name_km": "តែបៃតង ក្រឡុក",
+      "description_en": "Ice-blended sweet and creamy matcha green tea.",
+      "description_km": "តែបៃតងកិនជាមួយទឹកកក និងទឹកដោះគោស្រស់។",
+      "image": "/images/menu-items/green-tea-frappe.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.56,
+          "price_khr": 10500
+        }
+      ],
+      "temperature": [
+        "iced"
+      ],
+      "sugar_levels": [
+        0,
+        25,
+        50,
+        75,
+        100
+      ],
+      "ice_levels": [
+        "normal"
+      ],
+      "extras": [
+        {
+          "name_en": "Whipped Cream",
+          "name_km": "ក្រែមវីប",
+          "price_usd": 0.5,
+          "price_khr": 2000
+        }
+      ],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 3
     },
     {
       "id": 120,
@@ -1123,7 +1077,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 2
+      "sort_order": 4
     },
     {
       "id": 121,
@@ -1160,7 +1114,7 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 3
+      "sort_order": 5
     },
     {
       "id": 122,
@@ -1197,291 +1151,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 4
-    },
-    {
-      "id": 123,
-      "slug": "phnom-penh-noodle-soup",
-      "category_id": 7,
-      "name_en": "Phnom Penh Noodle Soup",
-      "name_km": "គុយទាវភ្នំពេញ",
-      "description_en": "Clear savory pork bone broth with rice noodles, minced pork, and herbs.",
-      "description_km": "គុយទាវទឹកស៊ុបឆ្អឹងជ្រូកផ្អែមឆ្ងាញ់ សាច់ជ្រូកចិញ្ច្រាំ និងប្រហិត។",
-      "image": "/images/products/noodle-soup/beef-noodle-soup.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 3.5,
-          "price_khr": 14000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": true,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 1
-    },
-    {
-      "id": 124,
-      "slug": "beef-noodle-soup",
-      "category_id": 7,
-      "name_en": "Beef Noodle Soup",
-      "name_km": "គុយទាវសាច់គោ",
-      "description_en": "Aromatic beef bone broth with tender beef slices and meatballs.",
-      "description_km": "គុយទាវទឹកស៊ុបគោ សាច់គោផុយ និងប្រហិតគោ។",
-      "image": "/images/products/noodle-soup/beef-noodle-soup.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 3.5,
-          "price_khr": 14000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": true,
-      "featured": false,
-      "sort_order": 2
-    },
-    {
-      "id": 125,
-      "slug": "seafood-noodle-soup",
-      "category_id": 7,
-      "name_en": "Seafood Noodle Soup",
-      "name_km": "គុយទាវគ្រឿងសមុទ្រ",
-      "description_en": "Fresh prawns, squid and fish balls in clear, fragrant broth.",
-      "description_km": "គុយទាវបង្គា មឹក និងប្រហិតត្រី ក្នុងទឹកស៊ុបឈ្ងុយឆ្ងាញ់។",
-      "image": "/images/products/noodle-soup/beef-noodle-soup.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 4,
-          "price_khr": 16000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 3
-    },
-    {
-      "id": 126,
-      "slug": "steam-chicken-with-rice",
-      "category_id": 8,
-      "name_en": "Steam Chicken With Rice",
-      "name_km": "បាយមាន់ស្ងោរ",
-      "description_en": "Tender poached chicken served over fragrant chicken broth rice with ginger dip.",
-      "description_km": "សាច់មាន់ស្ងោរផុយ ញ៉ាំជាមួយបាយដាំទឹកស៊ុបមាន់ និងទឹកជ្រលក់ខ្ញី។",
-      "image": "/images/menu-items/steam-chicken-with-rice-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": true,
-      "recommended": true,
-      "featured": true,
-      "sort_order": 1
-    },
-    {
-      "id": 127,
-      "slug": "fried-chicken-thigh-with-rice",
-      "category_id": 8,
-      "name_en": "Fried Chicken Thigh With Rice",
-      "name_km": "បាយ ភ្លៅមាន់ចៀន",
-      "description_en": "Crispy fried golden chicken thigh served with steamed rice and pickled cucumber.",
-      "description_km": "ភ្លៅមាន់ចៀនស្រួយពណ៌មាស ជាមួយបាយស និងជ្រក់ត្រសក់។",
-      "image": "/images/menu-items/fried-chicken-thigh-with-rice-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": true,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 2
-    },
-    {
-      "id": 128,
-      "slug": "fried-chicken-wing-with-rice",
-      "category_id": 8,
-      "name_en": "Fried Chicken Wing with Rice",
-      "name_km": "បាយស្លាបមាន់ចៀន",
-      "description_en": "Marinated crispy fried chicken wings served with steamed rice and chili sauce.",
-      "description_km": "ស្លាបមាន់ចៀនស្រួយ ជាមួយបាយស និងទឹកជ្រលក់រសជាតិឆ្ងាញ់។",
-      "image": "/images/menu-items/fried-chicken-wing-with-rice-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 3
-    },
-    {
-      "id": 129,
-      "slug": "chicken-porridge-thigh",
-      "category_id": 9,
-      "name_en": "Chicken Porridge (Thigh)",
-      "name_km": "បបរមាន់ស្រែ (ភ្លៅ)",
-      "description_en": "Traditional free-range chicken congee served with a tender whole chicken thigh.",
-      "description_km": "បបរអង្កររម្ងាស់ជាមួយភ្លៅមាន់ស្រែ ខ្ញី ស្លឹកខ្ទឹម និងខ្ទឹមបំពង។",
-      "image": "/images/menu-items/chicken-porridge-thigh-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": true,
-      "recommended": true,
-      "featured": true,
-      "sort_order": 1
-    },
-    {
-      "id": 130,
-      "slug": "chicken-porridge-wing",
-      "category_id": 9,
-      "name_en": "Chicken Porridge (Wing)",
-      "name_km": "បបរមាន់ស្រែ (ស្លាប)",
-      "description_en": "Savory hot rice congee served with free-range chicken wings.",
-      "description_km": "បបរមាន់ស្រែជាមួយស្លាបមាន់ ខ្ញី និងខ្ទឹមបំពងឈ្ងុយឆ្ងាញ់។",
-      "image": "/images/menu-items/chicken-porridge-wing-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": false,
-      "featured": false,
-      "sort_order": 2
-    },
-    {
-      "id": 131,
-      "slug": "shredded-chicken-porridge",
-      "category_id": 9,
-      "name_en": "Shredded Chicken Porridge",
-      "name_km": "បបរមាន់ស្រែ (សរសៃ)",
-      "description_en": "Silky rice porridge cooked with tender shredded chicken meat and herbs.",
-      "description_km": "បបរមាន់សរសៃទន់ស្រួលញ៉ាំ ជាមួយខ្ញី និងម្រេច។",
-      "image": "/images/menu-items/shredded-chicken-porridge-1.webp",
-      "ingredients_en": [],
-      "ingredients_km": [],
-      "sizes": [
-        {
-          "name": "Regular",
-          "price_usd": 2.93,
-          "price_khr": 12000
-        }
-      ],
-      "temperature": [
-        "hot"
-      ],
-      "sugar_levels": [],
-      "ice_levels": [],
-      "extras": [],
-      "options": [],
-      "available": true,
-      "best_seller": false,
-      "recommended": true,
-      "featured": false,
-      "sort_order": 3
+      "sort_order": 6
     },
     {
       "id": 132,
       "slug": "bay-phat-love",
-      "category_id": 10,
+      "category_id": 7,
       "name_en": "Bay Phat Love",
       "name_km": "បាយផាត់ឡូវ",
       "description_en": "Fragrant steamed rice served with braised pork offal, egg and pickled veggies.",
@@ -1504,7 +1179,7 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
+      "best_seller": false,
       "recommended": false,
       "featured": false,
       "sort_order": 1
@@ -1512,7 +1187,7 @@
     {
       "id": 133,
       "slug": "rice-with-grill-pork",
-      "category_id": 10,
+      "category_id": 7,
       "name_en": "Rice With Grill Pork",
       "name_km": "បាយស្រូប វិទ្យាល័យ",
       "description_en": "Classic Cambodian breakfast grilled marinated pork over hot steamed rice.",
@@ -1536,14 +1211,14 @@
       "options": [],
       "available": true,
       "best_seller": true,
-      "recommended": true,
+      "recommended": false,
       "featured": true,
       "sort_order": 2
     },
     {
       "id": 134,
       "slug": "fries-fish-trey-ngeat",
-      "category_id": 10,
+      "category_id": 7,
       "name_en": "Fries Fish Trey Ngeat with Rice",
       "name_km": "បាយស ត្រីងៀតចៀន",
       "description_en": "Steamed jasmine rice served with savory dried snakehead fish.",
@@ -1574,7 +1249,7 @@
     {
       "id": 135,
       "slug": "fries-fish-trey-kantho",
-      "category_id": 10,
+      "category_id": 7,
       "name_en": "Fries Fish Trey Kantho with Rice",
       "name_km": "បាយសត្រី កន្ធរចៀន",
       "description_en": "Fresh local Kantho fish fried to golden perfection with steamed rice.",
@@ -1603,9 +1278,226 @@
       "sort_order": 4
     },
     {
+      "id": 123,
+      "slug": "phnom-penh-noodle-soup",
+      "category_id": 7,
+      "name_en": "Phnom Penh Noodle Soup",
+      "name_km": "គុយទាវភ្នំពេញ",
+      "description_en": "Clear savory pork bone broth with rice noodles, minced pork, and herbs.",
+      "description_km": "គុយទាវទឹកស៊ុបឆ្អឹងជ្រូកផ្អែមឆ្ងាញ់ សាច់ជ្រូកចិញ្ច្រាំ និងប្រហិត។",
+      "image": "/images/products/noodle-soup/beef-noodle-soup.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 3.5,
+          "price_khr": 14000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 5
+    },
+    {
+      "id": 124,
+      "slug": "beef-noodle-soup",
+      "category_id": 7,
+      "name_en": "Beef Noodle Soup",
+      "name_km": "គុយទាវសាច់គោ",
+      "description_en": "Aromatic beef bone broth with tender beef slices and meatballs.",
+      "description_km": "គុយទាវទឹកស៊ុបគោ សាច់គោផុយ និងប្រហិតគោ។",
+      "image": "/images/products/noodle-soup/beef-noodle-soup.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 3.5,
+          "price_khr": 14000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 6
+    },
+    {
+      "id": 125,
+      "slug": "seafood-noodle-soup",
+      "category_id": 7,
+      "name_en": "Seafood Noodle Soup",
+      "name_km": "គុយទាវគ្រឿងសមុទ្រ",
+      "description_en": "Fresh prawns, squid and fish balls in clear, fragrant broth.",
+      "description_km": "គុយទាវបង្គា មឹក និងប្រហិតត្រី ក្នុងទឹកស៊ុបឈ្ងុយឆ្ងាញ់។",
+      "image": "/images/products/noodle-soup/beef-noodle-soup.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 4,
+          "price_khr": 16000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 7
+    },
+    {
+      "id": 172,
+      "slug": "minced-pork-noodle-soup",
+      "category_id": 7,
+      "name_en": "Minced Pork Noodle Soup",
+      "name_km": "គុយទាវសាច់ជ្រូកចិញ្ច្រាំ",
+      "description_en": "Clear pork broth with rice noodles and seasoned minced pork.",
+      "description_km": "គុយទាវទឹកស៊ុបជ្រូកថ្លា ជាមួយសាច់ជ្រូកចិញ្ច្រាំឆ្ងាញ់។",
+      "image": "",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 3.5,
+          "price_khr": 14000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": true,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 8
+    },
+    {
+      "id": 129,
+      "slug": "chicken-porridge-thigh",
+      "category_id": 7,
+      "name_en": "Chicken Porridge (Thigh)",
+      "name_km": "បបរមាន់ស្រែ (ភ្លៅ)",
+      "description_en": "Traditional free-range chicken congee served with a tender whole chicken thigh.",
+      "description_km": "បបរអង្កររម្ងាស់ជាមួយភ្លៅមាន់ស្រែ ខ្ញី ស្លឹកខ្ទឹម និងខ្ទឹមបំពង។",
+      "image": "/images/menu-items/chicken-porridge-thigh-1.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.93,
+          "price_khr": 12000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": true,
+      "sort_order": 9
+    },
+    {
+      "id": 130,
+      "slug": "chicken-porridge-wing",
+      "category_id": 7,
+      "name_en": "Chicken Porridge (Wing)",
+      "name_km": "បបរមាន់ស្រែ (ស្លាប)",
+      "description_en": "Savory hot rice congee served with free-range chicken wings.",
+      "description_km": "បបរមាន់ស្រែជាមួយស្លាបមាន់ ខ្ញី និងខ្ទឹមបំពងឈ្ងុយឆ្ងាញ់។",
+      "image": "/images/menu-items/chicken-porridge-wing-1.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.93,
+          "price_khr": 12000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 10
+    },
+    {
+      "id": 131,
+      "slug": "shredded-chicken-porridge",
+      "category_id": 7,
+      "name_en": "Shredded Chicken Porridge",
+      "name_km": "បបរមាន់ស្រែ (សរសៃ)",
+      "description_en": "Silky rice porridge cooked with tender shredded chicken meat and herbs.",
+      "description_km": "បបរមាន់សរសៃទន់ស្រួលញ៉ាំ ជាមួយខ្ញី និងម្រេច។",
+      "image": "/images/menu-items/shredded-chicken-porridge-1.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.93,
+          "price_khr": 12000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 11
+    },
+    {
       "id": 136,
       "slug": "classic-american-breakfast",
-      "category_id": 11,
+      "category_id": 7,
       "name_en": "Classic American Breakfast Set",
       "name_km": "ឈុតអាហារពេលព្រឹកអាមេរិកាំង",
       "description_en": "Two eggs, bacon, grilled sausages, beans, and toasted bread.",
@@ -1628,15 +1520,15 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
-      "recommended": true,
+      "best_seller": false,
+      "recommended": false,
       "featured": true,
-      "sort_order": 1
+      "sort_order": 12
     },
     {
       "id": 137,
       "slug": "bacon-scrambled-eggs",
-      "category_id": 11,
+      "category_id": 7,
       "name_en": "Bacon & Scrambled Eggs with Toast",
       "name_km": "ស៊ុតកូរ ប៊ីខន និងនំបុ័ងអាំង",
       "description_en": "Creamy scrambled eggs with crispy bacon and buttered toast.",
@@ -1662,12 +1554,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 2
+      "sort_order": 13
     },
     {
       "id": 138,
       "slug": "sausage-sunny-eggs",
-      "category_id": 11,
+      "category_id": 7,
       "name_en": "Sausage & Sunny Side Up Eggs",
       "name_km": "សាច់ក្រក និងស៊ុតចៀន",
       "description_en": "Grilled pork breakfast sausages with two sunny side up eggs.",
@@ -1693,12 +1585,105 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
+      "sort_order": 14
+    },
+    {
+      "id": 126,
+      "slug": "steam-chicken-with-rice",
+      "category_id": 8,
+      "name_en": "Steam Chicken With Rice",
+      "name_km": "បាយមាន់ស្ងោរ",
+      "description_en": "Tender poached chicken served over fragrant chicken broth rice with ginger dip.",
+      "description_km": "សាច់មាន់ស្ងោរផុយ ញ៉ាំជាមួយបាយដាំទឹកស៊ុបមាន់ និងទឹកជ្រលក់ខ្ញី។",
+      "image": "/images/menu-items/steam-chicken-with-rice-1.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.93,
+          "price_khr": 12000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": true,
+      "sort_order": 1
+    },
+    {
+      "id": 127,
+      "slug": "fried-chicken-thigh-with-rice",
+      "category_id": 8,
+      "name_en": "Fried Chicken Thigh With Rice",
+      "name_km": "បាយ ភ្លៅមាន់ចៀន",
+      "description_en": "Crispy fried golden chicken thigh served with steamed rice and pickled cucumber.",
+      "description_km": "ភ្លៅមាន់ចៀនស្រួយពណ៌មាស ជាមួយបាយស និងជ្រក់ត្រសក់។",
+      "image": "/images/menu-items/fried-chicken-thigh-with-rice-1.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.93,
+          "price_khr": 12000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": false,
+      "recommended": false,
+      "featured": false,
+      "sort_order": 2
+    },
+    {
+      "id": 128,
+      "slug": "fried-chicken-wing-with-rice",
+      "category_id": 8,
+      "name_en": "Fried Chicken Wing with Rice",
+      "name_km": "បាយស្លាបមាន់ចៀន",
+      "description_en": "Marinated crispy fried chicken wings served with steamed rice and chili sauce.",
+      "description_km": "ស្លាបមាន់ចៀនស្រួយ ជាមួយបាយស និងទឹកជ្រលក់រសជាតិឆ្ងាញ់។",
+      "image": "/images/menu-items/fried-chicken-wing-with-rice-1.webp",
+      "ingredients_en": [],
+      "ingredients_km": [],
+      "sizes": [
+        {
+          "name": "Regular",
+          "price_usd": 2.93,
+          "price_khr": 12000
+        }
+      ],
+      "temperature": [
+        "hot"
+      ],
+      "sugar_levels": [],
+      "ice_levels": [],
+      "extras": [],
+      "options": [],
+      "available": true,
+      "best_seller": true,
+      "recommended": false,
+      "featured": false,
       "sort_order": 3
     },
     {
       "id": 139,
       "slug": "beef-lok-lak",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Beef Lok Lak",
       "name_km": "បាយឡុកឡាក់ សាច់គោ",
       "description_en": "Tender stir-fried beef cubes served with steamed rice and lime-pepper sauce.",
@@ -1722,14 +1707,14 @@
       "options": [],
       "available": true,
       "best_seller": true,
-      "recommended": true,
+      "recommended": false,
       "featured": true,
-      "sort_order": 1
+      "sort_order": 4
     },
     {
       "id": 140,
       "slug": "sea-food-fry-rice-chili-dip",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Sea Food Fry Rice with Chili Dip",
       "name_km": "បាយឆាគ្រឿង សមុទ្រ (ទឹកម្ទេស)",
       "description_en": "Wok-fried rice with fresh squid and prawns, served with chili dip.",
@@ -1752,15 +1737,15 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
+      "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 2
+      "sort_order": 5
     },
     {
       "id": 141,
       "slug": "sea-food-fry-rice-soy-dip",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Sea Food Fry Rice with Soy Dip",
       "name_km": "បាយឆាគ្រឿង សមុទ្រ (ទឹកស៊ីអ៊ីវ)",
       "description_en": "Wok-fried seafood rice served with chili soy sauce dip.",
@@ -1786,12 +1771,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 3
+      "sort_order": 6
     },
     {
       "id": 142,
       "slug": "holy-basil-fries-rice-with-beef",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Holy Basil Fries Rice with Beef",
       "name_km": "បាយឆាសាច់គោ ម្រះព្រៅ",
       "description_en": "Stir-fried beef and fragrant holy basil over steamed rice.",
@@ -1817,12 +1802,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 4
+      "sort_order": 7
     },
     {
       "id": 143,
       "slug": "holy-basil-minced-pork-with-rice",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Holy Basil Minced Pork with Rice",
       "name_km": "បាយឆាម្រះព្រៅ សាច់ជ្រូកចិញ្ច្រាំ",
       "description_en": "Spicy minced pork stir-fried with holy basil leaves over rice.",
@@ -1845,15 +1830,15 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": false,
+      "best_seller": true,
       "recommended": false,
       "featured": false,
-      "sort_order": 5
+      "sort_order": 8
     },
     {
       "id": 144,
       "slug": "fried-ginger-with-pork-and-rice",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Fried Ginger with Pork and Rice",
       "name_km": "បាយ ឆាខ្ញីសាច់ជ្រូក",
       "description_en": "Pork stir-fried with fresh young ginger strips and steamed rice.",
@@ -1879,12 +1864,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 6
+      "sort_order": 9
     },
     {
       "id": 145,
       "slug": "fried-mixed-lemongrass-beef-with-rice",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Fried Lemongrass Beef with Rice",
       "name_km": "បាយ ឆាគ្រឿងសាច់គោ",
       "description_en": "Khmer lemongrass paste stir-fried with beef served with rice.",
@@ -1910,12 +1895,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 7
+      "sort_order": 10
     },
     {
       "id": 146,
       "slug": "fried-mixed-lemongrass-chicken-with-rice",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Fried Lemongrass Chicken with Rice",
       "name_km": "បាយ ឆាគ្រឿងសាច់មាន់",
       "description_en": "Chicken stir-fried in aromatic lemongrass kroeung with rice.",
@@ -1941,12 +1926,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 8
+      "sort_order": 11
     },
     {
       "id": 147,
       "slug": "chhapka-khatna-with-rice",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Chhapka Khatna with Rice",
       "name_km": "បាយ ឆាផ្កាខាត់ណា",
       "description_en": "Stir-fried crisp Chinese broccoli and pork with rice.",
@@ -1972,12 +1957,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 9
+      "sort_order": 12
     },
     {
       "id": 148,
       "slug": "pork-partlow-soup",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Pork Partlow Soup Bowl",
       "name_km": "សម្លរផាក់ឡូវ",
       "description_en": "Braised five-spice pork offal soup bowl.",
@@ -2003,12 +1988,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 10
+      "sort_order": 13
     },
     {
       "id": 149,
       "slug": "mjokreng-sachkor",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Mjokreng Sachkor",
       "name_km": "ម្ជូរគ្រឿង សាច់គោ",
       "description_en": "Traditional sour soup with tender beef and lemongrass paste.",
@@ -2032,14 +2017,14 @@
       "options": [],
       "available": true,
       "best_seller": false,
-      "recommended": true,
+      "recommended": false,
       "featured": false,
-      "sort_order": 11
+      "sort_order": 14
     },
     {
       "id": 150,
       "slug": "somlor-korko",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Somlor Korko",
       "name_km": "សម្លរគោរកោ",
       "description_en": "Iconic Khmer vegetable and meat stew with roasted ground rice.",
@@ -2063,14 +2048,14 @@
       "options": [],
       "available": true,
       "best_seller": false,
-      "recommended": true,
+      "recommended": false,
       "featured": false,
-      "sort_order": 12
+      "sort_order": 15
     },
     {
       "id": 151,
       "slug": "somlor-jichhay",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Somlor Jichhay",
       "name_km": "សម្លរ ជីឆាយ",
       "description_en": "Comforting clear soup with minced pork and Chinese chives.",
@@ -2096,12 +2081,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 13
+      "sort_order": 16
     },
     {
       "id": 152,
       "slug": "mjoyoun-trey-por",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Mjoyoun Trey Por",
       "name_km": "សម្លរម្ជូរយួន ត្រីពោរ",
       "description_en": "Sweet and sour fish soup with pineapple, tomatoes and herbs.",
@@ -2127,12 +2112,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 14
+      "sort_order": 17
     },
     {
       "id": 153,
       "slug": "seaweed-soup-with-minced-pork",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Seaweed Soup with Minced Pork",
       "name_km": "សម្លរ សារ៉ាយសមុទ្រ សាច់ជ្រូក",
       "description_en": "Healthy seaweed and minced pork clear soup.",
@@ -2158,12 +2143,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 15
+      "sort_order": 18
     },
     {
       "id": 154,
       "slug": "tomyam-sea-food",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Tomyam Sea Food",
       "name_km": "តុមយ៉ាំ គ្រឿងសមុទ្រ",
       "description_en": "Spicy and sour Thai-style soup loaded with fresh prawns and squid.",
@@ -2186,15 +2171,15 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
+      "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 16
+      "sort_order": 19
     },
     {
       "id": 155,
       "slug": "mjo-seri",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Mjo Seri",
       "name_km": "ម្ជូរស្រែត្រីរស់",
       "description_en": "Countryside sour soup with fresh snakehead fish and wild greens.",
@@ -2220,12 +2205,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 17
+      "sort_order": 20
     },
     {
       "id": 156,
       "slug": "pickled-mustard-green-soup-with-pork",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Pickled Mustard Green Soup with Pork",
       "name_km": "សម្លស្ពៃជ្រក់ សាច់ជ្រូក",
       "description_en": "Savory sour pickled mustard green soup cooked with tender pork ribs.",
@@ -2251,12 +2236,12 @@
       "best_seller": false,
       "recommended": false,
       "featured": false,
-      "sort_order": 18
+      "sort_order": 21
     },
     {
       "id": 157,
       "slug": "spaghetti-carbonara",
-      "category_id": 12,
+      "category_id": 8,
       "name_en": "Spaghetti Carbonara",
       "name_km": "ស្ប៉ាហ្គេតទី កាបូណារ៉ា",
       "description_en": "Creamy Italian pasta tossed with crispy bacon, parmesan and black pepper.",
@@ -2280,14 +2265,14 @@
       "options": [],
       "available": true,
       "best_seller": false,
-      "recommended": true,
+      "recommended": false,
       "featured": false,
-      "sort_order": 19
+      "sort_order": 22
     },
     {
       "id": 158,
       "slug": "french-fries",
-      "category_id": 13,
+      "category_id": 9,
       "name_en": "French Fries",
       "name_km": "ដំឡូងបំពង",
       "description_en": "Crispy salted golden french fries served with ketchup and mayo.",
@@ -2310,7 +2295,7 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
+      "best_seller": false,
       "recommended": false,
       "featured": false,
       "sort_order": 1
@@ -2318,7 +2303,7 @@
     {
       "id": 159,
       "slug": "fried-chicken-wings-platter",
-      "category_id": 13,
+      "category_id": 9,
       "name_en": "Fried Chicken Wings Snack Platter",
       "name_km": "ស្លាបមាន់ចៀន",
       "description_en": "Crispy seasoned chicken wings snack portion.",
@@ -2341,7 +2326,7 @@
       "extras": [],
       "options": [],
       "available": true,
-      "best_seller": true,
+      "best_seller": false,
       "recommended": false,
       "featured": false,
       "sort_order": 2
@@ -2349,7 +2334,7 @@
     {
       "id": 160,
       "slug": "fried-chicken-wings-with-pickled-radish",
-      "category_id": 13,
+      "category_id": 9,
       "name_en": "Fried Chicken Wings with Pickled Radish",
       "name_km": "ស្លាបមាន់ចៀន ជ្រក់",
       "description_en": "Crispy fried chicken wings served with house-made pickled radish.",
@@ -2373,14 +2358,14 @@
       "options": [],
       "available": true,
       "best_seller": false,
-      "recommended": true,
+      "recommended": false,
       "featured": false,
       "sort_order": 3
     },
     {
       "id": 161,
       "slug": "fried-mixed-lemongrass-chicken-plate",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Fried Mixed Lemongrass Chicken Plate",
       "name_km": "ឆាគ្រឿង សាច់មាន់",
       "description_en": "A la carte plate of lemongrass stir-fried chicken.",
@@ -2411,7 +2396,7 @@
     {
       "id": 162,
       "slug": "fried-ginger-pork-plate",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Fried Ginger Pork Plate",
       "name_km": "ឆាខ្ញី សាច់ជ្រូក",
       "description_en": "A la carte plate of ginger stir-fried pork.",
@@ -2442,7 +2427,7 @@
     {
       "id": 163,
       "slug": "fried-mixed-lemongrass-beef-plate",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Fried Mixed Lemongrass Beef Plate",
       "name_km": "ឆាគ្រឿង សាច់គោ",
       "description_en": "A la carte plate of lemongrass stir-fried beef.",
@@ -2473,7 +2458,7 @@
     {
       "id": 164,
       "slug": "fried-cauliflower-pork-plate",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Fried Cauliflower Pork Plate",
       "name_km": "ឆាផ្កាខាត់ណា សាច់ជ្រូក",
       "description_en": "A la carte plate of stir-fried cauliflower and pork.",
@@ -2504,7 +2489,7 @@
     {
       "id": 165,
       "slug": "pork-partlow-plate",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Pork Partlow Plate",
       "name_km": "ផាក់ឡូវ",
       "description_en": "A la carte plate of braised five-spice pork offal.",
@@ -2535,7 +2520,7 @@
     {
       "id": 166,
       "slug": "minced-pork-holy-basil-plate",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Minced Pork Holy Basil Plate",
       "name_km": "ឆាម្រះព្រៅ សាច់ជ្រូកចិញ្ច្រាំ",
       "description_en": "A la carte plate of spicy holy basil minced pork.",
@@ -2566,7 +2551,7 @@
     {
       "id": 167,
       "slug": "somlor-korko-ingredients-set",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Somlor Korko Ingredients Set",
       "name_km": "ឈុតគ្រឿងផ្សំ សម្លរគោរកោ",
       "description_en": "Fresh ingredient cooking set for traditional Somlor Korko soup.",
@@ -2597,7 +2582,7 @@
     {
       "id": 168,
       "slug": "mjoyoun-trey-por-ingredients-set",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Mjoyoun Trey Por Ingredients Set",
       "name_km": "ឈុតគ្រឿងផ្សំ សម្លរម្ជូរយួន ត្រីពោរ",
       "description_en": "Fresh ingredient cooking set for Mjoyoun Trey Por sour soup.",
@@ -2628,7 +2613,7 @@
     {
       "id": 169,
       "slug": "mjokreng-sachkor-ingredients-set",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Mjokreng Sachkor Ingredients Set",
       "name_km": "ឈុតគ្រឿងផ្សំ ម្ជូរគ្រឿង សាច់គោ",
       "description_en": "Fresh ingredient cooking set for beef lemongrass sour soup.",
@@ -2659,7 +2644,7 @@
     {
       "id": 170,
       "slug": "steamed-rice",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Steamed Jasmine Rice",
       "name_km": "បាយស",
       "description_en": "Extra bowl of fragrant steamed Cambodian jasmine rice.",
@@ -2690,7 +2675,7 @@
     {
       "id": 171,
       "slug": "fried-egg",
-      "category_id": 14,
+      "category_id": 10,
       "name_en": "Fried Egg (Sunny Side Up)",
       "name_km": "ពងទាចៀន",
       "description_en": "Crispy edged sunny side up fried duck egg.",

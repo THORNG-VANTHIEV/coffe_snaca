@@ -43,20 +43,15 @@ const force = process.argv.includes('--force')
  * family so a page full of cards reads as one set (spec §30).
  */
 const PALETTES = {
-  'matcha-serie': { from: '#4E7348', to: '#1F381B', vessel: '#EEF5ED', fill: '#6C9A63', accent: '#8BBF80' },
-  edition: { from: '#8B5A2B', to: '#38200F', vessel: '#F8F0E5', fill: '#5C3317', accent: '#D49A6A' },
-  'cold-drinks': { from: '#5A7D8F', to: '#223844', vessel: '#EBF4F7', fill: '#8FB4C4', accent: '#B4D6E5' },
-  'hot-drinks': { from: '#7A5638', to: '#31200F', vessel: '#F2E7D8', fill: '#4A2C16', accent: '#C68B59' },
+  'matcha-series': { from: '#4E7348', to: '#1F381B', vessel: '#EEF5ED', fill: '#6C9A63', accent: '#8BBF80' },
+  'signature-drinks': { from: '#8B5A2B', to: '#38200F', vessel: '#F8F0E5', fill: '#5C3317', accent: '#D49A6A' },
+  'iced-coffee': { from: '#5A7D8F', to: '#223844', vessel: '#EBF4F7', fill: '#8FB4C4', accent: '#B4D6E5' },
+  'hot-coffee': { from: '#7A5638', to: '#31200F', vessel: '#F2E7D8', fill: '#4A2C16', accent: '#C68B59' },
   'tea-soda': { from: '#7E8A5C', to: '#333A20', vessel: '#F3EEE0', fill: '#B4BE7C', accent: '#CBD79A' },
-  'frappe-smoothie': { from: '#CF9A57', to: '#6B3F1C', vessel: '#F8F0E3', fill: '#EFAD52', accent: '#FFD08A' },
-  'noodle-soup': { from: '#BE8F5C', to: '#543619', vessel: '#F6EDDD', fill: '#E6BE85', accent: '#FAD9A6' },
-  'chicken-rice': { from: '#C5AC7E', to: '#5B4A2E', vessel: '#F9F3E6', fill: '#F0E4C8', accent: '#E4CFA2' },
-  'chicken-porridge': { from: '#D4B886', to: '#614E2B', vessel: '#FAF6ED', fill: '#E8D5B0', accent: '#F5E6CB' },
+  'blended-drinks': { from: '#CF9A57', to: '#6B3F1C', vessel: '#F8F0E3', fill: '#EFAD52', accent: '#FFD08A' },
   breakfast: { from: '#C79355', to: '#5D3A19', vessel: '#F7EEDE', fill: '#EFC178', accent: '#FFDCA1' },
-  'american-breakfast': { from: '#B8724D', to: '#4F2A18', vessel: '#F7EDE6', fill: '#DE8B5F', accent: '#F2AC85' },
   lunch: { from: '#AE6A42', to: '#4D2A16', vessel: '#F5EADB', fill: '#D2854A', accent: '#F0AC6C' },
-  snack: { from: '#C88B4A', to: '#593516', vessel: '#F7EFE1', fill: '#EFB264', accent: '#FFCE86' },
-  'extra-choice': { from: '#8A7A68', to: '#3D352B', vessel: '#F5F1EB', fill: '#B8A896', accent: '#D6C8B8' },
+  others: { from: '#8A7A68', to: '#3D352B', vessel: '#F5F1EB', fill: '#B8A896', accent: '#D6C8B8' },
   coffee: { from: '#7A5638', to: '#31200F', vessel: '#F2E7D8', fill: '#4A2C16', accent: '#C68B59' },
   'non-coffee': { from: '#B08A5E', to: '#493220', vessel: '#F7F1E7', fill: '#E4D4BB', accent: '#D9B98C' },
   tea: { from: '#7E8A5C', to: '#333A20', vessel: '#F3EEE0', fill: '#B4BE7C', accent: '#CBD79A' },
@@ -197,8 +192,8 @@ const HERO_SLIDES = [
   { seed: 'hero-2', palette: 'tea', dish: false, radius: 244, steam: true, dark: '#1C2411' },
   { seed: 'hero-3', palette: 'lunch', dish: true, radius: 288, steam: false, dark: '#2A1509' },
   { seed: 'hero-4', palette: 'smoothies', dish: false, radius: 252, steam: false, dark: '#2B1608' },
-  { seed: 'hero-5', palette: 'edition', dish: false, radius: 260, steam: false, dark: '#00283f' },
-  { seed: 'hero-6', palette: 'matcha-serie', dish: false, radius: 270, steam: false, dark: '#1a3320' },
+  { seed: 'hero-5', palette: 'signature-drinks', dish: false, radius: 260, steam: false, dark: '#00283f' },
+  { seed: 'hero-6', palette: 'matcha-series', dish: false, radius: 270, steam: false, dark: '#1a3320' },
 ]
 
 function makeHero({ seed, palette: paletteKey, dish, radius, steam, dark }) {

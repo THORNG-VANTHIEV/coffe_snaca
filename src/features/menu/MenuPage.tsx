@@ -21,7 +21,7 @@ const DEEP_LINK_TIMEOUT = 10_000
 /**
  * Continuous Full Menu with Sticky Category Bar and Smooth Anchor Navigation.
  *
- * All 14 official categories are stacked continuously on one single scrollable
+ * All 10 official categories are stacked continuously on one single scrollable
  * page. Customers can smoothly scroll from top to bottom through all dishes, or
  * tap any category chip in the sticky bar to glide straight to that section.
  */
@@ -58,7 +58,7 @@ export function MenuPage() {
 
   useDocumentTitle(`${t.sections.fullMenu} | ${shopName(settings, language)}`)
 
-  // Group products into 14 continuous category sections
+  // Group products into 10 continuous category sections
   const categorySections = useMemo(() => {
     return categories
       .map((category) => ({
