@@ -2,8 +2,11 @@ import { Link } from 'react-router-dom'
 import type { Product } from '@/models'
 import { getStartingSize } from '@/models'
 import { useLanguage } from '@/hooks/useLanguage'
+import { useSettings } from '@/hooks/useMenu'
+import { activeDiscount } from '@/services/promotion'
 import { ImageWithFallback } from '@/components/common/ImageWithFallback'
 import { AvailabilityBadge } from './AvailabilityBadge'
+import { DiscountBadge } from './DiscountBadge'
 import { PriceDisplay } from './PriceDisplay'
 import { ProductBadge } from './ProductBadge'
 import { cn } from '@/utils/cn'
@@ -19,6 +22,8 @@ interface ProductCardProps {
 /** The menu's workhorse card (spec §12, §33). */
 export function ProductCard({ product, priority, className }: ProductCardProps) {
   const { language, t } = useLanguage()
+  const settings = useSettings()
+  const discount = activeDiscount(product, settings)
 
   const name = productName(product, language)
   const altName = productAltName(product, language)
@@ -57,6 +62,14 @@ export function ProductCard({ product, priority, className }: ProductCardProps) 
           </div>
         )}
 
+        {/* Top-right, opposite the best-seller stack: two badges competing
+            for the same corner is how a card stops being scannable. */}
+        {discount > 0 && (
+          <div className="pointer-events-none absolute top-3 end-3">
+            <DiscountBadge percent={discount} />
+          </div>
+        )}
+
         {!product.available && (
           <div className="absolute inset-x-3 bottom-3">
             <AvailabilityBadge available={false} className="shadow-sm" />
@@ -84,6 +97,7 @@ export function ProductCard({ product, priority, className }: ProductCardProps) 
           <PriceDisplay
             price={startingSize.price}
             prefix={hasRange ? t.common.from : undefined}
+            discountPercent={discount}
             className="mt-auto pt-2"
           />
         )}

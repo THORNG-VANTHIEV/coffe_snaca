@@ -27,6 +27,7 @@ const settings: Settings = {
   showUnavailableProducts: true,
   facebook: '',
   telegram: '',
+  promo: null,
 }
 
 function renderSplash(content: ReactNode) {

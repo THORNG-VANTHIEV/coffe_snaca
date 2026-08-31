@@ -79,6 +79,10 @@ const PAIRS = [
   ['on-accent', 'accent', 4.5, 'best-seller badge'],
   ['on-secondary', 'secondary', 4.5, 'featured badge'],
   ['success', 'success-soft', 4.5, 'available badge'],
+  // The discount chip fills with --success and writes on it in --bg, so both
+  // ends flip with the theme. Checked in both, like everything else here.
+  ['bg', 'success', 4.5, 'discount badge'],
+  ['success', 'surface', 4.5, 'discounted price on a card'],
   ['danger', 'danger-soft', 4.5, 'unavailable badge'],
   ['border-interactive', 'surface', 3, 'outline button and search field border'],
   ['border-interactive', 'bg', 3, 'control borders on the page'],

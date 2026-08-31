@@ -3,6 +3,7 @@ export { LANGUAGES, isLanguage } from './common'
 
 export type { Category, CategoryKind } from './category'
 export type { MenuData } from './menu'
+export type { Promotion } from './promotion'
 export type { Settings } from './settings'
 export type { Table } from './table'
 export type {

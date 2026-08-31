@@ -288,6 +288,28 @@ Missing photos never break the page — the app falls back to
 > validation because the file exists, so they are easy to miss. They are
 > distinguishable by weight — generated art is 9–13 KB, a real photo 20–100 KB.
 
+### Run a promotion
+
+A promotion is two halves: a banner announcing it, and the products whose prices
+change.
+
+Set both in the admin — **Promotion** for the banner and the dates, **Products →
+Set discount** for the items — then publish once.
+
+What a customer sees:
+
+- The banner, once per visit, three seconds after the welcome screen, with a
+  close button. Touching or hovering it stops the countdown; Escape, the close
+  button and the backdrop all dismiss it.
+- A `−20%` chip on every discounted card, and the old price struck through
+  beside the new one.
+
+The discount arithmetic is in `src/services/promotion.ts`, and it obeys
+[the riel rule](#the-riel-rule): the dollar price is discounted and rounded to
+the cent, then riel is derived from *that* at 4,100៛/$, rounded up to the next
+100៛ note — exactly as an undiscounted price was. Taking the percentage off the
+riel figure instead would produce prices `npm run validate` rejects.
+
 ### Table QR codes
 
 Each table gets its own link:
@@ -392,6 +414,32 @@ customer's phone.
 | `default_language` | `"km"` or `"en"` — used until the customer chooses |
 | `show_unavailable_products` | `false` hides sold-out items instead of dimming |
 | `facebook`, `telegram` | Leave empty to hide the link |
+| `promo` | The running promotion, or the key is absent. See below |
+
+#### `settings.promo`
+
+Present only while the shop has a campaign switched on.
+
+```json
+{
+  "title_en": "Rainy season offer",
+  "title_km": "ការបញ្ចុះតម្លៃរដូវវស្សា",
+  "text_en": "20% off our house coffees, all week.",
+  "text_km": "បញ្ចុះតម្លៃ ២០% លើកាហ្វេផ្ទះ ពេញមួយសប្តាហ៍។",
+  "image": "/images/promo/rainy-season.webp",
+  "starts_at": "2026-09-01",
+  "ends_at": "2026-09-30",
+  "timezone": "Asia/Phnom_Penh"
+}
+```
+
+`starts_at` and `ends_at` are inclusive calendar days; either may be empty for
+"no bound on that side". They are read **in `timezone`**, not on the phone's own
+clock — the campaign belongs to the shop's day, and a customer whose phone is
+set to another country must still see the offer at the right time.
+
+Because the dates are read in the browser, a campaign starts and ends on its own
+day with no republish.
 
 ### `tables`
 
@@ -442,6 +490,9 @@ See spec §25 for the full shape. Four things worth calling out:
 - **`sizes[].name_en` / `name_km`** — optional. `R`, `S`, `M`, `L` and `XL` are
   expanded to Regular/ធម្មតា automatically; anything else should spell out both
   languages.
+- **`promo_percent`** — 1–90, absent when the product is not on offer. Prices in
+  the file stay at full price; the discount is applied when the product is shown,
+  and only while `settings.promo` is inside its dates.
 
 All options are **informational**. Version 1 has no ordering, so the product
 page presents them as a description of what is possible, not as controls.

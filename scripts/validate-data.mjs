@@ -121,6 +121,58 @@ if (!settings || typeof settings !== 'object') {
     if (typeof image !== 'string' || !image) fail('settings', 'hero_images must be paths')
     else if (!imageExists(image)) warn('settings', `hero image not found at public${image}`)
   }
+
+  checkPromotion(settings.promo)
+}
+
+/**
+ * The promotion block, present only while the shop is running one.
+ *
+ * A promotion is the one thing in this file that changes a price, and the
+ * admin already refuses to publish a broken one — this is the second gate, for
+ * a db.json edited by hand.
+ */
+function checkPromotion(promo) {
+  if (promo === undefined || promo === null) return
+
+  if (typeof promo !== 'object' || Array.isArray(promo)) {
+    fail('promo', 'must be an object')
+    return
+  }
+
+  if (!promo.title_en && !promo.title_km) {
+    fail('promo', 'needs a title in at least one language, or the banner is blank')
+  } else {
+    checkBilingual('promo', promo, 'title', { required: false })
+  }
+
+  if (promo.image && !imageExists(promo.image)) {
+    warn('promo', `banner image not found at public${promo.image}`)
+  }
+
+  const isDay = (value) => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
+
+  for (const key of ['starts_at', 'ends_at']) {
+    const value = promo[key]
+    if (value === null || value === undefined || value === '') continue
+    if (!isDay(value)) fail('promo', `${key} must be a YYYY-MM-DD date (got ${JSON.stringify(value)})`)
+  }
+
+  if (isDay(promo.starts_at) && isDay(promo.ends_at) && promo.ends_at < promo.starts_at) {
+    fail('promo', `ends_at ${promo.ends_at} is before starts_at ${promo.starts_at}`)
+  }
+
+  // The menu reads the window in this timezone; an unknown name would send
+  // every phone back to its own clock.
+  if (promo.timezone) {
+    try {
+      new Intl.DateTimeFormat('en-CA', { timeZone: promo.timezone })
+    } catch {
+      fail('promo', `timezone "${promo.timezone}" is not a known IANA zone`)
+    }
+  } else {
+    warn('promo', 'no timezone — the window falls back to each phone’s own clock')
+  }
 }
 
 // ------------------------------------------------------------------ tables --
@@ -284,6 +336,18 @@ for (const product of products) {
   }
 
   if (typeof product.sort_order !== 'number') warn(where, 'missing sort_order')
+
+  if (product.promo_percent !== undefined) {
+    const percent = product.promo_percent
+
+    if (typeof percent !== 'number' || !Number.isInteger(percent) || percent < 1 || percent > 90) {
+      fail(where, `promo_percent must be a whole number from 1 to 90 (got ${JSON.stringify(percent)})`)
+    } else if (!db.settings?.promo) {
+      // Harmless — the menu gates every discount on the campaign — but it
+      // means someone set a discount and no customer will ever see it.
+      warn(where, `has promo_percent ${percent} but there is no promotion running`)
+    }
+  }
 }
 
 // ------------------------------------------------------------------ report --

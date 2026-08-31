@@ -8,6 +8,7 @@ import type {
   ProductOptionGroup,
   ProductOptionValue,
   ProductSize,
+  Promotion,
   Settings,
   Table,
   Temperature,
@@ -127,6 +128,8 @@ function mapProduct(source: RawRecord): Product {
     extras: readRecordArray(source, 'extras').map(mapExtra),
     options: readRecordArray(source, 'options').map(mapOptionGroup),
 
+    promoPercent: readNumber(source, 'promo_percent'),
+
     available: readBoolean(source, 'available', true),
     bestSeller: readBoolean(source, 'best_seller'),
     recommended: readBoolean(source, 'recommended'),
@@ -190,6 +193,36 @@ function mapSettings(source: RawRecord): Settings {
     showUnavailableProducts: readBoolean(source, 'show_unavailable_products', true),
     facebook: readString(source, 'facebook'),
     telegram: readString(source, 'telegram'),
+    promo: mapPromotion(source),
+  }
+}
+
+/**
+ * The promotion, or null.
+ *
+ * The key is absent from `db.json` whenever the shop has no campaign, so its
+ * absence is the ordinary case. A promo block with no headline in either
+ * language is treated as absent too: the banner would be an empty box, and a
+ * customer scanning a QR code should get the menu, not a blank overlay.
+ */
+function mapPromotion(source: RawRecord): Promotion | null {
+  if (!isRecord(source.promo)) return null
+
+  const promo = source.promo
+  const title = readBilingual(promo, 'title')
+  const text = readBilingual(promo, 'text')
+
+  if (!title.en && !title.km) return null
+
+  return {
+    titleEn: title.en,
+    titleKm: title.km,
+    textEn: text.en,
+    textKm: text.km,
+    image: resolveAssetUrl(readString(promo, 'image')),
+    startsAt: readString(promo, 'starts_at'),
+    endsAt: readString(promo, 'ends_at'),
+    timezone: readString(promo, 'timezone', 'Asia/Phnom_Penh'),
   }
 }
 

@@ -71,6 +71,14 @@ export interface Product {
   /** Per-product option groups (spice level, portion style, …). */
   options: ProductOptionGroup[]
 
+  /**
+   * Percentage off every size while the shop's promotion is running, or 0.
+   *
+   * On its own it means nothing: the campaign decides whether it applies.
+   * Read it through activeDiscount() rather than directly.
+   */
+  promoPercent: number
+
   available: boolean
   bestSeller: boolean
   recommended: boolean

@@ -1,4 +1,5 @@
 import type { Language } from './common'
+import type { Promotion } from './promotion'
 
 /** Shop-wide configuration read from `db.json` (spec §23). */
 export interface Settings {
@@ -24,4 +25,9 @@ export interface Settings {
   showUnavailableProducts: boolean
   facebook: string
   telegram: string
+  /**
+   * The running promotion, or null when the shop has none. Its date window is
+   * still checked before anything is shown — see services/promotion.ts.
+   */
+  promo: Promotion | null
 }

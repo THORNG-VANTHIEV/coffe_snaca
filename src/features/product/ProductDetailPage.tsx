@@ -20,6 +20,7 @@ import { EmptyState } from '@/components/common/EmptyState'
 import { ImageWithFallback } from '@/components/common/ImageWithFallback'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { AvailabilityBadge } from '@/components/menu/AvailabilityBadge'
+import { DiscountBadge } from '@/components/menu/DiscountBadge'
 import { PriceDisplay } from '@/components/menu/PriceDisplay'
 import { ProductBadge } from '@/components/menu/ProductBadge'
 import { ProductRail } from '@/components/menu/ProductRail'
@@ -32,6 +33,7 @@ import {
   getRelatedProducts,
   indexCategoriesById,
 } from '@/services/menuSelectors'
+import { activeDiscount } from '@/services/promotion'
 import { cn } from '@/utils/cn'
 import { formatPriceDelta } from '@/utils/currency'
 import {
@@ -98,6 +100,8 @@ export function ProductDetailPage() {
     () => (product ? getRelatedProducts(products, product) : []),
     [products, product],
   )
+
+  const discount = product ? activeDiscount(product, settings) : 0
 
   if (!product) {
     return (
@@ -175,6 +179,12 @@ export function ProductDetailPage() {
                 {product.featured && <ProductBadge kind="featured" />}
               </div>
             )}
+
+            {discount > 0 && (
+              <div className="absolute top-4 end-4">
+                <DiscountBadge percent={discount} />
+              </div>
+            )}
           </div>
         </div>
 
@@ -223,7 +233,7 @@ export function ProductDetailPage() {
                     <span className="text-sm font-medium text-text">
                       {sizeName(size, language)}
                     </span>
-                    <PriceDisplay price={size.price} size="md" />
+                    <PriceDisplay price={size.price} size="md" discountPercent={discount} />
                   </li>
                 ))}
               </ul>

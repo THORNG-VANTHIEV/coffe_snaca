@@ -19,6 +19,9 @@ export const STORAGE_KEYS = {
   tableNumber: `${PREFIX}table_number`,
   // Session-only: a new browser session may show the branded welcome again.
   welcomeSeen: `${PREFIX}welcome_seen`,
+  // Same reasoning for the promotion pop-up: announced once a visit, not once
+  // ever — the offer is still news to someone coming back tomorrow.
+  promoSeen: `${PREFIX}promo_seen`,
 } as const
 
 export function readStored(key: string): string | null {

@@ -104,6 +104,16 @@ const en = {
     featured: 'Featured',
   },
 
+  promo: {
+    /** Screen-reader wording for the "-20%" chip, which is symbols alone. */
+    discount: 'Discount',
+    /** Labels the struck-through number so it cannot be read as the price. */
+    regularPrice: 'Regular price',
+    /** The pop-up's accessible name. */
+    announcement: 'Special offer',
+    dismiss: 'Close this offer',
+  },
+
   states: {
     loading: 'Loading the menu',
     emptyCategoryTitle: 'No menu items available in this category.',
@@ -244,6 +254,13 @@ const km: Dictionary = {
     bestSeller: 'លក់ដាច់',
     recommended: 'ណែនាំ',
     featured: 'ពិសេស',
+  },
+
+  promo: {
+    discount: 'បញ្ចុះតម្លៃ',
+    regularPrice: 'តម្លៃធម្មតា',
+    announcement: 'ការផ្តល់ជូនពិសេស',
+    dismiss: 'បិទការផ្តល់ជូននេះ',
   },
 
   states: {

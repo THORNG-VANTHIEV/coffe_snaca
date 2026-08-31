@@ -5,6 +5,8 @@ import { useMenuState } from '@/hooks/useMenu'
 import { ErrorState } from '@/components/common/ErrorState'
 import { Footer } from '@/components/common/Footer'
 import { Header } from '@/components/common/Header'
+import { PromoModal } from '@/features/promo/PromoModal'
+import { usePromoGate } from '@/features/promo/usePromoGate'
 import { SplashScreen } from '@/features/splash/SplashScreen'
 import { useWelcomeGate } from '@/features/splash/useWelcomeGate'
 import { cn } from '@/utils/cn'
@@ -22,6 +24,11 @@ export function MainLayout() {
   const mainRef = useRef<HTMLElement>(null)
   const { showWelcome, isLeaving, dismissWelcome, completeWelcome } = useWelcomeGate()
   const welcomeWasVisible = useRef(showWelcome)
+
+  // Only once the welcome is out of the way: two overlays on a freshly
+  // scanned QR code is one too many, and the offer would be counted as seen
+  // while the splash covered it.
+  const promo = usePromoGate(data?.settings, Boolean(data) && !showWelcome)
 
   // Restore keyboard/screen-reader position only after React has removed
   // `inert` from the menu underneath the departing welcome.
@@ -76,6 +83,15 @@ export function MainLayout() {
           onContinue={dismissWelcome}
           exiting={isLeaving}
           onExitComplete={completeWelcome}
+        />
+      ) : null}
+
+      {promo.promotion ? (
+        <PromoModal
+          promotion={promo.promotion}
+          onClose={promo.close}
+          onHold={promo.hold}
+          held={promo.held}
         />
       ) : null}
     </>
