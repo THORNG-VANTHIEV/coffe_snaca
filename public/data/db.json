@@ -24,7 +24,17 @@
         "default_language": "km",
         "show_unavailable_products": true,
         "facebook": "https://www.facebook.com/share/1CCibzr285/?mibextid=wwXIfr",
-        "telegram": ""
+        "telegram": "",
+        "promo": {
+            "title_en": "Promotion",
+            "title_km": "ប្រូម៉ូសិន",
+            "text_en": "",
+            "text_km": "",
+            "image": "",
+            "starts_at": "2026-09-01",
+            "ends_at": "2026-09-02",
+            "timezone": "Asia/Phnom_Penh"
+        }
     },
     "tables": [
         {
@@ -302,6 +312,7 @@
             "also_in_categories": [
                 1
             ],
+            "promo_percent": 25,
             "name_en": "Snaca Edition",
             "name_km": "កាហ្វេ ស្នាក់ការ",
             "description_en": "Our signature rich house blend iced coffee recipe.",
