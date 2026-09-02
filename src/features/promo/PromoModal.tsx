@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
-import { Tag, X } from 'lucide-react'
+import { Clock, Tag, X } from 'lucide-react'
 import type { Product, Promotion } from '@/models'
 import { getStartingSize } from '@/models'
 import { useLanguage } from '@/hooks/useLanguage'
-import { promotionText } from '@/services/promotion'
+import { promotionDaysLeft, promotionText } from '@/services/promotion'
 import { PriceDisplay } from '@/components/menu/PriceDisplay'
 import { ImageWithFallback } from '@/components/common/ImageWithFallback'
 import { productName } from '@/utils/translation'
@@ -49,6 +49,16 @@ interface PromoModalProps {
 export function PromoModal({ promotion, products, onClose, onHold }: PromoModalProps) {
   const { language, t } = useLanguage()
   const { title, text } = promotionText(promotion, language)
+  const daysLeft = promotionDaysLeft(promotion)
+
+  const countdown =
+    daysLeft === null
+      ? null
+      : daysLeft === 0
+        ? t.promo.endsToday
+        : daysLeft === 1
+          ? t.promo.endsTomorrow
+          : t.promo.daysLeft.replace('{count}', String(daysLeft))
   const closeRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -82,11 +92,14 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
         onFocusCapture={() => onHold(true)}
         onTouchStart={() => onHold(true)}
         className={cn(
-          'relative w-full max-w-sm overflow-hidden rounded-[1.75rem] border border-border/80',
-          'bg-surface/95 shadow-raised backdrop-blur-xl',
-          // Centred and carrying an offer list, the card can outgrow a short
-          // screen; it scrolls inside itself rather than off the top.
-          'max-h-[85vh] overflow-y-auto',
+          // Grows with the screen instead of sitting at one width: a phone
+          // gets the full column, a tablet and desktop a little more. It stops
+          // there — a pop-up that keeps growing stops reading as a pop-up.
+          'relative w-full max-w-sm sm:max-w-md overflow-hidden rounded-3xl sm:rounded-[1.75rem]',
+          'border border-border/80 bg-surface/95 shadow-raised backdrop-blur-xl',
+          // dvh, not vh: a phone browser's toolbar slides away, and vh would
+          // measure the taller viewport and let the card run under it.
+          'max-h-[85dvh] overflow-y-auto',
           !reduced && 'animate-fade-rise',
         )}
       >
@@ -116,13 +129,28 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
           />
         ) : null}
 
-        <div className="flex flex-col gap-2 px-6 pt-6 pb-5 text-center">
-          <span className="mx-auto inline-flex items-center gap-1.5 rounded-pill bg-success/15 px-3 py-1 text-[11px] font-semibold tracking-wider text-success uppercase">
-            <Tag className="size-3" aria-hidden="true" />
-            {t.promo.announcement}
-          </span>
+        <div className="flex flex-col gap-2 px-5 pt-6 pb-5 text-center sm:px-6">
+          {/*
+            How long is left, in whole days, because `ends_at` is a date and
+            nothing finer would be true. It sits beside the label rather than
+            below the offer: a customer deciding whether to order today reads
+            the deadline first.
+          */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-pill bg-success/15 px-3 py-1 text-[11px] font-semibold tracking-wider text-success uppercase">
+              <Tag className="size-3" aria-hidden="true" />
+              {t.promo.announcement}
+            </span>
 
-          <h2 className="text-lg leading-snug font-semibold text-text sm:text-xl">{title}</h2>
+            {countdown && (
+              <span className="inline-flex items-center gap-1.5 rounded-pill bg-surface-2 px-3 py-1 text-[11px] font-semibold text-muted">
+                <Clock className="size-3" aria-hidden="true" />
+                {countdown}
+              </span>
+            )}
+          </div>
+
+          <h2 className="text-lg leading-snug font-semibold text-balance text-text sm:text-xl">{title}</h2>
 
           {text ? (
             <p className="text-sm leading-relaxed text-muted">{text}</p>
@@ -154,7 +182,7 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
                         src={product.image}
                         alt=""
                         fit="cover"
-                        className="size-12 shrink-0 rounded-lg"
+                        className="size-12 shrink-0 rounded-lg sm:size-14"
                       />
 
                       <span className="min-w-0 flex-1 text-start">

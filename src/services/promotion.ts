@@ -125,6 +125,31 @@ export function getDiscountedProducts(
     .sort((a, b) => b.promoPercent - a.promoPercent)
 }
 
+/**
+ * Whole days left before the offer stops, or null when it has no end.
+ *
+ * Counted in calendar days because that is all `endsAt` carries — a date, no
+ * closing time — so anything finer would be invented. Zero means today is the
+ * last day, which is the number worth putting in front of someone.
+ */
+export function promotionDaysLeft(
+  promotion: Promotion,
+  now: Date = new Date(),
+): number | null {
+  if (!promotion.endsAt) return null
+
+  const today = shopToday(promotion.timezone, now)
+  if (today > promotion.endsAt) return null
+
+  const day = 24 * 60 * 60 * 1000
+  const from = Date.parse(`${today}T00:00:00Z`)
+  const until = Date.parse(`${promotion.endsAt}T00:00:00Z`)
+
+  if (Number.isNaN(from) || Number.isNaN(until)) return null
+
+  return Math.round((until - from) / day)
+}
+
 /** The promotion's headline and details in the reader's language. */
 export function promotionText(promotion: Promotion, language: 'en' | 'km') {
   return language === 'km'

@@ -115,6 +115,10 @@ const en = {
     /** Trails the two or three items the pop-up has room to show. */
     andMore: 'and more on the menu',
     seeMenu: 'See the menu',
+    /** {count} is replaced where it stands, so each language can order it. */
+    endsToday: 'Last day',
+    endsTomorrow: 'Ends tomorrow',
+    daysLeft: '{count} days left',
   },
 
   states: {
@@ -266,6 +270,9 @@ const km: Dictionary = {
     dismiss: 'បិទការផ្តល់ជូននេះ',
     andMore: 'និងមុខទៀតលើម៉ឺនុយ',
     seeMenu: 'មើលម៉ឺនុយ',
+    endsToday: 'ថ្ងៃចុងក្រោយ',
+    endsTomorrow: 'បញ្ចប់ថ្ងៃស្អែក',
+    daysLeft: 'នៅសល់ {count} ថ្ងៃ',
   },
 
   states: {

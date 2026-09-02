@@ -183,6 +183,17 @@ describe('how it sits on the screen', () => {
     expect(view.container.innerHTML).not.toContain('promo-countdown')
   })
 
+  it('grows a step with the screen instead of sitting at one width', () => {
+    const view = renderModal(
+      <PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} />,
+    )
+
+    const card = view.container.querySelector('[role="dialog"] > div')!
+
+    expect(card.className).toContain('max-w-sm')
+    expect(card.className).toContain('sm:max-w-md')
+  })
+
   /** Centred and carrying a list, it must not run off a short screen. */
   it('scrolls inside itself rather than off the top', () => {
     const view = renderModal(
@@ -192,6 +203,51 @@ describe('how it sits on the screen', () => {
     const card = view.container.querySelector('[role="dialog"] > div')!
 
     expect(card.className).toContain('overflow-y-auto')
+
+    // dvh, not vh: a phone browser's toolbar slides away, and vh would
+    // measure the taller viewport and let the card run under it.
+    expect(card.className).toContain('max-h-[85dvh]')
+  })
+})
+
+describe('the promotion countdown', () => {
+  it('says nothing when the offer has no end date', () => {
+    renderModal(<PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} />)
+
+    expect(screen.queryByText(dictionaries.en.promo.endsToday)).toBeNull()
+    expect(screen.queryByText(/days left/)).toBeNull()
+  })
+
+  it('names the last day rather than counting zero', () => {
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2026-09-03T04:00:00Z'))
+
+    renderModal(
+      <PromoModal
+        promotion={{ ...promotion, endsAt: '2026-09-03' }}
+        products={[]}
+        onClose={vi.fn()}
+        onHold={vi.fn()}
+      />,
+    )
+
+    expect(screen.getByText(dictionaries.en.promo.endsToday)).toBeTruthy()
+  })
+
+  it('counts the days that remain', () => {
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2026-09-03T04:00:00Z'))
+
+    renderModal(
+      <PromoModal
+        promotion={{ ...promotion, endsAt: '2026-09-08' }}
+        products={[]}
+        onClose={vi.fn()}
+        onHold={vi.fn()}
+      />,
+    )
+
+    expect(screen.getByText('5 days left')).toBeTruthy()
   })
 })
 

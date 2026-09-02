@@ -6,6 +6,7 @@ import {
   getDiscountedProducts,
   isPromotionLive,
   isValidPercent,
+  promotionDaysLeft,
   shopToday,
 } from './promotion'
 
@@ -201,5 +202,35 @@ describe('getDiscountedProducts', () => {
     )
 
     expect(result).toEqual([])
+  })
+})
+
+describe('promotionDaysLeft', () => {
+  // 11:00 in Phnom Penh on the 3rd.
+  const now = new Date('2026-09-03T04:00:00Z')
+
+  it('is null when the offer has no end', () => {
+    expect(promotionDaysLeft(promotion(), now)).toBeNull()
+  })
+
+  it('is zero on the last day', () => {
+    expect(promotionDaysLeft(promotion({ endsAt: '2026-09-03' }), now)).toBe(0)
+  })
+
+  it('counts the whole days that remain', () => {
+    expect(promotionDaysLeft(promotion({ endsAt: '2026-09-04' }), now)).toBe(1)
+    expect(promotionDaysLeft(promotion({ endsAt: '2026-09-10' }), now)).toBe(7)
+  })
+
+  it('is null once the day has passed', () => {
+    expect(promotionDaysLeft(promotion({ endsAt: '2026-09-02' }), now)).toBeNull()
+  })
+
+  /** Counted in the shop's day, not the reader's. */
+  it('uses the shop timezone for "today"', () => {
+    // 22:00 UTC on the 2nd is already the 3rd in Phnom Penh.
+    const lateUtc = new Date('2026-09-02T22:00:00Z')
+
+    expect(promotionDaysLeft(promotion({ endsAt: '2026-09-03' }), lateUtc)).toBe(0)
   })
 })
