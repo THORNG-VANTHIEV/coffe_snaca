@@ -112,6 +112,9 @@ const en = {
     /** The pop-up's accessible name. */
     announcement: 'Special offer',
     dismiss: 'Close this offer',
+    /** Trails the two or three items the pop-up has room to show. */
+    andMore: 'and more on the menu',
+    seeMenu: 'See the menu',
   },
 
   states: {
@@ -261,6 +264,8 @@ const km: Dictionary = {
     regularPrice: 'តម្លៃធម្មតា',
     announcement: 'ការផ្តល់ជូនពិសេស',
     dismiss: 'បិទការផ្តល់ជូននេះ',
+    andMore: 'និងមុខទៀតលើម៉ឺនុយ',
+    seeMenu: 'មើលម៉ឺនុយ',
   },
 
   states: {

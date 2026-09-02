@@ -103,6 +103,28 @@ export function activeDiscount(
   return isValidPercent(product.promoPercent) ? product.promoPercent : 0
 }
 
+/**
+ * The products a customer would actually save money on, deepest cut first.
+ *
+ * The banner announces an offer; this is the offer. Without it the pop-up can
+ * only repeat whatever the shop typed as a headline — and a shop in a hurry
+ * types one word.
+ *
+ * Sold-out items are left out even where the menu keeps them visible: a
+ * discount on something nobody can buy is not an offer.
+ */
+export function getDiscountedProducts(
+  products: Product[],
+  settings: Pick<Settings, 'promo'>,
+  now: Date = new Date(),
+): Product[] {
+  if (!isPromotionLive(settings.promo, now)) return []
+
+  return products
+    .filter((product) => product.available && isValidPercent(product.promoPercent))
+    .sort((a, b) => b.promoPercent - a.promoPercent)
+}
+
 /** The promotion's headline and details in the reader's language. */
 export function promotionText(promotion: Promotion, language: 'en' | 'km') {
   return language === 'km'

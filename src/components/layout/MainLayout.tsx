@@ -7,6 +7,7 @@ import { Footer } from '@/components/common/Footer'
 import { Header } from '@/components/common/Header'
 import { PromoModal } from '@/features/promo/PromoModal'
 import { usePromoGate } from '@/features/promo/usePromoGate'
+import { getDiscountedProducts } from '@/services/promotion'
 import { SplashScreen } from '@/features/splash/SplashScreen'
 import { useWelcomeGate } from '@/features/splash/useWelcomeGate'
 import { cn } from '@/utils/cn'
@@ -89,6 +90,7 @@ export function MainLayout() {
       {promo.promotion ? (
         <PromoModal
           promotion={promo.promotion}
+          products={data ? getDiscountedProducts(data.products, data.settings) : []}
           onClose={promo.close}
           onHold={promo.hold}
           held={promo.held}

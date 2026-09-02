@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import type { Promotion } from '@/models'
+import type { Product, Promotion } from '@/models'
 import {
   activeDiscount,
   discountPrice,
+  getDiscountedProducts,
   isPromotionLive,
   isValidPercent,
   shopToday,
@@ -138,5 +139,67 @@ describe('activeDiscount', () => {
     expect(
       activeDiscount({ promoPercent: 0 }, { promo: promotion() }, new Date('2026-09-03T04:00:00Z')),
     ).toBe(0)
+  })
+})
+
+describe('getDiscountedProducts', () => {
+  const product = (overrides: Partial<Product>): Product =>
+    ({
+      id: 1,
+      slug: 'x',
+      categoryId: 1,
+      alsoInCategoryIds: [],
+      nameEn: 'X',
+      nameKm: '',
+      descriptionEn: '',
+      descriptionKm: '',
+      image: '',
+      ingredientsEn: [],
+      ingredientsKm: [],
+      sizes: [],
+      temperature: [],
+      sugarLevels: [],
+      iceLevels: [],
+      extras: [],
+      options: [],
+      promoPercent: 0,
+      available: true,
+      bestSeller: false,
+      recommended: false,
+      featured: false,
+      sortOrder: 1,
+      ...overrides,
+    }) as Product
+
+  const live = { promo: promotion() }
+  const now = new Date('2026-09-03T04:00:00Z')
+
+  it('is empty while the campaign is not running, whatever the products say', () => {
+    expect(getDiscountedProducts([product({ promoPercent: 20 })], { promo: null }, now)).toEqual([])
+  })
+
+  it('lists only the discounted ones, deepest cut first', () => {
+    const result = getDiscountedProducts(
+      [
+        product({ id: 1, promoPercent: 10 }),
+        product({ id: 2, promoPercent: 0 }),
+        product({ id: 3, promoPercent: 30 }),
+      ],
+      live,
+      now,
+    )
+
+    expect(result.map((p) => p.id)).toEqual([3, 1])
+  })
+
+  /** A discount on something nobody can buy is not an offer. */
+  it('leaves out a sold-out product', () => {
+    const result = getDiscountedProducts(
+      [product({ id: 1, promoPercent: 25, available: false })],
+      live,
+      now,
+    )
+
+    expect(result).toEqual([])
   })
 })
