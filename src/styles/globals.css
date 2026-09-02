@@ -310,22 +310,6 @@
   animation: welcome-exit var(--motion-standard) ease-in both;
 }
 
-/**
- * The promotion pop-up's three-second countdown, drawn as a draining bar.
- *
- * A CSS animation rather than a React state tick: it runs on the compositor,
- * survives a re-render, and `animation-play-state` pauses it exactly where it
- * is when the customer touches the card to read.
- */
-@keyframes promo-countdown {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0%;
-  }
-}
-
 /** Image load opacity and card hover zoom share one compositor transition. */
 @utility image-reveal {
   transition-property: opacity, transform, scale;

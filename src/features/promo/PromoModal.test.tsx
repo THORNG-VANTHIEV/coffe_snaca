@@ -78,7 +78,7 @@ afterEach(() => {
 describe('PromoModal', () => {
   it('announces the offer as a dialog and shows it in the reader’s language', () => {
     renderModal(
-      <PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} held={false} />,
+      <PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} />,
       'km',
     )
 
@@ -91,7 +91,7 @@ describe('PromoModal', () => {
   it('closes on the close button', () => {
     const onClose = vi.fn()
     renderModal(
-      <PromoModal promotion={promotion} products={[]} onClose={onClose} onHold={vi.fn()} held={false} />,
+      <PromoModal promotion={promotion} products={[]} onClose={onClose} onHold={vi.fn()} />,
     )
 
     fireEvent.click(screen.getByRole('button', { name: dictionaries.en.promo.dismiss }))
@@ -101,7 +101,7 @@ describe('PromoModal', () => {
   it('closes on Escape and on the backdrop', () => {
     const onClose = vi.fn()
     renderModal(
-      <PromoModal promotion={promotion} products={[]} onClose={onClose} onHold={vi.fn()} held={false} />,
+      <PromoModal promotion={promotion} products={[]} onClose={onClose} onHold={vi.fn()} />,
     )
 
     fireEvent.keyDown(document, { key: 'Escape' })
@@ -115,7 +115,7 @@ describe('PromoModal', () => {
   it('does not close when the card itself is clicked', () => {
     const onClose = vi.fn()
     renderModal(
-      <PromoModal promotion={promotion} products={[]} onClose={onClose} onHold={vi.fn()} held={false} />,
+      <PromoModal promotion={promotion} products={[]} onClose={onClose} onHold={vi.fn()} />,
     )
 
     fireEvent.click(screen.getByRole('heading', { name: promotion.titleEn }))
@@ -124,7 +124,7 @@ describe('PromoModal', () => {
 
   it('moves focus to the close button so it is reachable straight away', () => {
     renderModal(
-      <PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} held={false} />,
+      <PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} />,
     )
 
     expect(document.activeElement).toBe(
@@ -134,7 +134,7 @@ describe('PromoModal', () => {
 
   it('pauses the countdown while the customer is reading', () => {
     const onHold = vi.fn()
-    renderModal(<PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={onHold} held={false} />)
+    renderModal(<PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={onHold} />)
 
     const card = screen.getByRole('heading', { name: promotion.titleEn }).closest('div')!
       .parentElement!
@@ -153,7 +153,7 @@ describe('PromoModal', () => {
         products={[]}
         onClose={vi.fn()}
         onHold={vi.fn()}
-        held={false}
+       
       />,
     )
 
@@ -163,23 +163,53 @@ describe('PromoModal', () => {
   })
 })
 
+describe('how it sits on the screen', () => {
+  it('is centred, not anchored to the bottom of the phone', () => {
+    renderModal(<PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} />)
+
+    const backdrop = screen.getByRole('dialog').className
+
+    expect(backdrop).toContain('place-items-center')
+    expect(backdrop).not.toContain('place-items-end')
+  })
+
+  /** The shop asked for the meter to go; the three seconds stay. */
+  it('draws no countdown bar', () => {
+    const view = renderModal(
+      <PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} />,
+    )
+
+    expect(view.container.querySelector('[style*="promo-countdown"]')).toBeNull()
+    expect(view.container.innerHTML).not.toContain('promo-countdown')
+  })
+
+  /** Centred and carrying a list, it must not run off a short screen. */
+  it('scrolls inside itself rather than off the top', () => {
+    const view = renderModal(
+      <PromoModal promotion={promotion} products={[]} onClose={vi.fn()} onHold={vi.fn()} />,
+    )
+
+    const card = view.container.querySelector('[role="dialog"] > div')!
+
+    expect(card.className).toContain('overflow-y-auto')
+  })
+})
+
 describe('the three-second window', () => {
   it('is the documented duration', () => {
     expect(PROMO_VISIBLE_MS).toBe(3000)
   })
 
-  it('lets the customer read on when they are still holding it', () => {
+  it('never closes itself — the gate owns the timer', () => {
     vi.useFakeTimers()
 
     const onClose = vi.fn()
-    renderModal(<PromoModal promotion={promotion} products={[]} onClose={onClose} onHold={vi.fn()} held />)
+    renderModal(<PromoModal promotion={promotion} products={[]} onClose={onClose} onHold={vi.fn()} />)
 
     act(() => {
       vi.advanceTimersByTime(PROMO_VISIBLE_MS * 3)
     })
 
-    // The modal is presentational — the gate owns the timer — so nothing here
-    // should be closing itself behind the customer's back.
     expect(onClose).not.toHaveBeenCalled()
   })
 })
@@ -224,7 +254,7 @@ describe('the offer itself', () => {
         products={[discounted({})]}
         onClose={vi.fn()}
         onHold={vi.fn()}
-        held={false}
+       
       />,
     )
 
@@ -251,7 +281,7 @@ describe('the offer itself', () => {
         products={many}
         onClose={vi.fn()}
         onHold={vi.fn()}
-        held={false}
+       
       />,
     )
 
@@ -271,7 +301,7 @@ describe('the offer itself', () => {
         products={[discounted({})]}
         onClose={onClose}
         onHold={vi.fn()}
-        held={false}
+       
       />,
     )
 

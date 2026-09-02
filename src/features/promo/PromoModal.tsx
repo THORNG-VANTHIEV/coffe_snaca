@@ -8,7 +8,6 @@ import { PriceDisplay } from '@/components/menu/PriceDisplay'
 import { ImageWithFallback } from '@/components/common/ImageWithFallback'
 import { productName } from '@/utils/translation'
 import { Link } from 'react-router-dom'
-import { PROMO_VISIBLE_MS } from './usePromoGate'
 import { prefersReducedMotion } from '@/utils/motion'
 import { cn } from '@/utils/cn'
 
@@ -20,9 +19,12 @@ interface PromoModalProps {
   /** The products the offer actually discounts, deepest cut first. */
   products: Product[]
   onClose: () => void
-  /** Called with true while the customer is reading, to pause the countdown. */
+  /**
+   * Called with true while the customer is reading, so the gate holds the
+   * three seconds open. Nothing draws that pause any more — the countdown bar
+   * is gone — but a card being read still should not vanish mid-sentence.
+   */
   onHold: (held: boolean) => void
-  held: boolean
 }
 
 /**
@@ -36,15 +38,15 @@ interface PromoModalProps {
  *    it is never the only way out.
  *  - Escape closes it, and so does the backdrop.
  *  - Hovering, focusing or touching the card pauses the countdown, because a
- *    dialog that vanishes while it is being read is worse than none.
- *  - The progress bar shows the time left, so its disappearance is expected
- *    rather than startling.
+ *    dialog that vanishes while it is being read is worse than none. Nothing
+ *    draws that pause: the shop asked for the bar to go, and a dialog that
+ *    leaves quietly after three seconds needs no meter to explain itself.
  *
  * Focus moves to the close button on open and the backdrop is inert to
  * pointer events beneath, so a screen-reader user meets the offer in order and
  * a sighted one cannot tap a product through it.
  */
-export function PromoModal({ promotion, products, onClose, onHold, held }: PromoModalProps) {
+export function PromoModal({ promotion, products, onClose, onHold }: PromoModalProps) {
   const { language, t } = useLanguage()
   const { title, text } = promotionText(promotion, language)
   const closeRef = useRef<HTMLButtonElement>(null)
@@ -69,7 +71,7 @@ export function PromoModal({ promotion, products, onClose, onHold, held }: Promo
       role="dialog"
       aria-modal="true"
       aria-label={t.promo.announcement}
-      className="fixed inset-0 z-50 grid place-items-end justify-items-center bg-bg/60 px-4 pb-6 backdrop-blur-sm sm:place-items-center sm:pb-4"
+      className="fixed inset-0 z-50 grid place-items-center bg-bg/60 p-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
@@ -82,6 +84,9 @@ export function PromoModal({ promotion, products, onClose, onHold, held }: Promo
         className={cn(
           'relative w-full max-w-sm overflow-hidden rounded-[1.75rem] border border-border/80',
           'bg-surface/95 shadow-raised backdrop-blur-xl',
+          // Centred and carrying an offer list, the card can outgrow a short
+          // screen; it scrolls inside itself rather than off the top.
+          'max-h-[85vh] overflow-y-auto',
           !reduced && 'animate-fade-rise',
         )}
       >
@@ -184,22 +189,6 @@ export function PromoModal({ promotion, products, onClose, onHold, held }: Promo
           </div>
         )}
 
-        {/*
-          The countdown, drawn rather than described. It freezes with the timer
-          while the card is held, so a paused dialog looks paused.
-        */}
-        <div className="h-1 w-full bg-surface-3" aria-hidden="true">
-          <div
-            className="h-full bg-success"
-            style={{
-              animation: reduced
-                ? undefined
-                : `promo-countdown ${PROMO_VISIBLE_MS}ms linear forwards`,
-              animationPlayState: held ? 'paused' : 'running',
-              width: reduced ? '100%' : undefined,
-            }}
-          />
-        </div>
       </div>
     </div>
   )

@@ -93,7 +93,6 @@ export function MainLayout() {
           products={data ? getDiscountedProducts(data.products, data.settings) : []}
           onClose={promo.close}
           onHold={promo.hold}
-          held={promo.held}
         />
       ) : null}
     </>
