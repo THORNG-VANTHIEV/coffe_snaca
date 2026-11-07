@@ -10,6 +10,7 @@ import { SearchBar } from '@/features/search/SearchBar'
 import { SearchResults } from '@/features/search/SearchResults'
 import { useSearchQuery, useSearchResults } from '@/features/search/useSearchQuery'
 import { HeroBanner } from './HeroBanner'
+import { PromoSpotlight } from '@/features/promo/PromoSpotlight'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useCategories, useProducts, useSettings } from '@/hooks/useMenu'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
@@ -61,6 +62,9 @@ export function HomePage() {
         <SearchResults query={query} results={results} />
       ) : (
         <>
+          {/* First after search while an offer runs; absent between campaigns. */}
+          <PromoSpotlight />
+
           <section aria-labelledby="home-categories">
             <SectionHeading
               id="home-categories"

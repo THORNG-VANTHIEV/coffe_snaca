@@ -112,13 +112,17 @@ const en = {
     /** The pop-up's accessible name. */
     announcement: 'Special offer',
     dismiss: 'Close this offer',
-    /** Trails the two or three items the pop-up has room to show. */
-    andMore: 'and more on the menu',
     seeMenu: 'See the menu',
     /** {count} is replaced where it stands, so each language can order it. */
     endsToday: 'Last day',
     endsTomorrow: 'Ends tomorrow',
     daysLeft: '{count} days left',
+    /** The deepest cut on offer. {percent} is a bare number. */
+    upTo: 'Up to {percent}% off',
+    /** Above the big number on the pop-up's badge. */
+    upToShort: 'Up to',
+    /** The pop-up's way through to the offer section on the home page. */
+    viewOffers: 'See all offers',
   },
 
   states: {
@@ -268,11 +272,13 @@ const km: Dictionary = {
     regularPrice: 'តម្លៃធម្មតា',
     announcement: 'ការផ្តល់ជូនពិសេស',
     dismiss: 'បិទការផ្តល់ជូននេះ',
-    andMore: 'និងមុខទៀតលើម៉ឺនុយ',
     seeMenu: 'មើលម៉ឺនុយ',
     endsToday: 'ថ្ងៃចុងក្រោយ',
     endsTomorrow: 'បញ្ចប់ថ្ងៃស្អែក',
     daysLeft: 'នៅសល់ {count} ថ្ងៃ',
+    upTo: 'បញ្ចុះរហូតដល់ {percent}%',
+    upToShort: 'រហូតដល់',
+    viewOffers: 'មើលការផ្តល់ជូនទាំងអស់',
   },
 
   states: {

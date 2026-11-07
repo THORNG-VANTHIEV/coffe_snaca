@@ -310,40 +310,51 @@ describe('the offer itself', () => {
         products={[discounted({})]}
         onClose={vi.fn()}
         onHold={vi.fn()}
-       
       />,
     )
 
     expect(screen.getByText('Snaca Edition')).toBeTruthy()
-    expect(screen.getByText('−25%')).toBeTruthy()
 
-    // The old price is struck through as one run of text — PriceDisplay joins
-    // the two currencies before striking them, so it is not its own node.
-    expect(screen.getByText(/\$2\.25/)).toBeTruthy()
-
-    // $2.25 − 25% = $1.69, and riel follows from that, not from 9,300.
+    // $2.25 − 25% = $1.69, the old price struck beside it. The card is too
+    // narrow for both currencies twice over, so it carries the first one.
     expect(screen.getByText('$1.69')).toBeTruthy()
-    expect(screen.getByText('7,000៛')).toBeTruthy()
+    expect(screen.getByText('$2.25').tagName).toBe('S')
   })
 
-  it('shows at most three, so it stays a pop-up and not a menu', () => {
-    const many = [1, 2, 3, 4, 5].map((id) =>
-      discounted({ id, slug: `p-${id}`, nameEn: `Product ${id}` }),
-    )
-
+  /** The one number worth reading first, stamped on the banner. */
+  it('stamps the deepest discount on the banner', () => {
     renderModal(
       <PromoModal
         promotion={promotion}
-        products={many}
+        products={[discounted({ id: 1, promoPercent: 10 }), discounted({ id: 2, slug: 'b', promoPercent: 30 })]}
         onClose={vi.fn()}
         onHold={vi.fn()}
-       
       />,
     )
 
-    expect(screen.getByText('Product 1')).toBeTruthy()
-    expect(screen.queryByText('Product 4')).toBeNull()
-    expect(screen.getByText(dictionaries.en.promo.andMore)).toBeTruthy()
+    expect(screen.getByText(dictionaries.en.promo.upToShort)).toBeTruthy()
+    // Once on the banner, once on the product carrying it.
+    expect(screen.getAllByText('−30%')).toHaveLength(2)
+  })
+
+  it('carries six to swipe through, then hands over to the home page', () => {
+    const many = [1, 2, 3, 4, 5, 6, 7].map((id) =>
+      discounted({ id, slug: `p-${id}`, nameEn: `Product ${id}` }),
+    )
+    const onClose = vi.fn()
+
+    renderModal(
+      <PromoModal promotion={promotion} products={many} onClose={onClose} onHold={vi.fn()} />,
+    )
+
+    expect(screen.getByText('Product 6')).toBeTruthy()
+    expect(screen.queryByText('Product 7')).toBeNull()
+
+    const seeAll = screen.getByRole('link', { name: dictionaries.en.promo.viewOffers })
+    expect(seeAll.getAttribute('href')).toBe('/#home-promo')
+
+    fireEvent.click(seeAll)
+    expect(onClose).toHaveBeenCalled()
   })
 
   /** Tapping an item is a decision; it should take you there, not leave the
