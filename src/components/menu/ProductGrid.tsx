@@ -10,20 +10,19 @@ interface ProductGridProps {
 }
 
 /**
- * Responsive product grid (spec §34). A single column of compact rows on
- * phones under 420px, where a full-size card per product ran the menu to some
- * 47 screens of scrolling; two cards up from 420px.
+ * Responsive product grid. Single column on the narrowest phones so names and
+ * prices stay comfortable, two up from 420px (spec §34).
  */
 export function ProductGrid({ products, priorityCount = 0, className }: ProductGridProps) {
   return (
     <div
       className={cn(
-        'motion-stagger grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 min-[420px]:gap-4 md:grid-cols-3 xl:grid-cols-4',
+        'motion-stagger grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4',
         className,
       )}
     >
       {products.map((product, index) => (
-        <ProductCard key={product.id} product={product} priority={index < priorityCount} compact />
+        <ProductCard key={product.id} product={product} priority={index < priorityCount} />
       ))}
     </div>
   )
