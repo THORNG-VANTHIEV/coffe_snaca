@@ -123,7 +123,7 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
             <img
               src={promotion.image}
               alt=""
-              className="aspect-2/1 w-full object-cover"
+              className="aspect-16/9 w-full object-cover"
               aria-hidden="true"
             />
           ) : (

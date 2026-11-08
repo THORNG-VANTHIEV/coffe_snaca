@@ -256,7 +256,7 @@ const km: Dictionary = {
   },
 
   availability: {
-    available: 'មាន',
+    available: 'មានលក់',
     unavailable: 'អស់ជាបណ្តោះអាសន្ន',
     unavailableShort: 'អស់ស្តុក',
   },

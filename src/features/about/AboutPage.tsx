@@ -41,7 +41,7 @@ export function AboutPage() {
     // which of the two Tailwind happens to emit last.
     <div className="container-page [--container-page:64rem] py-8 md:py-12">
       <header className="flex flex-col items-center text-center rounded-card border border-border/70 bg-surface/50 p-8 shadow-card backdrop-blur-sm sm:p-12">
-        <ShopLogo src={settings.logo} name={name} className="h-16 shadow-card sm:h-20" />
+        <ShopLogo src={settings.logo} name={name} className="h-16 sm:h-20" />
         <h1 className="sr-only">{name}</h1>
         {tagline && (
           <p className="mt-4 text-base font-medium text-text sm:text-lg">{tagline}</p>
@@ -61,7 +61,7 @@ export function AboutPage() {
             </dt>
             <dd className="text-sm font-medium text-text">
               {href ? (
-                <a href={href} className="transition duration-150 hover:text-accent-strong hover:underline">
+                <a href={href} className="-my-3 inline-flex min-h-11 items-center transition duration-150 hover:text-accent-strong hover:underline">
                   {value}
                 </a>
               ) : (

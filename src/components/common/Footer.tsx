@@ -29,7 +29,7 @@ export function Footer() {
   ].filter((item): item is NonNullable<typeof item> => item !== null)
 
   return (
-    <footer className="relative mt-20 border-t border-border/80 bg-surface-2/80 backdrop-blur-sm">
+    <footer className="relative mt-12 border-t sm:mt-20 border-border/80 bg-surface-2/80 backdrop-blur-sm">
       {/* Top accent line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
@@ -55,12 +55,12 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-wider text-text/90">
               {t.footer.quickLinks}
             </h3>
-            <ul className="flex flex-col gap-2.5 text-sm">
+            <ul className="flex flex-col text-sm md:gap-2.5">
               {navLinks.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="inline-flex items-center gap-1.5 text-muted transition duration-150 hover:translate-x-1 hover:text-accent-strong"
+                    className="inline-flex min-h-11 items-center gap-1.5 text-muted transition duration-150 hover:translate-x-1 hover:text-accent-strong md:min-h-0"
                   >
                     <ChevronRight className="size-3.5 text-accent/70" />
                     <span>{link.label}</span>
@@ -95,7 +95,7 @@ export function Footer() {
                   <dd>
                     <a
                       href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-                      className="text-muted font-medium tabular-nums transition duration-150 hover:text-accent-strong"
+                      className="inline-flex min-h-11 items-center text-muted font-medium tabular-nums transition duration-150 hover:text-accent-strong md:min-h-0"
                     >
                       {settings.phone}
                     </a>
@@ -134,7 +134,7 @@ export function Footer() {
                     href={href}
                     {...(external ? { target: '_blank', rel: 'noreferrer noopener' } : {})}
                     aria-label={label}
-                    className="flex items-center gap-2 rounded-pill border border-border bg-surface px-3.5 py-2 text-xs font-medium text-muted shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface-2 hover:text-text hover:shadow-raised"
+                    className="flex min-h-11 items-center gap-2 rounded-pill border border-border bg-surface px-3.5 py-2 text-xs md:min-h-0 font-medium text-muted shadow-card transition duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface-2 hover:text-text hover:shadow-raised"
                   >
                     <Icon className="size-4 text-accent" />
                     <span>{label}</span>

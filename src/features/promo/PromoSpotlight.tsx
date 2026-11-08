@@ -57,14 +57,16 @@ export function PromoSpotlight() {
       aria-labelledby={`${PROMO_SECTION_ID}-title`}
       className="scroll-mt-24 overflow-hidden rounded-3xl border border-border bg-surface shadow-card"
     >
-      <div className="relative isolate flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:p-7">
+      <div className="relative isolate flex items-start gap-3 p-5 sm:items-center sm:gap-5 sm:p-7">
         {/*
           The banner photo as a faint wash behind the header, faded out
           before the text so the headline never depends on the photo for
-          its contrast.
+          its contrast. Wide screens only: a phone's text runs the full width,
+          so there the photo could only ever be a smudge behind it. Phones
+          still get it, large, in the pop-up.
         */}
         {promotion.image ? (
-          <>
+          <div className="hidden sm:contents">
             <img
               src={promotion.image}
               alt=""
@@ -77,7 +79,7 @@ export function PromoSpotlight() {
               aria-hidden="true"
               className="absolute inset-0 -z-10 bg-linear-to-r from-surface from-40% via-surface/90 to-surface/30 rtl:bg-linear-to-l"
             />
-          </>
+          </div>
         ) : null}
 
         <div className="min-w-0 flex-1">
@@ -97,7 +99,7 @@ export function PromoSpotlight() {
 
           <h2
             id={`${PROMO_SECTION_ID}-title`}
-            className="mt-3 text-2xl leading-snug font-bold text-balance text-text sm:text-3xl"
+            className="mt-3 text-xl leading-snug font-bold text-balance text-text sm:text-3xl"
           >
             {title}
           </h2>
@@ -108,12 +110,12 @@ export function PromoSpotlight() {
         </div>
 
         {/* The headline number, big enough to read from across the table. */}
-        <p className="flex shrink-0 flex-col items-center self-start rounded-2xl bg-success px-5 py-3 text-bg shadow-raised sm:self-center sm:px-6 sm:py-4">
+        <p className="flex shrink-0 flex-col items-center rounded-2xl bg-success px-3 py-2.5 text-bg shadow-raised sm:px-6 sm:py-4">
           <span className="sr-only">{t.promo.upTo.replace('{percent}', String(deepest))}</span>
-          <span aria-hidden="true" className="text-xs leading-none font-semibold">
+          <span aria-hidden="true" className="text-[10px] leading-none font-semibold sm:text-xs">
             {t.promo.upToShort}
           </span>
-          <span aria-hidden="true" className="mt-1 text-3xl leading-none font-extrabold tabular-nums sm:text-4xl">
+          <span aria-hidden="true" className="mt-1 text-xl leading-none font-extrabold tabular-nums sm:text-4xl">
             −{deepest}%
           </span>
         </p>

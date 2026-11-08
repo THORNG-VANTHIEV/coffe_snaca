@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useMenuState } from '@/hooks/useMenu'
 import { ErrorState } from '@/components/common/ErrorState'
+import { BottomNav } from '@/components/common/BottomNav'
 import { Footer } from '@/components/common/Footer'
 import { Header } from '@/components/common/Header'
 import { PromoModal } from '@/features/promo/PromoModal'
@@ -55,6 +56,8 @@ export function MainLayout() {
       <div
         className={cn(
           'flex min-h-dvh flex-col bg-bg',
+          // Room for the bottom bar, so it never covers the end of the footer.
+          'pb-[calc(3.75rem+env(safe-area-inset-bottom))] md:pb-0',
           showWelcome && 'fixed inset-0 overflow-hidden',
         )}
         aria-hidden={showWelcome || undefined}
@@ -76,6 +79,8 @@ export function MainLayout() {
         </main>
 
         <Footer />
+
+        <BottomNav />
       </div>
 
       {showWelcome && data ? (
