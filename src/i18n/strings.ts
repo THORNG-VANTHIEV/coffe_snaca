@@ -157,6 +157,8 @@ const en = {
   },
 
   footer: {
+    /** Tooltip and screen-reader wording for the address link. */
+    openMap: 'Open in Google Maps',
     quickLinks: 'Quick Links',
     hours: 'Open daily',
     address: 'Address',
@@ -313,6 +315,7 @@ const km: Dictionary = {
   },
 
   footer: {
+    openMap: 'បើកក្នុង Google Maps',
     quickLinks: 'ព័ត៌មាន',
     hours: 'បើកជារៀងរាល់ថ្ងៃ',
     address: 'អាសយដ្ឋាន',
