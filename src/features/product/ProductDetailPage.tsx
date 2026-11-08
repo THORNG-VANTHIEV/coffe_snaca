@@ -123,8 +123,13 @@ export function ProductDetailPage() {
   const altName = productAltName(product, language)
   const description = productDescription(product, language)
   const ingredients = productIngredients(product, language)
-  const sizeLabel = category?.kind === 'food' ? t.product.portion : t.product.sizes
-  const showOptionsNote = hasDrinkOptions(product) || product.options.length > 0
+  const isFood = category?.kind === 'food'
+  const sizeLabel = isFood ? t.product.portion : t.product.sizes
+  // Temperature, sugar and ice are choices about a drink (spec §15). Food in
+  // the data still carries `temperature`, and the admin form has no field to
+  // clear it, so it is the kind that decides whether they are shown.
+  const showDrinkOptions = !isFood && hasDrinkOptions(product)
+  const showOptionsNote = showDrinkOptions || product.options.length > 0
 
   const temperatureItems: OptionItem[] = product.temperature.map((value) => ({
     key: value,
@@ -193,7 +198,7 @@ export function ProductDetailPage() {
             {category && (
               <Link
                 to={`/category/${category.slug}`}
-                className="w-fit text-xs font-medium text-accent-strong underline-offset-4 hover:underline"
+                className="-my-3 inline-flex min-h-11 w-fit items-center text-xs font-medium text-accent-strong underline-offset-4 hover:underline"
               >
                 {categoryName(category, language)}
               </Link>
@@ -233,7 +238,7 @@ export function ProductDetailPage() {
                     <span className="text-sm font-medium text-text">
                       {sizeName(size, language)}
                     </span>
-                    <PriceDisplay price={size.price} size="md" discountPercent={discount} />
+                    <PriceDisplay price={size.price} size="md" discountPercent={discount} className="justify-end" />
                   </li>
                 ))}
               </ul>
@@ -242,19 +247,19 @@ export function ProductDetailPage() {
             )}
           </section>
 
-          {temperatureItems.length > 0 && (
+          {showDrinkOptions && temperatureItems.length > 0 && (
             <OptionSection icon={Thermometer} title={t.product.temperature}>
               <OptionChips items={temperatureItems} />
             </OptionSection>
           )}
 
-          {sugarItems.length > 0 && (
+          {showDrinkOptions && sugarItems.length > 0 && (
             <OptionSection icon={Sparkles} title={t.product.sugar}>
               <OptionChips items={sugarItems} />
             </OptionSection>
           )}
 
-          {iceItems.length > 0 && (
+          {showDrinkOptions && iceItems.length > 0 && (
             <OptionSection icon={Snowflake} title={t.product.ice}>
               <OptionChips items={iceItems} />
             </OptionSection>

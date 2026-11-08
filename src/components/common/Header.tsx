@@ -11,8 +11,8 @@ import { cn } from '@/utils/cn'
 
 /**
  * Sticky top header (spec §7.2, §37): who you are, which table you are at,
- * what language you read, and how the menu looks. Nothing else — a menu does
- * not need a navigation system.
+ * what language you read, and how the menu looks. Its page links only fit from
+ * `md` up; on a phone BottomNav carries them instead.
  *
  * All three controls fit one row again now that the language and theme
  * switches are single buttons rather than segmented pairs, which keeps the

@@ -29,7 +29,7 @@ export function CategoryGrid({
           <li key={category.id}>
             <Link
               to={`/menu?category=${category.slug}#category-${category.slug}`}
-              className="group block overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-var(--motion-standard) ease-out hover:-translate-y-1 hover:border-border-strong hover:shadow-raised"
+              className="group flex h-full flex-col overflow-hidden rounded-card border border-border/70 bg-surface shadow-card transition duration-var(--motion-standard) ease-out hover:-translate-y-1 hover:border-border-strong hover:shadow-raised"
             >
               <div className="relative overflow-hidden">
                 <ImageWithFallback
@@ -46,7 +46,7 @@ export function CategoryGrid({
               </div>
 
               <div className="p-3">
-                <p className="truncate text-sm font-semibold text-text">{name}</p>
+                <p className="line-clamp-2 text-sm leading-snug font-semibold text-text">{name}</p>
                 <p className="text-xs text-muted tabular-nums">
                   {count} {count === 1 ? t.common.item : t.common.items}
                 </p>

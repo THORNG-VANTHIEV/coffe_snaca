@@ -32,13 +32,28 @@ import {
 const TEMPERATURES: readonly Temperature[] = ['hot', 'iced']
 const ICE_LEVELS: readonly IceLevel[] = ['none', 'less', 'normal', 'extra']
 
-/** Long-form labels for the conventional size codes. */
+const REGULAR = { en: 'Regular', km: 'ធម្មតា' }
+const SMALL = { en: 'Small', km: 'តូច' }
+const MEDIUM = { en: 'Medium', km: 'មធ្យម' }
+const LARGE = { en: 'Large', km: 'ធំ' }
+const EXTRA_LARGE = { en: 'Extra Large', km: 'ធំបំផុត' }
+
+/**
+ * Long-form labels for the conventional sizes, by code or by name: drinks say
+ * "R" and "L", while every food item says "Regular" outright, which without
+ * its own entry reached Khmer pages untranslated.
+ */
 const SIZE_LABELS: Record<string, { en: string; km: string }> = {
-  R: { en: 'Regular', km: 'ធម្មតា' },
-  S: { en: 'Small', km: 'តូច' },
-  M: { en: 'Medium', km: 'មធ្យម' },
-  L: { en: 'Large', km: 'ធំ' },
-  XL: { en: 'Extra Large', km: 'ធំបំផុត' },
+  R: REGULAR,
+  REGULAR,
+  S: SMALL,
+  SMALL,
+  M: MEDIUM,
+  MEDIUM,
+  L: LARGE,
+  LARGE,
+  XL: EXTRA_LARGE,
+  'EXTRA LARGE': EXTRA_LARGE,
 }
 
 /**

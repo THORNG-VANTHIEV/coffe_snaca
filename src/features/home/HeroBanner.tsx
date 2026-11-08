@@ -4,7 +4,7 @@ import { useLanguage } from '@/hooks/useLanguage'
 import { useSettings } from '@/hooks/useMenu'
 import { useTable } from '@/hooks/useTable'
 import { HeroSlideshow } from './HeroSlideshow'
-import { shopName, shopTagline } from '@/utils/translation'
+import { sameWords, shopName, shopTagline } from '@/utils/translation'
 import { resolveAssetUrl } from '@/utils/url'
 
 /** Used only when the shop has not listed any `hero_images` in db.json. */
@@ -25,6 +25,9 @@ export function HeroBanner() {
 
   const name = shopName(settings, language)
   const tagline = shopTagline(settings, language)
+  const headline = `${t.hero.titleLine1} ${t.hero.titleLine2}`
+  // The shop's tagline, unless it only repeats the headline right above it.
+  const subtitle = tagline && !sameWords(tagline, headline) ? tagline : t.hero.subtitle
   const slides = settings.heroImages.length > 0 ? settings.heroImages : FALLBACK_HERO
 
   const welcome = table
@@ -49,7 +52,7 @@ export function HeroBanner() {
         </h1>
 
         <p className="max-w-md text-sm text-white/85 sm:text-base">
-          {tagline || t.hero.subtitle}
+          {subtitle}
         </p>
 
         <ButtonLink to="/menu" variant="onImage" className="mt-2 w-fit">

@@ -55,7 +55,7 @@ export function PriceDisplay({
 
   return (
     <div className={cn('flex flex-wrap items-baseline gap-x-2 gap-y-0.5', className)}>
-      {prefix && <span className="text-xs text-muted">{prefix}</span>}
+      {prefix && !was && <span className="text-xs text-muted">{prefix}</span>}
 
       {/*
         The old price comes first, struck through, because that is the order
@@ -64,9 +64,12 @@ export function PriceDisplay({
         only the strikethrough carries.
       */}
       {was && (
-        <span className={cn('text-muted tabular-nums', WAS_SIZE[size])}>
-          <span className="sr-only">{t.promo.regularPrice} </span>
-          <s>{[was.usd, was.khr].filter(Boolean).join(' | ')}</s>
+        <span className="flex basis-full flex-wrap items-baseline gap-x-2 [justify-content:inherit]">
+          {prefix && <span className="text-xs text-muted">{prefix}</span>}
+          <span className={cn('text-muted tabular-nums', WAS_SIZE[size])}>
+            <span className="sr-only">{t.promo.regularPrice} </span>
+            <s>{[was.usd, was.khr].filter(Boolean).join(' | ')}</s>
+          </span>
         </span>
       )}
 

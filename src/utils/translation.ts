@@ -38,6 +38,17 @@ export const productIngredients = (product: Product, language: Language): string
 export const productAltName = (product: Product, language: Language): string =>
   language === 'km' ? product.nameEn : product.nameKm
 
+/**
+ * Whether two strings say the same words, ignoring case, spacing and
+ * punctuation: "Fresh Coffee. Better Moments." and "Fresh coffee, better
+ * moments." are one sentence. Letters, marks and digits are all kept, because
+ * Khmer vowels and subscripts are marks, not punctuation.
+ */
+export function sameWords(a: string, b: string): boolean {
+  const words = (text: string) => text.toLowerCase().replace(/[^\p{L}\p{M}\p{N}]/gu, '')
+  return words(a) === words(b)
+}
+
 export const categoryName = (category: Category, language: Language): string =>
   pick(language, category.nameEn, category.nameKm)
 
