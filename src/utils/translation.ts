@@ -67,6 +67,12 @@ export const optionGroupName = (group: ProductOptionGroup, language: Language): 
 export const optionValueName = (value: ProductOptionValue, language: Language): string =>
   pick(language, value.nameEn, value.nameKm)
 
+export const shopIntro = (settings: Settings, language: Language): string =>
+  pick(language, settings.aboutIntroEn, settings.aboutIntroKm)
+
+export const shopMenuNote = (settings: Settings, language: Language): string =>
+  pick(language, settings.menuNoteEn, settings.menuNoteKm)
+
 export const shopName = (settings: Settings, language: Language): string =>
   pick(language, settings.shopNameEn, settings.shopNameKm)
 

@@ -40,6 +40,10 @@ const settings = {
   showUnavailableProducts: true,
   facebook: '',
   telegram: '',
+  aboutIntroEn: '',
+  aboutIntroKm: '',
+  menuNoteEn: '',
+  menuNoteKm: '',
   promo: null,
 }
 
@@ -355,6 +359,31 @@ describe('the offer itself', () => {
 
     fireEvent.click(seeAll)
     expect(onClose).toHaveBeenCalled()
+  })
+
+  /** "Up to" and "all offers" would both promise more than one product can deliver. */
+  it('speaks plainly about a single product', () => {
+    renderModal(
+      <PromoModal promotion={promotion} products={[discounted({})]} onClose={vi.fn()} onHold={vi.fn()} />,
+    )
+
+    expect(screen.queryByText(dictionaries.en.promo.upToShort)).toBeNull()
+    expect(screen.queryByText(dictionaries.en.promo.viewOffers)).toBeNull()
+    expect(screen.getByRole('link', { name: dictionaries.en.promo.viewProduct }).getAttribute('href')).toBe('/menu/snaca-edition')
+  })
+
+  it('says "up to" only when the same discount does not cover everything', () => {
+    renderModal(
+      <PromoModal
+        promotion={promotion}
+        products={[discounted({ id: 1 }), discounted({ id: 2, slug: 'b' })]}
+        onClose={vi.fn()}
+        onHold={vi.fn()}
+      />,
+    )
+
+    expect(screen.queryByText(dictionaries.en.promo.upToShort)).toBeNull()
+    expect(screen.getByText(dictionaries.en.promo.viewOffers)).toBeTruthy()
   })
 
   /** Tapping an item is a decision; it should take you there, not leave the

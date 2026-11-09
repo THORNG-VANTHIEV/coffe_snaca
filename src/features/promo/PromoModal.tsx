@@ -11,7 +11,7 @@ import { ImageWithFallback } from '@/components/common/ImageWithFallback'
 import { productName } from '@/utils/translation'
 import { prefersReducedMotion } from '@/utils/motion'
 import { cn } from '@/utils/cn'
-import { countdownLabel, deepestDiscount, PROMO_SECTION_ID } from './promoLabels'
+import { countdownLabel, deepestDiscount, hasVariedDiscounts, PROMO_SECTION_ID } from './promoLabels'
 
 /**
  * How many products the pop-up's row carries. They scroll sideways, so this
@@ -60,6 +60,10 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
   const { title, text } = promotionText(promotion, language)
   const countdown = countdownLabel(promotion, t.promo)
   const deepest = deepestDiscount(products)
+  const varied = hasVariedDiscounts(products)
+  // One product needs no row to swipe, and "all offers" would promise more
+  // than there is: it gets a wide card and a link straight to it.
+  const single = products.length === 1 ? products[0] : null
   const closeRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -142,8 +146,8 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
                 !reduced && 'animate-fade-rise',
               )}
             >
-              <span className="text-[10px] leading-none font-semibold">{t.promo.upToShort}</span>
-              <span className="mt-0.5 text-2xl leading-none font-extrabold tabular-nums">
+              {varied && <span className="mb-0.5 text-[10px] leading-none font-semibold">{t.promo.upToShort}</span>}
+              <span className="text-2xl leading-none font-extrabold tabular-nums">
                 −{deepest}%
               </span>
             </div>
@@ -182,18 +186,21 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
         */}
         {products.length > 0 && (
           <div className="border-t border-border/70 pt-4 pb-5">
-            <ul className="scroll-row scroll-row-snap scrollbar-none gap-3 px-5 sm:px-6">
+            <ul className={cn('gap-3 px-5 sm:px-6', single ? 'grid' : 'scroll-row scroll-row-snap scrollbar-none')}>
               {products.slice(0, SHOWN).map((product) => {
                 const size = getStartingSize(product)
 
                 return (
-                  <li key={product.id} className="scroll-item w-36 shrink-0">
+                  <li key={product.id} className={single ? '' : 'scroll-item w-36 shrink-0'}>
                     <Link
                       to={`/menu/${product.slug}`}
                       onClick={onClose}
-                      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-surface-2 text-start transition hover:border-border-strong"
+                      className={cn(
+                        'group flex h-full overflow-hidden rounded-2xl border border-border/70 bg-surface-2 text-start transition hover:border-border-strong',
+                        single ? 'items-center' : 'flex-col',
+                      )}
                     >
-                      <span className="relative block">
+                      <span className={cn('relative block', single && 'w-28 shrink-0')}>
                         <ImageWithFallback
                           src={product.image}
                           alt=""
@@ -231,14 +238,14 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
 
             <div className="px-5 pt-4 sm:px-6">
               <Link
-                to={{ pathname: '/', hash: `#${PROMO_SECTION_ID}` }}
+                to={single ? `/menu/${single.slug}` : { pathname: '/', hash: `#${PROMO_SECTION_ID}` }}
                 onClick={onClose}
                 className={cn(
                   'flex w-full items-center justify-center gap-2 rounded-pill bg-primary px-5 py-3 text-sm font-semibold text-on-primary transition',
                   'hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-border-interactive',
                 )}
               >
-                {t.promo.viewOffers}
+                {single ? t.promo.viewProduct : t.promo.viewOffers}
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
             </div>

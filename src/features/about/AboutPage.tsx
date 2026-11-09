@@ -4,12 +4,7 @@ import { ShopLogo } from '@/components/common/ShopLogo'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useSettings } from '@/hooks/useMenu'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
-import {
-  shopAddress,
-  shopName,
-  shopOpeningHours,
-  shopTagline,
-} from '@/utils/translation'
+import { shopAddress, shopIntro, shopMenuNote, shopName, shopOpeningHours, shopTagline } from '@/utils/translation'
 
 /** Shop information (spec §27, §62). */
 export function AboutPage() {
@@ -46,7 +41,7 @@ export function AboutPage() {
         {tagline && (
           <p className="mt-4 text-base font-medium text-text sm:text-lg">{tagline}</p>
         )}
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">{t.about.intro}</p>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">{shopIntro(settings, language) || t.about.intro}</p>
       </header>
 
       <dl className="mt-8 grid gap-4 sm:grid-cols-3 sm:gap-6">
@@ -95,7 +90,7 @@ export function AboutPage() {
 
       <p className="mt-8 flex items-start justify-center gap-2.5 rounded-card border border-border/60 bg-surface-2/60 p-4 text-center text-sm text-muted">
         <Info className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
-        {t.about.menuNote}
+        {shopMenuNote(settings, language) || t.about.menuNote}
       </p>
     </div>
   )

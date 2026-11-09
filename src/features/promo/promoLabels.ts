@@ -26,6 +26,11 @@ export function countdownLabel(
   return strings.daysLeft.replace('{count}', String(daysLeft))
 }
 
+/** Whether the offer has more than one discount, which is when "up to" is true. */
+export function hasVariedDiscounts(products: Pick<Product, 'promoPercent'>[]): boolean {
+  return new Set(products.map((product) => product.promoPercent)).size > 1
+}
+
 /** The deepest discount among the products on offer, or 0 for none. */
 export function deepestDiscount(products: Pick<Product, 'promoPercent'>[]): number {
   return products.reduce((deepest, product) => Math.max(deepest, product.promoPercent), 0)

@@ -26,6 +26,14 @@ export interface Settings {
   facebook: string
   telegram: string
   /**
+   * The shop's own wording, empty when it has written none, in which case the
+   * menu uses the wording in i18n/strings.
+   */
+  aboutIntroEn: string
+  aboutIntroKm: string
+  menuNoteEn: string
+  menuNoteKm: string
+  /**
    * The running promotion, or null when the shop has none. Its date window is
    * still checked before anything is shown — see services/promotion.ts.
    */

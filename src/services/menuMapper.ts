@@ -188,6 +188,8 @@ function mapSettings(source: RawRecord): Settings {
   const tagline = readBilingual(source, 'tagline')
   const address = readBilingual(source, 'address')
   const openingHours = readBilingual(source, 'opening_hours')
+  const aboutIntro = readBilingual(source, 'about_intro')
+  const menuNote = readBilingual(source, 'menu_note')
   const defaultLanguage = readString(source, 'default_language', 'km')
 
   return {
@@ -208,6 +210,10 @@ function mapSettings(source: RawRecord): Settings {
     showUnavailableProducts: readBoolean(source, 'show_unavailable_products', true),
     facebook: readString(source, 'facebook'),
     telegram: readString(source, 'telegram'),
+    aboutIntroEn: aboutIntro.en,
+    aboutIntroKm: aboutIntro.km,
+    menuNoteEn: menuNote.en,
+    menuNoteKm: menuNote.km,
     promo: mapPromotion(source),
   }
 }

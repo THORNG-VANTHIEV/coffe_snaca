@@ -5,7 +5,7 @@ import { useSettings } from '@/hooks/useMenu'
 import { FacebookIcon, TelegramIcon } from './BrandIcons'
 import { ShopLogo } from './ShopLogo'
 import { cn } from '@/utils/cn'
-import { shopAddress, shopName, shopOpeningHours, shopTagline } from '@/utils/translation'
+import { shopAddress, shopIntro, shopName, shopOpeningHours, shopTagline } from '@/utils/translation'
 
 /**
  * Shop details, quick links, and social connections (spec §62).
@@ -56,9 +56,7 @@ export function Footer() {
               </p>
             )}
             <p className="hidden text-xs text-muted leading-relaxed md:block">
-              {language === 'km'
-                ? 'ហាងកាហ្វេក្នុងស្រុក ដែលផ្តល់ជូនកាហ្វេលីងថ្មីៗ ភេសជ្ជៈឈ្ងុយឆ្ងាញ់ និងបរិយាកាសស្ងប់ស្ងាត់។'
-                : 'A local coffee shop offering fresh roasts, delicious drinks, and a cozy atmosphere.'}
+              {shopIntro(settings, language) || t.about.intro}
             </p>
           </div>
 

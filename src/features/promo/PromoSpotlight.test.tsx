@@ -38,6 +38,10 @@ const settings = (promo: Promotion | null): Settings =>
     showUnavailableProducts: true,
     facebook: '',
     telegram: '',
+    aboutIntroEn: '',
+    aboutIntroKm: '',
+    menuNoteEn: '',
+    menuNoteKm: '',
     promo,
   }) as Settings
 
@@ -124,6 +128,13 @@ describe('PromoSpotlight', () => {
 
     // The deepest cut, spelled out for screen readers as well as drawn.
     expect(screen.getByText('Up to 30% off')).toBeTruthy()
+  })
+
+  it('does not say "up to" about a single discount', () => {
+    renderSpotlight(live, [product({ promoPercent: 20 })])
+
+    expect(screen.getByText('20% off')).toBeTruthy()
+    expect(screen.queryByText(dictionaries.en.promo.upToShort)).toBeNull()
   })
 
   it('is absent between campaigns', () => {

@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { Clock, Tag } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
+import { ProductCard } from '@/components/menu/ProductCard'
 import { ProductRail } from '@/components/menu/ProductRail'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useProducts, useSettings } from '@/hooks/useMenu'
 import { getDiscountedProducts, promotionText } from '@/services/promotion'
 import { prefersReducedMotion } from '@/utils/motion'
-import { countdownLabel, deepestDiscount, PROMO_SECTION_ID } from './promoLabels'
+import { countdownLabel, deepestDiscount, hasVariedDiscounts, PROMO_SECTION_ID } from './promoLabels'
 
 /**
  * The running offer, kept on the home page.
@@ -49,6 +50,8 @@ export function PromoSpotlight() {
   const { title, text } = promotionText(promotion, language)
   const countdown = countdownLabel(promotion, t.promo)
   const deepest = deepestDiscount(discounted)
+  const varied = hasVariedDiscounts(discounted)
+  const single = discounted.length === 1 ? discounted[0] : null
 
   return (
     <section
@@ -111,18 +114,27 @@ export function PromoSpotlight() {
 
         {/* The headline number, big enough to read from across the table. */}
         <p className="flex shrink-0 flex-col items-center rounded-2xl bg-success px-3 py-2.5 text-bg shadow-raised sm:px-6 sm:py-4">
-          <span className="sr-only">{t.promo.upTo.replace('{percent}', String(deepest))}</span>
-          <span aria-hidden="true" className="text-[10px] leading-none font-semibold sm:text-xs">
-            {t.promo.upToShort}
+          <span className="sr-only">
+            {(varied ? t.promo.upTo : t.promo.percentOff).replace('{percent}', String(deepest))}
           </span>
-          <span aria-hidden="true" className="mt-1 text-xl leading-none font-extrabold tabular-nums sm:text-4xl">
+          {varied && (
+            <span aria-hidden="true" className="mb-1 text-[10px] leading-none font-semibold sm:text-xs">
+              {t.promo.upToShort}
+            </span>
+          )}
+          <span aria-hidden="true" className="text-xl leading-none font-extrabold tabular-nums sm:text-4xl">
             −{deepest}%
           </span>
         </p>
       </div>
 
       <div className="px-4 pb-5 sm:px-7 sm:pb-7">
-        <ProductRail products={discounted} />
+        {/* A lone card in a four-column row would leave the section lopsided. */}
+        {single ? (
+          <ProductCard product={single} className="mx-auto w-full max-w-sm" />
+        ) : (
+          <ProductRail products={discounted} />
+        )}
       </div>
     </section>
   )

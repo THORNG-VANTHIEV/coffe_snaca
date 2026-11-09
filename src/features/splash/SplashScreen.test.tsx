@@ -27,6 +27,10 @@ const settings: Settings = {
   showUnavailableProducts: true,
   facebook: '',
   telegram: '',
+  aboutIntroEn: '',
+  aboutIntroKm: '',
+  menuNoteEn: '',
+  menuNoteKm: '',
   promo: null,
 }
 

@@ -24,6 +24,10 @@ const settings = (promoOverrides: Record<string, string> | null = {}): Settings 
   showUnavailableProducts: true,
   facebook: '',
   telegram: '',
+  aboutIntroEn: '',
+  aboutIntroKm: '',
+  menuNoteEn: '',
+  menuNoteKm: '',
   promo:
     promoOverrides === null
       ? null

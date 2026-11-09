@@ -121,6 +121,10 @@ const en = {
     upTo: 'Up to {percent}% off',
     /** Above the big number on the pop-up's badge. */
     upToShort: 'Up to',
+    /** The same discount on everything on offer, so "up to" would be untrue. {percent} is a bare number. */
+    percentOff: '{percent}% off',
+    /** The pop-up's way through when the offer is one product. */
+    viewProduct: 'View this item',
     /** The pop-up's way through to the offer section on the home page. */
     viewOffers: 'See all offers',
   },
@@ -280,6 +284,8 @@ const km: Dictionary = {
     daysLeft: 'នៅសល់ {count} ថ្ងៃ',
     upTo: 'បញ្ចុះរហូតដល់ {percent}%',
     upToShort: 'រហូតដល់',
+    percentOff: 'បញ្ចុះ {percent}%',
+    viewProduct: 'មើលទំនិញនេះ',
     viewOffers: 'មើលការផ្តល់ជូនទាំងអស់',
   },
 
