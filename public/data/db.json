@@ -24,7 +24,11 @@
         "default_language": "km",
         "show_unavailable_products": true,
         "facebook": "https://www.facebook.com/share/1CCibzr285/?mibextid=wwXIfr",
-        "telegram": ""
+        "telegram": "",
+        "about_intro_en": "A neighbourhood coffee shop serving freshly roasted beans, Khmer home cooking and a quiet place to sit.",
+        "about_intro_km": "ហាងកាហ្វេក្នុងសង្កាត់ ដែលផ្តល់ជូនកាហ្វេលីងថ្មីៗ ម្ហូបខ្មែរ និងកន្លែងអង្គុយស្ងប់ស្ងាត់។",
+        "menu_note_en": "This menu is for viewing only. Please order at the counter or ask our staff.",
+        "menu_note_km": "ម៉ឺនុយនេះសម្រាប់មើលប៉ុណ្ណោះ។ សូមកម្មង់នៅបញ្ជរ ឬសួរបុគ្គលិក។"
     },
     "tables": [
         {
@@ -498,9 +502,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -529,9 +531,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -560,9 +560,7 @@
                     "price_khr": 12300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -591,9 +589,7 @@
                     "price_khr": 8900
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -858,9 +854,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -889,9 +883,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -920,9 +912,7 @@
                     "price_khr": 9100
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -951,9 +941,7 @@
                     "price_khr": 8200
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1175,9 +1163,7 @@
                     "price_khr": 12300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1206,9 +1192,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1237,9 +1221,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1446,9 +1428,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1561,9 +1541,7 @@
                     "price_khr": 12300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1592,9 +1570,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1759,9 +1735,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1877,9 +1851,7 @@
                     "price_khr": 13400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1908,9 +1880,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -1981,9 +1951,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2192,9 +2160,7 @@
                     "price_khr": 13400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2223,9 +2189,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2254,9 +2218,7 @@
                     "price_khr": 12300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2517,9 +2479,7 @@
                     "price_khr": 13400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2548,9 +2508,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2579,9 +2537,7 @@
                     "price_khr": 12300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2788,9 +2744,7 @@
                     "price_khr": 13400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2819,9 +2773,7 @@
                     "price_khr": 10300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2850,9 +2802,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -2970,9 +2920,7 @@
                     "price_khr": 8200
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3001,9 +2949,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3069,9 +3015,7 @@
                     "price_khr": 8200
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3100,9 +3044,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3131,9 +3073,7 @@
                     "price_khr": 6200
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3162,9 +3102,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3193,9 +3131,7 @@
                     "price_khr": 6200
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3224,9 +3160,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3255,9 +3189,7 @@
                     "price_khr": 12300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3286,9 +3218,7 @@
                     "price_khr": 12300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3317,9 +3247,7 @@
                     "price_khr": 12300
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3348,9 +3276,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3379,9 +3305,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3410,9 +3334,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3441,9 +3363,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
@@ -3472,9 +3392,7 @@
                     "price_khr": 14400
                 }
             ],
-            "temperature": [
-                "hot"
-            ],
+            "temperature": [],
             "sugar_levels": [],
             "ice_levels": [],
             "extras": [],
