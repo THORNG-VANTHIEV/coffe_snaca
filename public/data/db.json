@@ -144,7 +144,7 @@
             "id": 4,
             "slug": "matcha-series",
             "name_en": "Matcha Series",
-            "name_km": "Matcha Series",
+            "name_km": "ស៊េរីម៉ាឆា",
             "description_en": "Premium Japanese green tea series",
             "description_km": "ភេសជ្ជៈម៉ាត់ឆាជប៉ុនពិសេស",
             "image": "/images/menu-items/matcha-snaca-latte.webp",
@@ -251,7 +251,7 @@
             "slug": "matcha-snaca-latte",
             "category_id": 4,
             "name_en": "Matcha Snaca Latte",
-            "name_km": "Matcha Snaca Latte",
+            "name_km": "ម៉ាឆា ស្នាក់ការ ឡាតេ",
             "description_en": "Premium Japanese matcha whisked with rich fresh milk.",
             "description_km": "ម៉ាឆាជប៉ុនពិសេសក្រឡុកជាមួយទឹកដោះគោស្រស់ឈ្ងុយឆ្ងាញ់។",
             "image": "/images/menu-items/matcha-snaca-latte.webp",
@@ -360,7 +360,7 @@
             "name_km": "ស្នាក់ការ ក្រឡុក",
             "description_en": "Signature blended special frappe with velvety texture.",
             "description_km": "ភេសជ្ជៈកិនរូបមន្តពិសេសស្នាក់ការ រសជាតិទន់ក្រអូបឈ្ងុយឆ្ងាញ់។",
-            "image": "",
+            "image": "/images/menu-items/snaca-frappe-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1467,7 +1467,7 @@
             "name_km": "ឡាតេ ក្តៅ",
             "description_en": "Espresso topped with steamed fresh milk.",
             "description_km": "កាហ្វេ Espresso ជាមួយទឹកដោះគោស្រស់ក្តៅ។",
-            "image": "",
+            "image": "/images/menu-items/hot-latte.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1780,7 +1780,7 @@
             "name_km": "ម៉ូកា ក្តៅ",
             "description_en": "Hot espresso blended with chocolate and fresh milk.",
             "description_km": "កាហ្វេ Espresso ក្តៅ លាយសូកូឡា និងទឹកដោះគោស្រស់។",
-            "image": "",
+            "image": "/images/menu-items/hot-mocha.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1822,10 +1822,10 @@
                 1
             ],
             "name_en": "Matcha Latte",
-            "name_km": "Matcha Latte",
+            "name_km": "ម៉ាឆា ឡាតេ",
             "description_en": "Premium Japanese matcha with fresh milk over ice.",
             "description_km": "ម៉ាឆាជប៉ុនពិសេស ជាមួយទឹកដោះគោស្រស់ និងទឹកកក។",
-            "image": "",
+            "image": "/images/menu-items/matcha-latte.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -2002,7 +2002,7 @@
             "name_km": "ស្នាក់ការ ទឹកកក",
             "description_en": "The house coffee blend, smooth and served over ice.",
             "description_km": "កាហ្វេប្រចាំហាង រសជាតិទន់ភ្លន់ ជាមួយទឹកកក។",
-            "image": "",
+            "image": "/images/menu-items/ice-snaca.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -2056,7 +2056,7 @@
             "name_km": "អេស្ព្រេសូ ក្តៅ",
             "description_en": "A single shot of freshly pulled espresso.",
             "description_km": "កាហ្វេ Espresso ស្រស់ ក្រអូបខ្លាំង។",
-            "image": "",
+            "image": "/images/menu-items/hot-espresso.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -2090,7 +2090,7 @@
             "slug": "matcha-oat-milk",
             "category_id": 4,
             "name_en": "Matcha Oat Milk",
-            "name_km": "Matcha Oat Milk",
+            "name_km": "ម៉ាឆា ទឹកដោះគោអូត",
             "description_en": "Premium Japanese matcha with creamy oat milk.",
             "description_km": "ម៉ាឆាជប៉ុនពិសេស ជាមួយទឹកដោះគោអូត។",
             "image": "",
@@ -2329,7 +2329,7 @@
             "name_km": "សូកូឡា ក្តៅ",
             "description_en": "Rich dark chocolate stirred into hot fresh milk.",
             "description_km": "សូកូឡាដិត លាយទឹកដោះគោស្រស់ក្តៅ។",
-            "image": "",
+            "image": "/images/menu-items/hot-chocolate.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -2368,10 +2368,10 @@
             "slug": "matcha-chocolate-latte",
             "category_id": 4,
             "name_en": "Matcha Chocolate Latte",
-            "name_km": "Matcha Chocolate Latte",
+            "name_km": "ម៉ាឆា សូកូឡា ឡាតេ",
             "description_en": "Japanese matcha layered with chocolate and fresh milk.",
             "description_km": "ម៉ាឆាជប៉ុន លាយសូកូឡា និងទឹកដោះគោស្រស់។",
-            "image": "",
+            "image": "/images/menu-items/matcha-chocolate-latte.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -2413,7 +2413,7 @@
             "name_km": "ផាសិន ទឹកដោះគោ",
             "description_en": "Sweet tangy passion fruit shaken with fresh milk.",
             "description_km": "ផ្លែផាសិនផ្អែមជូរ លាយជាមួយទឹកដោះគោស្រស់។",
-            "image": "",
+            "image": "/images/menu-items/passion-milk.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -2689,7 +2689,7 @@
             "name_km": "តែទឹកឃ្មុំ ក្រូចឆ្មា ទឹកកក",
             "description_en": "Iced tea with pure honey and fresh squeezed lime.",
             "description_km": "តែទឹកកក លាយទឹកឃ្មុំសុទ្ធ និងក្រូចឆ្មាស្រស់។",
-            "image": "",
+            "image": "/images/menu-items/ice-honey-lemon-tea.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -2731,7 +2731,7 @@
             "name_km": "គីវី ស្មូតធី",
             "description_en": "Fresh kiwi fruit smoothie blended with yogurt and milk.",
             "description_km": "ផ្លែគីវីស្រស់កិនជាមួយទឹកដោះគោ និងយ៉ាអួ។",
-            "image": "",
+            "image": "/images/menu-items/kiwi-smoothie.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -2913,7 +2913,7 @@
             "name_km": "ផាសិន ស្មូតធី",
             "description_en": "Fresh passion fruit smoothie blended with yogurt and milk.",
             "description_km": "ផ្លែផាសិនស្រស់កិនជាមួយទឹកដោះគោ និងយ៉ាអួ។",
-            "image": "",
+            "image": "/images/menu-items/passion-smoothie.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
