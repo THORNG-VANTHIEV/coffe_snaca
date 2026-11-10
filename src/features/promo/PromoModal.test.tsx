@@ -36,6 +36,7 @@ const settings = {
   openingHoursKm: '',
   currencyUsd: true,
   currencyKhr: true,
+  khrPerUsd: 4100,
   defaultLanguage: 'en' as const,
   showUnavailableProducts: true,
   facebook: '',

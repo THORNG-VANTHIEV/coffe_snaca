@@ -48,7 +48,7 @@ export function PriceDisplay({
   const { t } = useLanguage()
 
   const discounted = isValidPercent(discountPercent)
-  const payable = discounted ? discountPrice(price, discountPercent) : price
+  const payable = discounted ? discountPrice(price, discountPercent, settings.khrPerUsd) : price
 
   const { usd, khr } = formatPrice(payable, settings)
   const was = discounted ? formatPrice(price, settings) : null

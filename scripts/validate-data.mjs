@@ -20,8 +20,14 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const publicDir = join(root, 'public')
 const dbPath = join(publicDir, 'data/db.json')
 
-/** The shop's fixed exchange rate. Prices in riel are derived from USD. */
-const KHR_PER_USD = 4100
+/**
+ * The rate used when db.json names none — the one every price was first set
+ * at. The admin writes `settings.khr_per_usd` only once the shop changes it,
+ * and only accepts a rate between these bounds.
+ */
+const DEFAULT_KHR_PER_USD = 4100
+const MIN_KHR_PER_USD = 3000
+const MAX_KHR_PER_USD = 5000
 
 const errors = []
 const warnings = []
@@ -48,6 +54,17 @@ try {
   console.error(`✖ Could not read ${dbPath}\n  ${error.message}`)
   process.exit(1)
 }
+
+/** Riel per dollar that every price in the file was worked out at. */
+const KHR_PER_USD = (() => {
+  const rate = db?.settings?.khr_per_usd
+  if (rate === undefined) return DEFAULT_KHR_PER_USD
+  if (!Number.isInteger(rate) || rate < MIN_KHR_PER_USD || rate > MAX_KHR_PER_USD) {
+    fail('settings', `khr_per_usd must be a whole number from ${MIN_KHR_PER_USD} to ${MAX_KHR_PER_USD} (got ${JSON.stringify(rate)})`)
+    return DEFAULT_KHR_PER_USD
+  }
+  return rate
+})()
 
 const imageCache = new Map()
 function imageExists(path) {
@@ -84,8 +101,8 @@ function checkPrice(where, record) {
     warn(where, 'has a USD price but no KHR price')
   }
 
-  // The shop converts at a fixed 4,100៛ per dollar and always rounds UP to the
-  // next 100៛ note, so the two currencies can never drift apart by hand.
+  // The shop converts at its own rate (4,100៛ unless it has set another) and
+  // always rounds UP to the next 100៛ note, so the currencies cannot drift apart.
   if (typeof usd === 'number' && typeof khr === 'number' && usd > 0) {
     const expected = Math.ceil((usd * KHR_PER_USD) / 100) * 100
     if (khr !== expected) {

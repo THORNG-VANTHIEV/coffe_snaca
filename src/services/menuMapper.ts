@@ -15,6 +15,7 @@ import type {
 } from '@/models'
 import { isLanguage } from '@/models'
 import { resolveAssetUrl } from '@/utils/url'
+import { DEFAULT_KHR_PER_USD, isValidRate } from './promotion'
 import {
   isRecord,
   readArray,
@@ -191,6 +192,8 @@ function mapSettings(source: RawRecord): Settings {
   const aboutIntro = readBilingual(source, 'about_intro')
   const menuNote = readBilingual(source, 'menu_note')
   const defaultLanguage = readString(source, 'default_language', 'km')
+  // Absent while the shop keeps the rate its prices were first set at.
+  const khrPerUsd = readNumber(source, 'khr_per_usd', DEFAULT_KHR_PER_USD)
 
   return {
     shopNameEn: shopName.en,
@@ -206,6 +209,7 @@ function mapSettings(source: RawRecord): Settings {
     openingHoursKm: openingHours.km,
     currencyUsd: readBoolean(source, 'currency_usd', true),
     currencyKhr: readBoolean(source, 'currency_khr', true),
+    khrPerUsd: isValidRate(khrPerUsd) ? khrPerUsd : DEFAULT_KHR_PER_USD,
     defaultLanguage: isLanguage(defaultLanguage) ? defaultLanguage : 'km',
     showUnavailableProducts: readBoolean(source, 'show_unavailable_products', true),
     facebook: readString(source, 'facebook'),

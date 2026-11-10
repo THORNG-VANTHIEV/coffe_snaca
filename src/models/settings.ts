@@ -20,6 +20,12 @@ export interface Settings {
   openingHoursKm: string
   currencyUsd: boolean
   currencyKhr: boolean
+  /**
+   * Riel per dollar, set by the shop in the admin. Every riel price in the
+   * file is already worked out at this rate; the menu only needs it for the
+   * discounted prices it calculates itself.
+   */
+  khrPerUsd: number
   defaultLanguage: Language
   /** When false, sold-out products are hidden instead of dimmed (spec §16). */
   showUnavailableProducts: boolean

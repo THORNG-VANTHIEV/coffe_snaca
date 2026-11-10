@@ -25,3 +25,24 @@ describe('size labels', () => {
     expect(withSize('Family')).toMatchObject({ nameEn: 'Family', nameKm: 'Family' })
   })
 })
+
+describe('exchange rate', () => {
+  const rateFrom = (settings: Record<string, unknown>) =>
+    mapMenuData({ settings, tables: [], categories: [], products: [] }).settings.khrPerUsd
+
+  it('reads the rate the shop set', () => {
+    expect(rateFrom({ khr_per_usd: 4000 })).toBe(4000)
+  })
+
+  /** The admin leaves the key out while the shop keeps the rate prices were first set at. */
+  it('falls back to 4,100៛ when the file names no rate', () => {
+    expect(rateFrom({})).toBe(4100)
+  })
+
+  /** 410 or 41000 would put every discount out by a factor of ten. */
+  it('ignores a rate no shop would set', () => {
+    expect(rateFrom({ khr_per_usd: 410 })).toBe(4100)
+    expect(rateFrom({ khr_per_usd: 41000 })).toBe(4100)
+    expect(rateFrom({ khr_per_usd: 'abc' })).toBe(4100)
+  })
+})

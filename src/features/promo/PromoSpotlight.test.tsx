@@ -34,6 +34,7 @@ const settings = (promo: Promotion | null): Settings =>
     openingHoursKm: '',
     currencyUsd: true,
     currencyKhr: true,
+    khrPerUsd: 4100,
     defaultLanguage: 'en',
     showUnavailableProducts: true,
     facebook: '',

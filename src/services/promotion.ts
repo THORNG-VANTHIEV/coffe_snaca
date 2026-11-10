@@ -21,8 +21,18 @@ import type { Price, Product, Promotion, Settings } from '@/models'
  *     inclusive.
  */
 
-/** The shop's fixed rate, matching KHR_PER_USD in scripts/validate-data.mjs. */
-const KHR_PER_USD = 4100
+/**
+ * The rate every price was set at before the shop could change it, and the one
+ * used when db.json does not name a rate. The admin only accepts a rate between
+ * the two bounds, so anything outside them is a damaged file, not a choice.
+ */
+export const DEFAULT_KHR_PER_USD = 4100
+const MIN_KHR_PER_USD = 3000
+const MAX_KHR_PER_USD = 5000
+
+export function isValidRate(rate: number): boolean {
+  return Number.isInteger(rate) && rate >= MIN_KHR_PER_USD && rate <= MAX_KHR_PER_USD
+}
 
 const MIN_PERCENT = 1
 const MAX_PERCENT = 90
@@ -73,8 +83,12 @@ export function isPromotionLive(
   return true
 }
 
-/** The discounted price, in both currencies. */
-export function discountPrice(price: Price, percent: number): Price {
+/** The discounted price, in both currencies, at the shop's exchange rate. */
+export function discountPrice(
+  price: Price,
+  percent: number,
+  khrPerUsd: number = DEFAULT_KHR_PER_USD,
+): Price {
   if (!isValidPercent(percent) || price.usd <= 0) return price
 
   // Round to the cent first: 2.25 x 0.8 is 1.8000000000000003 in binary
@@ -83,7 +97,7 @@ export function discountPrice(price: Price, percent: number): Price {
 
   return {
     usd,
-    khr: Math.ceil((usd * KHR_PER_USD) / 100) * 100,
+    khr: Math.ceil((usd * khrPerUsd) / 100) * 100,
   }
 }
 

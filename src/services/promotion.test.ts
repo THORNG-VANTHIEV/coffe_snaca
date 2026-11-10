@@ -39,6 +39,15 @@ describe('discountPrice', () => {
     expect(discountPrice({ usd: 3, khr: 12300 }, 15)).toEqual({ usd: 2.55, khr: 10500 })
   })
 
+  /** The shop sets its own rate in the admin, and every price moves with it. */
+  it('derives riel at the shop’s rate when it has set one', () => {
+    // $2.25 − 20% = $1.80 → 1.80 x 4000 = 7,200
+    expect(discountPrice({ usd: 2.25, khr: 9000 }, 20, 4000)).toEqual({ usd: 1.8, khr: 7200 })
+
+    // $2.70 − 20% = $2.16 → 2.16 x 4150 = 8,964 → up to 9,000
+    expect(discountPrice({ usd: 2.7, khr: 11300 }, 20, 4150)).toEqual({ usd: 2.16, khr: 9000 })
+  })
+
   it('rounds the discounted dollars to the cent', () => {
     // 2.25 * 0.8 is 1.8000000000000003 in binary floating point, and the riel
     // figure is derived from this number — so it must be money first.

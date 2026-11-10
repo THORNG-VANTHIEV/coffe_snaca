@@ -224,7 +224,7 @@ export function PromoModal({ promotion, products, onClose, onHold }: PromoModalP
                         */}
                         {size && (
                           <CompactPrice
-                            now={formatPrice(discountPrice(size.price, product.promoPercent), settings)}
+                            now={formatPrice(discountPrice(size.price, product.promoPercent, settings.khrPerUsd), settings)}
                             was={formatPrice(size.price, settings)}
                             regularLabel={t.promo.regularPrice}
                           />
