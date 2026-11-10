@@ -203,7 +203,7 @@
             "name_km": "គុយទាវ",
             "description_en": "Hot savory Cambodian noodle soups",
             "description_km": "គុយទាវទឹកស៊ុបក្តៅ ឈ្ងុយឆ្ងាញ់",
-            "image": "/images/products/noodle-soup/beef-noodle-soup.webp",
+            "image": "/images/menu-items/dsc09498.webp",
             "icon": "soup",
             "kind": "food",
             "active": true,
@@ -844,7 +844,7 @@
             "name_km": "គុយទាវគ្រឿងសមុទ្រ",
             "description_en": "Fresh prawns, squid and fish balls in clear, fragrant broth.",
             "description_km": "គុយទាវបង្គា មឹក និងប្រហិតត្រី ក្នុងទឹកស៊ុបឈ្ងុយឆ្ងាញ់។",
-            "image": "",
+            "image": "/images/menu-items/dsc09493.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1560,7 +1560,7 @@
             "name_km": "គុយទាវទឹកខ្មៅសាច់គោ",
             "description_en": "Rice noodles in dark savory broth with sliced beef.",
             "description_km": "គុយទាវទឹកខ្មៅ ជាមួយសាច់គោ។",
-            "image": "",
+            "image": "/images/menu-items/dsc09498-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
