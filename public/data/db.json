@@ -25,7 +25,6 @@
         "show_unavailable_products": true,
         "facebook": "https://www.facebook.com/share/1CCibzr285/?mibextid=wwXIfr",
         "telegram": "",
-        "khr_per_usd": 4000,
         "about_intro_en": "A neighbourhood coffee shop serving freshly roasted beans, Khmer home cooking and a quiet place to sit.",
         "about_intro_km": "ហាងកាហ្វេក្នុងសង្កាត់ ដែលផ្តល់ជូនកាហ្វេលីងថ្មីៗ ម្ហូបខ្មែរ និងកន្លែងអង្គុយស្ងប់ស្ងាត់។",
         "menu_note_en": "This menu is for viewing only. Please order at the counter or ask our staff.",
@@ -266,7 +265,7 @@
                 {
                     "name": "R",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [
@@ -290,7 +289,7 @@
                     "name_en": "Extra Matcha",
                     "name_km": "ថែមម៉ាឆា",
                     "price_usd": 0.5,
-                    "price_khr": 2000
+                    "price_khr": 2100
                 }
             ],
             "options": [],
@@ -318,12 +317,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.25,
-                    "price_khr": 9000
+                    "price_khr": 9300
                 },
                 {
                     "name": "L",
                     "price_usd": 2.7,
-                    "price_khr": 10800
+                    "price_khr": 11100
                 }
             ],
             "temperature": [
@@ -347,7 +346,7 @@
                     "name_en": "Extra Shot",
                     "name_km": "ថែម Espresso",
                     "price_usd": 0.5,
-                    "price_khr": 2000
+                    "price_khr": 2100
                 }
             ],
             "options": [],
@@ -372,12 +371,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.56,
-                    "price_khr": 10300
+                    "price_khr": 10500
                 },
                 {
                     "name": "L",
                     "price_usd": 3.05,
-                    "price_khr": 12200
+                    "price_khr": 12600
                 }
             ],
             "temperature": [
@@ -416,12 +415,12 @@
                 {
                     "name": "R",
                     "price_usd": 1.5,
-                    "price_khr": 6000
+                    "price_khr": 6200
                 },
                 {
                     "name": "L",
                     "price_usd": 2.2,
-                    "price_khr": 8800
+                    "price_khr": 9100
                 }
             ],
             "temperature": [
@@ -458,12 +457,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -500,7 +499,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -529,7 +528,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -558,7 +557,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3,
-                    "price_khr": 12000
+                    "price_khr": 12300
                 }
             ],
             "temperature": [],
@@ -587,7 +586,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.15,
-                    "price_khr": 8600
+                    "price_khr": 8900
                 }
             ],
             "temperature": [],
@@ -616,12 +615,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.56,
-                    "price_khr": 10300
+                    "price_khr": 10500
                 },
                 {
                     "name": "L",
                     "price_usd": 3.05,
-                    "price_khr": 12200
+                    "price_khr": 12600
                 }
             ],
             "temperature": [
@@ -642,7 +641,7 @@
                     "name_en": "Whipped Cream",
                     "name_km": "ក្រែមវីប",
                     "price_usd": 0.5,
-                    "price_khr": 2000
+                    "price_khr": 2100
                 }
             ],
             "options": [],
@@ -667,12 +666,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -709,12 +708,12 @@
                 {
                     "name": "R",
                     "price_usd": 1.83,
-                    "price_khr": 7400
+                    "price_khr": 7600
                 },
                 {
                     "name": "L",
                     "price_usd": 2.2,
-                    "price_khr": 8800
+                    "price_khr": 9100
                 }
             ],
             "temperature": [
@@ -738,7 +737,7 @@
                     "name_en": "Extra Shot",
                     "name_km": "ថែម Espresso",
                     "price_usd": 0.5,
-                    "price_khr": 2000
+                    "price_khr": 2100
                 }
             ],
             "options": [],
@@ -763,12 +762,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.68,
-                    "price_khr": 10800
+                    "price_khr": 11000
                 }
             ],
             "temperature": [
@@ -805,12 +804,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -852,7 +851,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -881,7 +880,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -910,7 +909,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.2,
-                    "price_khr": 8800
+                    "price_khr": 9100
                 }
             ],
             "temperature": [],
@@ -939,7 +938,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2,
-                    "price_khr": 8000
+                    "price_khr": 8200
                 }
             ],
             "temperature": [],
@@ -968,12 +967,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -1015,12 +1014,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.45,
-                    "price_khr": 9800
+                    "price_khr": 10100
                 }
             ],
             "temperature": [
@@ -1044,7 +1043,7 @@
                     "name_en": "Extra Shot",
                     "name_km": "ថែម Espresso",
                     "price_usd": 0.5,
-                    "price_khr": 2000
+                    "price_khr": 2100
                 }
             ],
             "options": [],
@@ -1072,12 +1071,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -1119,12 +1118,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.56,
-                    "price_khr": 10300
+                    "price_khr": 10500
                 },
                 {
                     "name": "L",
                     "price_usd": 3.05,
-                    "price_khr": 12200
+                    "price_khr": 12600
                 }
             ],
             "temperature": [
@@ -1161,7 +1160,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3,
-                    "price_khr": 12000
+                    "price_khr": 12300
                 }
             ],
             "temperature": [],
@@ -1190,7 +1189,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -1219,7 +1218,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -1248,12 +1247,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -1290,12 +1289,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.8,
-                    "price_khr": 11200
+                    "price_khr": 11500
                 }
             ],
             "temperature": [
@@ -1337,12 +1336,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -1384,12 +1383,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.56,
-                    "price_khr": 10300
+                    "price_khr": 10500
                 },
                 {
                     "name": "L",
                     "price_usd": 3.05,
-                    "price_khr": 12200
+                    "price_khr": 12600
                 }
             ],
             "temperature": [
@@ -1426,7 +1425,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -1455,12 +1454,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.45,
-                    "price_khr": 9800
+                    "price_khr": 10100
                 }
             ],
             "temperature": [
@@ -1497,12 +1496,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 },
                 {
                     "name": "L",
                     "price_usd": 2.7,
-                    "price_khr": 10800
+                    "price_khr": 11100
                 }
             ],
             "temperature": [
@@ -1539,7 +1538,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3,
-                    "price_khr": 12000
+                    "price_khr": 12300
                 }
             ],
             "temperature": [],
@@ -1568,7 +1567,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -1597,12 +1596,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.44,
-                    "price_khr": 9800
+                    "price_khr": 10100
                 },
                 {
                     "name": "L",
                     "price_usd": 2.7,
-                    "price_khr": 10800
+                    "price_khr": 11100
                 }
             ],
             "temperature": [
@@ -1644,12 +1643,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -1691,12 +1690,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.56,
-                    "price_khr": 10300
+                    "price_khr": 10500
                 },
                 {
                     "name": "L",
                     "price_usd": 3.05,
-                    "price_khr": 12200
+                    "price_khr": 12600
                 }
             ],
             "temperature": [
@@ -1733,7 +1732,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -1762,12 +1761,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -1807,7 +1806,7 @@
                 {
                     "name": "R",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [
@@ -1849,7 +1848,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.25,
-                    "price_khr": 13000
+                    "price_khr": 13400
                 }
             ],
             "temperature": [],
@@ -1878,7 +1877,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -1907,7 +1906,7 @@
                 {
                     "name": "R",
                     "price_usd": 2,
-                    "price_khr": 8000
+                    "price_khr": 8200
                 }
             ],
             "temperature": [
@@ -1949,7 +1948,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -1978,12 +1977,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -2007,7 +2006,7 @@
                     "name_en": "Extra Shot",
                     "name_km": "ថែម Espresso",
                     "price_usd": 0.5,
-                    "price_khr": 2000
+                    "price_khr": 2100
                 }
             ],
             "options": [],
@@ -2032,7 +2031,7 @@
                 {
                     "name": "R",
                     "price_usd": 1.25,
-                    "price_khr": 5000
+                    "price_khr": 5200
                 }
             ],
             "temperature": [
@@ -2069,7 +2068,7 @@
                 {
                     "name": "R",
                     "price_usd": 2.7,
-                    "price_khr": 10800
+                    "price_khr": 11100
                 }
             ],
             "temperature": [
@@ -2111,12 +2110,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.7,
-                    "price_khr": 10800
+                    "price_khr": 11100
                 },
                 {
                     "name": "L",
                     "price_usd": 3.25,
-                    "price_khr": 13000
+                    "price_khr": 13400
                 }
             ],
             "temperature": [
@@ -2158,7 +2157,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.25,
-                    "price_khr": 13000
+                    "price_khr": 13400
                 }
             ],
             "temperature": [],
@@ -2187,7 +2186,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -2216,7 +2215,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3,
-                    "price_khr": 12000
+                    "price_khr": 12300
                 }
             ],
             "temperature": [],
@@ -2245,12 +2244,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.7,
-                    "price_khr": 10800
+                    "price_khr": 11100
                 }
             ],
             "temperature": [
@@ -2274,7 +2273,7 @@
                     "name_en": "Extra Shot",
                     "name_km": "ថែម Espresso",
                     "price_usd": 0.5,
-                    "price_khr": 2000
+                    "price_khr": 2100
                 }
             ],
             "options": [],
@@ -2299,12 +2298,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.7,
-                    "price_khr": 10800
+                    "price_khr": 11100
                 }
             ],
             "temperature": [
@@ -2341,7 +2340,7 @@
                 {
                     "name": "R",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [
@@ -2383,12 +2382,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.07,
-                    "price_khr": 8300
+                    "price_khr": 8500
                 },
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -2430,12 +2429,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.56,
-                    "price_khr": 10300
+                    "price_khr": 10500
                 },
                 {
                     "name": "L",
                     "price_usd": 3.05,
-                    "price_khr": 12200
+                    "price_khr": 12600
                 }
             ],
             "temperature": [
@@ -2477,7 +2476,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.25,
-                    "price_khr": 13000
+                    "price_khr": 13400
                 }
             ],
             "temperature": [],
@@ -2506,7 +2505,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -2535,7 +2534,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3,
-                    "price_khr": 12000
+                    "price_khr": 12300
                 }
             ],
             "temperature": [],
@@ -2564,12 +2563,12 @@
                 {
                     "name": "R",
                     "price_usd": 1.5,
-                    "price_khr": 6000
+                    "price_khr": 6200
                 },
                 {
                     "name": "L",
                     "price_usd": 2,
-                    "price_khr": 8000
+                    "price_khr": 8200
                 }
             ],
             "temperature": [
@@ -2611,12 +2610,12 @@
                 {
                     "name": "R",
                     "price_usd": 1.25,
-                    "price_khr": 5000
+                    "price_khr": 5200
                 },
                 {
                     "name": "L",
                     "price_usd": 1.83,
-                    "price_khr": 7400
+                    "price_khr": 7600
                 }
             ],
             "temperature": [
@@ -2653,7 +2652,7 @@
                 {
                     "name": "L",
                     "price_usd": 2.32,
-                    "price_khr": 9300
+                    "price_khr": 9600
                 }
             ],
             "temperature": [
@@ -2695,12 +2694,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.56,
-                    "price_khr": 10300
+                    "price_khr": 10500
                 },
                 {
                     "name": "L",
                     "price_usd": 3.05,
-                    "price_khr": 12200
+                    "price_khr": 12600
                 }
             ],
             "temperature": [
@@ -2742,7 +2741,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.25,
-                    "price_khr": 13000
+                    "price_khr": 13400
                 }
             ],
             "temperature": [],
@@ -2771,7 +2770,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2.5,
-                    "price_khr": 10000
+                    "price_khr": 10300
                 }
             ],
             "temperature": [],
@@ -2800,7 +2799,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -2829,12 +2828,12 @@
                 {
                     "name": "R",
                     "price_usd": 1.5,
-                    "price_khr": 6000
+                    "price_khr": 6200
                 },
                 {
                     "name": "L",
                     "price_usd": 2,
-                    "price_khr": 8000
+                    "price_khr": 8200
                 }
             ],
             "temperature": [
@@ -2871,12 +2870,12 @@
                 {
                     "name": "R",
                     "price_usd": 2.56,
-                    "price_khr": 10300
+                    "price_khr": 10500
                 },
                 {
                     "name": "L",
                     "price_usd": 3.05,
-                    "price_khr": 12200
+                    "price_khr": 12600
                 }
             ],
             "temperature": [
@@ -2918,7 +2917,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2,
-                    "price_khr": 8000
+                    "price_khr": 8200
                 }
             ],
             "temperature": [],
@@ -2947,7 +2946,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -2976,7 +2975,7 @@
                 {
                     "name": "L",
                     "price_usd": 2.15,
-                    "price_khr": 8600
+                    "price_khr": 8900
                 }
             ],
             "temperature": [
@@ -3013,7 +3012,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 2,
-                    "price_khr": 8000
+                    "price_khr": 8200
                 }
             ],
             "temperature": [],
@@ -3042,7 +3041,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -3071,7 +3070,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 1.5,
-                    "price_khr": 6000
+                    "price_khr": 6200
                 }
             ],
             "temperature": [],
@@ -3100,7 +3099,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -3129,7 +3128,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 1.5,
-                    "price_khr": 6000
+                    "price_khr": 6200
                 }
             ],
             "temperature": [],
@@ -3158,7 +3157,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -3187,7 +3186,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3,
-                    "price_khr": 12000
+                    "price_khr": 12300
                 }
             ],
             "temperature": [],
@@ -3216,7 +3215,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3,
-                    "price_khr": 12000
+                    "price_khr": 12300
                 }
             ],
             "temperature": [],
@@ -3245,7 +3244,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3,
-                    "price_khr": 12000
+                    "price_khr": 12300
                 }
             ],
             "temperature": [],
@@ -3274,7 +3273,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -3303,7 +3302,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -3332,7 +3331,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -3361,7 +3360,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
@@ -3390,7 +3389,7 @@
                 {
                     "name": "Regular",
                     "price_usd": 3.5,
-                    "price_khr": 14000
+                    "price_khr": 14400
                 }
             ],
             "temperature": [],
