@@ -931,7 +931,7 @@
             "name_km": "នំផេនខេក",
             "description_en": "Soft pancakes served warm.",
             "description_km": "នំផេនខេកទន់ ក្តៅៗ។",
-            "image": "",
+            "image": "/images/menu-items/golden-pancakes-with-berries-and-syrup.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1211,7 +1211,7 @@
             "name_km": "គុយទាវសាច់ជ្រូកចិញ្ច្រាំ",
             "description_en": "Clear pork broth with rice noodles and seasoned minced pork.",
             "description_km": "គុយទាវទឹកស៊ុបជ្រូកថ្លា ជាមួយសាច់ជ្រូកចិញ្ច្រាំឆ្ងាញ់។",
-            "image": "",
+            "image": "/images/menu-items/kuy-teav-noodle-soup-with-minced-pork.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -3063,7 +3063,7 @@
             "name_km": "ពងចៀនស្អំ",
             "description_en": "A plate of sunny side up fried eggs.",
             "description_km": "ពងចៀនស្អំ មួយចាន។",
-            "image": "",
+            "image": "/images/menu-items/img-6970.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
