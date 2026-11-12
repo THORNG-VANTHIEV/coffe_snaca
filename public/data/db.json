@@ -310,7 +310,7 @@
             "name_km": "កាហ្វេ ស្នាក់ការ",
             "description_en": "Our signature rich house blend iced coffee recipe.",
             "description_km": "រូបមន្តកាហ្វេពិសេសប្រចាំហាងស្នាក់ការ ឈ្ងុយប្លែក និងដិតជាប់ចិត្ត។",
-            "image": "/images/menu-items/cafe-snaca.webp",
+            "image": "/images/menu-items/snaca-edition.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -701,7 +701,7 @@
             "name_km": "កាហ្វេខ្មៅ ទឹកកក",
             "description_en": "Bold espresso shot served with cold filtered water and ice.",
             "description_km": "កាហ្វេខ្មៅ Espresso ជាមួយទឹកត្រជាក់ និងទឹកកក។",
-            "image": "/images/menu-items/ice-americano.webp",
+            "image": "/images/menu-items/ice-americano-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1007,7 +1007,7 @@
             "name_km": "ឡាតេ ទឹកកក",
             "description_en": "Espresso mixed with fresh milk and served over ice.",
             "description_km": "កាហ្វេ Espresso លាយជាមួយទឹកដោះគោស្រស់ និងទឹកកក។",
-            "image": "/images/menu-items/ice-latte.webp",
+            "image": "/images/menu-items/ice-latte-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1064,7 +1064,7 @@
             "name_km": "ផាសិន សូដា",
             "description_en": "Sparkling soda infused with sweet tangy passion fruit.",
             "description_km": "សូដាផ្អែមត្រជាក់ លាយជាមួយផ្លែផាសិនស្រស់ជូរអែម។",
-            "image": "/images/menu-items/passion-soda.webp",
+            "image": "/images/menu-items/passion-soda-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1282,7 +1282,7 @@
             "name_km": "កាពូជីណូ ទឹកកក",
             "description_en": "Espresso, cold milk and fluffy milk foam on top.",
             "description_km": "កាហ្វេ Espresso ទឹកដោះគោស្រស់ និងពពុះទឹកដោះគោលើទឹកកក។",
-            "image": "/images/menu-items/ice-cappuccino.webp",
+            "image": "/images/menu-items/ice-capuccino.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1589,7 +1589,7 @@
             "name_km": "សូកូឡា ទឹកកក",
             "description_en": "Rich premium dark chocolate blended with cold milk and ice.",
             "description_km": "សូកូឡាដិតឆ្ងាញ់ លាយជាមួយទឹកដោះគោស្រស់ និងទឹកកក។",
-            "image": "/images/menu-items/ice-chocolate.webp",
+            "image": "/images/menu-items/ice-chocolate-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
