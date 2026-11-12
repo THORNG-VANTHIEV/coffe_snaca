@@ -258,7 +258,7 @@
             "name_km": "ម៉ាឆា ស្នាក់ការ ឡាតេ",
             "description_en": "Premium Japanese matcha whisked with rich fresh milk.",
             "description_km": "ម៉ាឆាជប៉ុនពិសេសក្រឡុកជាមួយទឹកដោះគោស្រស់ឈ្ងុយឆ្ងាញ់។",
-            "image": "/images/menu-items/matcha-snaca-latte.webp",
+            "image": "/images/menu-items/matcha-snaca-latte-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -408,7 +408,7 @@
             "name_km": "កាហ្វេខ្មៅ ក្តៅ",
             "description_en": "Freshly brewed hot espresso topped with hot water.",
             "description_km": "កាហ្វេខ្មៅ Espresso ក្តៅៗឈ្ងុយឆ្ងាញ់។",
-            "image": "/images/menu-items/hot-americano.webp",
+            "image": "/images/menu-items/hot-americano-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -608,7 +608,7 @@
             "name_km": "តែបៃតង ក្រឡុក",
             "description_en": "Ice-blended sweet and creamy matcha green tea.",
             "description_km": "តែបៃតងកិនជាមួយទឹកកក និងទឹកដោះគោស្រស់។",
-            "image": "/images/menu-items/green-tea-frappe.webp",
+            "image": "/images/menu-items/green-tea-frappe-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -659,7 +659,7 @@
             "name_km": "តែបៃតង ក្តៅ",
             "description_en": "Traditional fragrant hot green tea.",
             "description_km": "តែបៃតងក្តៅៗឈ្ងុយឆ្ងាញ់ និងមានផាសុកភាព។",
-            "image": "/images/menu-items/hot-green-tea.webp",
+            "image": "/images/menu-items/hot-green-tea-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -701,7 +701,7 @@
             "name_km": "កាហ្វេខ្មៅ ទឹកកក",
             "description_en": "Bold espresso shot served with cold filtered water and ice.",
             "description_km": "កាហ្វេខ្មៅ Espresso ជាមួយទឹកត្រជាក់ និងទឹកកក។",
-            "image": "/images/menu-items/ice-americano-2.webp",
+            "image": "/images/menu-items/ice-americano-3.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -755,7 +755,7 @@
             "name_km": "កាពូជីណូ ក្តៅ",
             "description_en": "Hot espresso layered with steamed milk and thick foam.",
             "description_km": "កាហ្វេ Espresso ក្តៅ ជាមួយទឹកដោះគោ និងពពុះទឹកដោះគោទន់ល្មើយ។",
-            "image": "/images/menu-items/hot-cappuccino.webp",
+            "image": "/images/menu-items/hot-capuccino.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -797,7 +797,7 @@
             "name_km": "តែក្រហម ទឹកកក",
             "description_en": "Refreshing chilled red tea over crystal ice.",
             "description_km": "តែក្រហមទឹកកក ផ្អែមឈ្ងុយត្រជាក់ស្រស់ស្រាយ។",
-            "image": "/images/menu-items/ice-red-tea.webp",
+            "image": "/images/menu-items/red-tea.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -960,7 +960,7 @@
             "name_km": "តែបៃតង ទឹកកក",
             "description_en": "Chilled refreshing green tea with ice.",
             "description_km": "តែបៃតងទឹកកកត្រជាក់ស្រស់ស្រាយ។",
-            "image": "/images/menu-items/ice-green-tea.webp",
+            "image": "/images/menu-items/green-tea.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1007,7 +1007,7 @@
             "name_km": "ឡាតេ ទឹកកក",
             "description_en": "Espresso mixed with fresh milk and served over ice.",
             "description_km": "កាហ្វេ Espresso លាយជាមួយទឹកដោះគោស្រស់ និងទឹកកក។",
-            "image": "/images/menu-items/ice-latte-2.webp",
+            "image": "/images/menu-items/ice-latte-3.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1064,7 +1064,7 @@
             "name_km": "ផាសិន សូដា",
             "description_en": "Sparkling soda infused with sweet tangy passion fruit.",
             "description_km": "សូដាផ្អែមត្រជាក់ លាយជាមួយផ្លែផាសិនស្រស់ជូរអែម។",
-            "image": "/images/menu-items/passion-soda-2.webp",
+            "image": "/images/menu-items/passion-soda-3.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1111,7 +1111,7 @@
             "name_km": "តែក្រហម ក្រឡុក",
             "description_en": "Ice-blended authentic red tea with sweet condensed milk.",
             "description_km": "តែក្រហមកិនទឹកកក ផ្អែមឈ្ងុយស្រទន់។",
-            "image": "/images/menu-items/red-frappe.webp",
+            "image": "/images/menu-items/red-tea-frappe.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1282,7 +1282,7 @@
             "name_km": "កាពូជីណូ ទឹកកក",
             "description_en": "Espresso, cold milk and fluffy milk foam on top.",
             "description_km": "កាហ្វេ Espresso ទឹកដោះគោស្រស់ និងពពុះទឹកដោះគោលើទឹកកក។",
-            "image": "/images/menu-items/ice-capuccino.webp",
+            "image": "/images/menu-items/ice-capuccino-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1329,7 +1329,7 @@
             "name_km": "គីវី សូដា",
             "description_en": "Fizzy soda with vibrant fresh kiwi flavor.",
             "description_km": "សូដាគីវីពណ៌បៃតងស្រស់ ត្រជាក់ផ្អែមស្រទន់។",
-            "image": "/images/menu-items/kiwi-soda.webp",
+            "image": "/images/menu-items/kiwi-soda-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1376,7 +1376,7 @@
             "name_km": "សូកូឡា ក្រឡុក",
             "description_en": "Rich ice-blended chocolate with milk.",
             "description_km": "សូកូឡាកិនទឹកកកដិតឆ្ងាញ់ជាប់ចិត្ត។",
-            "image": "/images/menu-items/chocolate-frappe.webp",
+            "image": "/images/menu-items/chocolate-frappe-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1589,7 +1589,7 @@
             "name_km": "សូកូឡា ទឹកកក",
             "description_en": "Rich premium dark chocolate blended with cold milk and ice.",
             "description_km": "សូកូឡាដិតឆ្ងាញ់ លាយជាមួយទឹកដោះគោស្រស់ និងទឹកកក។",
-            "image": "/images/menu-items/ice-chocolate-2.webp",
+            "image": "/images/menu-items/ice-chocolate-3.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1636,7 +1636,7 @@
             "name_km": "ស្រ្តប៊ឺរី សូដា",
             "description_en": "Sparkling soda flavored with sweet strawberry syrup.",
             "description_km": "សូដាស្រ្តប៊ឺរី ផ្អែមឈ្ងុយត្រជាក់ចិត្ត។",
-            "image": "/images/menu-items/strawberry-soda.webp",
+            "image": "/images/menu-items/strawberry-soda-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1683,7 +1683,7 @@
             "name_km": "ស្រ្តប៊ឺរី ស្មូតធី",
             "description_en": "Fresh strawberry fruit smoothie blended with yogurt and milk.",
             "description_km": "ផ្លែស្រ្តប៊ឺរីស្រស់កិនជាមួយទឹកដោះគោ និងយ៉ាអួ។",
-            "image": "/images/menu-items/strawberry-smoothie.webp",
+            "image": "/images/menu-items/strawberry-smoothie-2.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
@@ -1899,7 +1899,7 @@
             "name_km": "ទឹកឃ្មុំ ក្រូចឆ្មាសូដា",
             "description_en": "Pure honey and fresh squeezed lime in fizzy soda.",
             "description_km": "ទឹកឃ្មុំសុទ្ធ ក្រូចឆ្មាស្រស់ និងសូដាត្រជាក់។",
-            "image": "/images/menu-items/honey-lemon-soda.webp",
+            "image": "/images/menu-items/ice-honey-lemon-soda.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
