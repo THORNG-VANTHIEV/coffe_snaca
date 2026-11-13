@@ -8,9 +8,11 @@ import { useSearchQuery, useSearchResults } from '@/features/search/useSearchQue
 import { useLanguage } from '@/hooks/useLanguage'
 import { useCategories, useProducts, useSettings } from '@/hooks/useMenu'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
+import type { Temperature } from '@/models'
 import { resolveCategoryIcon } from '@/utils/icons'
-import { getProductsByCategory } from '@/services/menuSelectors'
+import { filterByTemperature, getProductsByCategory } from '@/services/menuSelectors'
 import { categoryName, shopName } from '@/utils/translation'
+import { TemperatureFilter } from './TemperatureFilter'
 
 /** Sticky header (64px) + sticky category bar (~54px) + comfortable clearance */
 const STICKY_NAV_OFFSET = 135
@@ -34,7 +36,12 @@ export function MenuPage() {
   const [params] = useSearchParams()
 
   const [query, setQuery] = useSearchQuery()
-  const searchResults = useSearchResults(query)
+  const [temperature, setTemperature] = useState<Temperature | null>(null)
+  const allSearchResults = useSearchResults(query)
+  const searchResults = useMemo(
+    () => filterByTemperature(allSearchResults, temperature),
+    [allSearchResults, temperature],
+  )
   const isSearching = query.trim().length > 0
 
   // Initial category from URL query or hash computed once on mount
@@ -58,15 +65,18 @@ export function MenuPage() {
 
   useDocumentTitle(`${t.sections.fullMenu} | ${shopName(settings, language)}`)
 
-  // Group products into 10 continuous category sections
+  // Group products into continuous category sections. Under a hot or iced
+  // filter, the sections left with nothing (all of the food) drop out, and
+  // their chips with them.
   const categorySections = useMemo(() => {
+    const shown = filterByTemperature(products, temperature)
     return categories
       .map((category) => ({
         category,
-        items: getProductsByCategory(products, category.id),
+        items: getProductsByCategory(shown, category.id),
       }))
       .filter((section) => section.items.length > 0)
-  }, [categories, products])
+  }, [categories, products, temperature])
 
   // A chip for a category with no products would light up and lead nowhere,
   // because the section it points at is never rendered.
@@ -180,6 +190,18 @@ export function MenuPage() {
       scrollToCategory(slug)
     },
     [isSearching, scrollToCategory, setQuery],
+  )
+
+  // The sections all change height at once, so wherever the customer was is
+  // no longer meaningful: start the filtered menu from the top.
+  const handleSelectTemperature = useCallback(
+    (next: Temperature | null) => {
+      if (next === temperature) return
+      setTemperature(next)
+      if (isSearching) return
+      scrollToCategory(null)
+    },
+    [temperature, isSearching, scrollToCategory],
   )
 
   useEffect(() => {
@@ -314,7 +336,10 @@ export function MenuPage() {
 
   return (
     <div className="container-page flex flex-col gap-6 py-6">
-      <SearchBar value={query} onChange={setQuery} />
+      <div className="flex flex-col gap-3">
+        <SearchBar value={query} onChange={setQuery} />
+        <TemperatureFilter value={temperature} onChange={handleSelectTemperature} />
+      </div>
 
       {/* Sticky Category Bar */}
       <div

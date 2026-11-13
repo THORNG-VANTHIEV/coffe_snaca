@@ -1,4 +1,4 @@
-import type { Category, MenuData, Product, Table } from '@/models'
+import type { Category, MenuData, Product, Table, Temperature } from '@/models'
 import { getStartingSize } from '@/models'
 
 /**
@@ -78,6 +78,18 @@ function startingPriceUsd(product: Product): number {
  */
 export function getProductsByCategory(products: Product[], categoryId: number): Product[] {
   return products.filter((product) => isInCategory(product, categoryId))
+}
+
+/**
+ * The products served at the chosen temperature, or all of them when none is
+ * chosen. Food carries no temperature, so a hot or iced view is drinks only.
+ */
+export function filterByTemperature(
+  products: Product[],
+  temperature: Temperature | null,
+): Product[] {
+  if (temperature === null) return products
+  return products.filter((product) => product.temperature.includes(temperature))
 }
 
 export function isInCategory(product: Product, categoryId: number): boolean {
