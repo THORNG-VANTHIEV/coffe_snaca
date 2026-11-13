@@ -85,13 +85,6 @@ const en = {
     iced: 'Iced',
   },
 
-  temperatureFilter: {
-    label: 'Show hot or iced drinks',
-    all: 'Full menu',
-    hot: 'Hot',
-    iced: 'Iced',
-  },
-
   ice: {
     none: 'No Ice',
     less: 'Less Ice',
@@ -257,13 +250,6 @@ const km: Dictionary = {
   },
 
   temperature: {
-    hot: 'ក្តៅ',
-    iced: 'ទឹកកក',
-  },
-
-  temperatureFilter: {
-    label: 'បង្ហាញភេសជ្ជៈក្តៅ ឬទឹកកក',
-    all: 'ម៉ឺនុយពេញ',
     hot: 'ក្តៅ',
     iced: 'ទឹកកក',
   },
