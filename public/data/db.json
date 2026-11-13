@@ -134,11 +134,11 @@
         {
             "id": 3,
             "slug": "hot-coffee",
-            "name_en": "Hot Coffee",
-            "name_km": "កាហ្វេក្ដៅ",
-            "description_en": "Fresh hot brewed coffee, rich and aromatic",
-            "description_km": "កាហ្វេក្ដៅៗឈ្ងុយឆ្ងាញ់ ក្រអូបខ្លាំង",
-            "image": "/images/menu-items/hot-cappuccino.webp",
+            "name_en": "Hot Drinks",
+            "name_km": "ភេសជ្ជៈក្តៅ",
+            "description_en": "Hot coffee, tea and matcha, made fresh",
+            "description_km": "កាហ្វេ តែ និងម៉ាឆា ក្ដៅៗ ឆុងថ្មីៗ",
+            "image": "/images/menu-items/hot-capuccino.webp",
             "icon": "coffee",
             "kind": "drink",
             "active": true,
@@ -443,48 +443,6 @@
             "sort_order": 1
         },
         {
-            "id": 113,
-            "slug": "hot-red-tea",
-            "category_id": 5,
-            "name_en": "Hot Red Tea",
-            "name_km": "តែក្រហម ក្តៅ",
-            "description_en": "Aromatic traditional hot brewed red tea.",
-            "description_km": "តែក្រហមក្តៅៗ ឈ្ងុយ និងជួយសម្រួលអារម្មណ៍។",
-            "image": "/images/menu-items/hot-red-tea.webp",
-            "ingredients_en": [],
-            "ingredients_km": [],
-            "sizes": [
-                {
-                    "name": "R",
-                    "price_usd": 2.07,
-                    "price_khr": 8500
-                },
-                {
-                    "name": "L",
-                    "price_usd": 2.32,
-                    "price_khr": 9600
-                }
-            ],
-            "temperature": [
-                "hot"
-            ],
-            "sugar_levels": [
-                0,
-                25,
-                50,
-                75,
-                100
-            ],
-            "ice_levels": [],
-            "extras": [],
-            "options": [],
-            "available": true,
-            "best_seller": false,
-            "recommended": false,
-            "featured": false,
-            "sort_order": 1
-        },
-        {
             "id": 124,
             "slug": "beef-noodle-soup",
             "category_id": 11,
@@ -644,48 +602,6 @@
                     "price_khr": 2100
                 }
             ],
-            "options": [],
-            "available": true,
-            "best_seller": false,
-            "recommended": false,
-            "featured": false,
-            "sort_order": 2
-        },
-        {
-            "id": 103,
-            "slug": "hot-green-tea",
-            "category_id": 4,
-            "name_en": "Hot Green Tea",
-            "name_km": "តែបៃតង ក្តៅ",
-            "description_en": "Traditional fragrant hot green tea.",
-            "description_km": "តែបៃតងក្តៅៗឈ្ងុយឆ្ងាញ់ និងមានផាសុកភាព។",
-            "image": "/images/menu-items/hot-green-tea-2.webp",
-            "ingredients_en": [],
-            "ingredients_km": [],
-            "sizes": [
-                {
-                    "name": "R",
-                    "price_usd": 2.07,
-                    "price_khr": 8500
-                },
-                {
-                    "name": "L",
-                    "price_usd": 2.32,
-                    "price_khr": 9600
-                }
-            ],
-            "temperature": [
-                "hot"
-            ],
-            "sugar_levels": [
-                0,
-                25,
-                50,
-                75,
-                100
-            ],
-            "ice_levels": [],
-            "extras": [],
             "options": [],
             "available": true,
             "best_seller": false,
@@ -1460,48 +1376,6 @@
                     "name": "L",
                     "price_usd": 2.45,
                     "price_khr": 10100
-                }
-            ],
-            "temperature": [
-                "hot"
-            ],
-            "sugar_levels": [
-                0,
-                25,
-                50,
-                75,
-                100
-            ],
-            "ice_levels": [],
-            "extras": [],
-            "options": [],
-            "available": true,
-            "best_seller": false,
-            "recommended": false,
-            "featured": false,
-            "sort_order": 4
-        },
-        {
-            "id": 182,
-            "slug": "hot-matcha",
-            "category_id": 4,
-            "name_en": "Hot Matcha",
-            "name_km": "Matcha ក្តៅ",
-            "description_en": "Premium Japanese matcha whisked with hot fresh milk.",
-            "description_km": "ម៉ាឆាជប៉ុនពិសេស ក្រឡុកជាមួយទឹកដោះគោស្រស់ក្តៅ។",
-            "image": "/images/menu-items/img-6946.webp",
-            "ingredients_en": [],
-            "ingredients_km": [],
-            "sizes": [
-                {
-                    "name": "R",
-                    "price_usd": 2.5,
-                    "price_khr": 10300
-                },
-                {
-                    "name": "L",
-                    "price_usd": 2.7,
-                    "price_khr": 11100
                 }
             ],
             "temperature": [
@@ -2785,6 +2659,48 @@
             "sort_order": 8
         },
         {
+            "id": 103,
+            "slug": "hot-green-tea",
+            "category_id": 3,
+            "name_en": "Hot Green Tea",
+            "name_km": "តែបៃតង ក្តៅ",
+            "description_en": "Traditional fragrant hot green tea.",
+            "description_km": "តែបៃតងក្តៅៗឈ្ងុយឆ្ងាញ់ និងមានផាសុកភាព។",
+            "image": "/images/menu-items/hot-green-tea-2.webp",
+            "ingredients_en": [],
+            "ingredients_km": [],
+            "sizes": [
+                {
+                    "name": "R",
+                    "price_usd": 2.07,
+                    "price_khr": 8500
+                },
+                {
+                    "name": "L",
+                    "price_usd": 2.32,
+                    "price_khr": 9600
+                }
+            ],
+            "temperature": [
+                "hot"
+            ],
+            "sugar_levels": [
+                0,
+                25,
+                50,
+                75,
+                100
+            ],
+            "ice_levels": [],
+            "extras": [],
+            "options": [],
+            "available": true,
+            "best_seller": false,
+            "recommended": false,
+            "featured": false,
+            "sort_order": 9
+        },
+        {
             "id": 149,
             "slug": "mjokreng-sachkor",
             "category_id": 8,
@@ -2804,48 +2720,6 @@
             ],
             "temperature": [],
             "sugar_levels": [],
-            "ice_levels": [],
-            "extras": [],
-            "options": [],
-            "available": true,
-            "best_seller": false,
-            "recommended": false,
-            "featured": false,
-            "sort_order": 9
-        },
-        {
-            "id": 188,
-            "slug": "hot-passion-honey",
-            "category_id": 5,
-            "name_en": "Hot Passion with Honey",
-            "name_km": "ផាសិន ទឹកឃ្មុំ ក្តៅ",
-            "description_en": "Hot passion fruit infusion sweetened with pure honey.",
-            "description_km": "ផ្លែផាសិនក្តៅ លាយទឹកឃ្មុំសុទ្ធ ផ្អែមឈ្ងុយ។",
-            "image": "/images/menu-items/img-6948.webp",
-            "ingredients_en": [],
-            "ingredients_km": [],
-            "sizes": [
-                {
-                    "name": "R",
-                    "price_usd": 1.5,
-                    "price_khr": 6200
-                },
-                {
-                    "name": "L",
-                    "price_usd": 2,
-                    "price_khr": 8200
-                }
-            ],
-            "temperature": [
-                "hot"
-            ],
-            "sugar_levels": [
-                0,
-                25,
-                50,
-                75,
-                100
-            ],
             "ice_levels": [],
             "extras": [],
             "options": [],
@@ -2961,21 +2835,26 @@
             "sort_order": 10
         },
         {
-            "id": 189,
-            "slug": "hot-honey-lemon-tea",
-            "category_id": 5,
-            "name_en": "Hot Honey Lemon Tea",
-            "name_km": "តែទឹកឃ្មុំ ក្រូចឆ្មា ក្តៅ",
-            "description_en": "Hot tea with pure honey and fresh squeezed lime.",
-            "description_km": "តែក្តៅ លាយទឹកឃ្មុំសុទ្ធ និងក្រូចឆ្មាស្រស់។",
-            "image": "/images/menu-items/img-6947.webp",
+            "id": 182,
+            "slug": "hot-matcha",
+            "category_id": 3,
+            "name_en": "Hot Matcha",
+            "name_km": "Matcha ក្តៅ",
+            "description_en": "Premium Japanese matcha whisked with hot fresh milk.",
+            "description_km": "ម៉ាឆាជប៉ុនពិសេស ក្រឡុកជាមួយទឹកដោះគោស្រស់ក្តៅ។",
+            "image": "/images/menu-items/img-6946.webp",
             "ingredients_en": [],
             "ingredients_km": [],
             "sizes": [
                 {
+                    "name": "R",
+                    "price_usd": 2.5,
+                    "price_khr": 10300
+                },
+                {
                     "name": "L",
-                    "price_usd": 2.15,
-                    "price_khr": 8900
+                    "price_usd": 2.7,
+                    "price_khr": 11100
                 }
             ],
             "temperature": [
@@ -3025,6 +2904,48 @@
             "recommended": false,
             "featured": false,
             "sort_order": 10
+        },
+        {
+            "id": 113,
+            "slug": "hot-red-tea",
+            "category_id": 3,
+            "name_en": "Hot Red Tea",
+            "name_km": "តែក្រហម ក្តៅ",
+            "description_en": "Aromatic traditional hot brewed red tea.",
+            "description_km": "តែក្រហមក្តៅៗ ឈ្ងុយ និងជួយសម្រួលអារម្មណ៍។",
+            "image": "/images/menu-items/hot-red-tea.webp",
+            "ingredients_en": [],
+            "ingredients_km": [],
+            "sizes": [
+                {
+                    "name": "R",
+                    "price_usd": 2.07,
+                    "price_khr": 8500
+                },
+                {
+                    "name": "L",
+                    "price_usd": 2.32,
+                    "price_khr": 9600
+                }
+            ],
+            "temperature": [
+                "hot"
+            ],
+            "sugar_levels": [
+                0,
+                25,
+                50,
+                75,
+                100
+            ],
+            "ice_levels": [],
+            "extras": [],
+            "options": [],
+            "available": true,
+            "best_seller": false,
+            "recommended": false,
+            "featured": false,
+            "sort_order": 11
         },
         {
             "id": 154,
@@ -3114,6 +3035,48 @@
             "sort_order": 12
         },
         {
+            "id": 188,
+            "slug": "hot-passion-honey",
+            "category_id": 3,
+            "name_en": "Hot Passion with Honey",
+            "name_km": "ផាសិន ទឹកឃ្មុំ ក្តៅ",
+            "description_en": "Hot passion fruit infusion sweetened with pure honey.",
+            "description_km": "ផ្លែផាសិនក្តៅ លាយទឹកឃ្មុំសុទ្ធ ផ្អែមឈ្ងុយ។",
+            "image": "/images/menu-items/img-6948.webp",
+            "ingredients_en": [],
+            "ingredients_km": [],
+            "sizes": [
+                {
+                    "name": "R",
+                    "price_usd": 1.5,
+                    "price_khr": 6200
+                },
+                {
+                    "name": "L",
+                    "price_usd": 2,
+                    "price_khr": 8200
+                }
+            ],
+            "temperature": [
+                "hot"
+            ],
+            "sugar_levels": [
+                0,
+                25,
+                50,
+                75,
+                100
+            ],
+            "ice_levels": [],
+            "extras": [],
+            "options": [],
+            "available": true,
+            "best_seller": false,
+            "recommended": false,
+            "featured": false,
+            "sort_order": 12
+        },
+        {
             "id": 202,
             "slug": "scrambled-eggs",
             "category_id": 7,
@@ -3141,6 +3104,43 @@
             "recommended": false,
             "featured": false,
             "sort_order": 12
+        },
+        {
+            "id": 189,
+            "slug": "hot-honey-lemon-tea",
+            "category_id": 3,
+            "name_en": "Hot Honey Lemon Tea",
+            "name_km": "តែទឹកឃ្មុំ ក្រូចឆ្មា ក្តៅ",
+            "description_en": "Hot tea with pure honey and fresh squeezed lime.",
+            "description_km": "តែក្តៅ លាយទឹកឃ្មុំសុទ្ធ និងក្រូចឆ្មាស្រស់។",
+            "image": "/images/menu-items/img-6947.webp",
+            "ingredients_en": [],
+            "ingredients_km": [],
+            "sizes": [
+                {
+                    "name": "L",
+                    "price_usd": 2.15,
+                    "price_khr": 8900
+                }
+            ],
+            "temperature": [
+                "hot"
+            ],
+            "sugar_levels": [
+                0,
+                25,
+                50,
+                75,
+                100
+            ],
+            "ice_levels": [],
+            "extras": [],
+            "options": [],
+            "available": true,
+            "best_seller": false,
+            "recommended": false,
+            "featured": false,
+            "sort_order": 13
         },
         {
             "id": 208,
