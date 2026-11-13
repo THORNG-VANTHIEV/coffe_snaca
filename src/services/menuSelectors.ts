@@ -22,12 +22,18 @@ export function getActiveCategories(menu: MenuData): Category[] {
  * runs from dearest to cheapest, so a category tails off to its cheapest item.
  * `sort_order` is a tiebreaker between equally priced items, which still lets
  * the owner decide which of two $2.50 lattes leads.
+ * A category the shop has put in its own order (`manualOrder`) skips badges
+ * and price and runs by `sort_order` alone — a mixed category such as hot
+ * drinks reads better grouped by kind than by price.
  * Sold-out items sink to the bottom of their own category rather than the
  * bottom of the menu.
  */
 export function getVisibleProducts(menu: MenuData): Product[] {
   const categories = getActiveCategories(menu)
   const categoryOrder = new Map(categories.map((category) => [category.id, category.sortOrder]))
+  const keepsShopOrder = new Set(
+    categories.filter((category) => category.manualOrder).map((category) => category.id),
+  )
 
   return menu.products
     .filter((product) => categoryOrder.has(product.categoryId))
@@ -37,6 +43,7 @@ export function getVisibleProducts(menu: MenuData): Product[] {
         (categoryOrder.get(a.categoryId) ?? 0) - (categoryOrder.get(b.categoryId) ?? 0)
       if (categoryDelta !== 0) return categoryDelta
       if (a.available !== b.available) return a.available ? -1 : 1
+      if (keepsShopOrder.has(a.categoryId)) return a.sortOrder - b.sortOrder || a.id - b.id
       // Sits below availability: a sold-out house pick must not open a section.
       const rankDelta = promotionRank(a) - promotionRank(b)
       if (rankDelta !== 0) return rankDelta

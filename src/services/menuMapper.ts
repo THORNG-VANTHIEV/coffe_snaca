@@ -171,6 +171,8 @@ function mapCategory(source: RawRecord): Category {
     kind: (kind === 'food' ? 'food' : 'drink') satisfies CategoryKind,
     active: readBoolean(source, 'active', true),
     sortOrder: readNumber(source, 'sort_order', Number.MAX_SAFE_INTEGER),
+    // Older documents do not carry it; they keep the badge-and-price order.
+    manualOrder: readBoolean(source, 'manual_order', false),
   }
 }
 

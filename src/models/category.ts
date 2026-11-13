@@ -22,4 +22,9 @@ export interface Category {
   kind: CategoryKind
   active: boolean
   sortOrder: number
+  /**
+   * The shop has put this category's products in its own order (`sortOrder`),
+   * so the menu keeps it instead of ranking them by badge and price.
+   */
+  manualOrder: boolean
 }
